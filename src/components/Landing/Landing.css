@@ -1,0 +1,19 @@
+.LandingContent {
+    height: 80vh;
+    margin: 15px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.LandingDescription {
+    font-size: 1em;
+    margin: 10% auto;
+    width: 80%;
+}
+
+.loginLink {
+    position: absolute;
+    right: 15px;
+    top: 2%;
+}

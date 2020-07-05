@@ -1,0 +1,57 @@
+.formPage {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.LoginForm {
+    height: 57%;
+    border: 1px solid black;
+    padding: 1em;
+    vertical-align: middle;
+    width: 90%;
+    margin: 0 auto;
+    border-radius: 30px;
+    background: lightgray;
+}
+
+.formTitle {
+    font-size: 2em;
+    padding-bottom: 20px;
+}
+
+.loginDirect {
+    margin: 0 auto 15px;
+    width: 90%;
+}
+
+.user_name, .password {
+    font-weight: bold;
+}
+
+#loginUserName, #loginPassword {
+    border: 1px solid #ddd;
+    border-bottom: 1px solid blue;
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: left;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.loginButton, .registerButton {
+    margin: 15px auto 20px;
+    order: 1px solid #aaa;
+    background-color: #eee;
+    font-size: 1.1em;
+    border-radius: 10px;
+    padding: 8px 12px;
+    font-weight: bold;
+}
+
+.registerDesc {
+    margin-bottom: 5px;
+}

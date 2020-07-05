@@ -1,0 +1,13 @@
+.noPageContent {
+    height: 90vh;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 75%;
+    color: red;
+}
+
+.noPageDescription {
+    color: black;
+}

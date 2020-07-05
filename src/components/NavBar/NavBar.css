@@ -1,0 +1,23 @@
+.navBar {
+    text-align: right;
+    padding: 10px;
+    height: 4rem;
+}
+
+.backArrow {
+    width: 25px;
+    height: 25px;
+    margin: 3px auto;
+}
+
+.backButton {
+    position: absolute;
+    left: 10px;
+    top: 8px;
+    display: flex;
+    flex-direction: column;
+    padding: 3px auto;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
