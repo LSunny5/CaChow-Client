@@ -1,67 +1,82 @@
 import React, { Component } from 'react';
 import SearchForm from '../../components/SearchForm/SearchForm';
-
+import CachowContext from '../../CachowContext';
+import { NavLink } from 'react-router-dom';
+import '../../components/SearchForm/Search.css';
 
 
 export default class SearchPage extends Component {
+    static contextType = CachowContext;
+    constructor() {
+        super();
+        this.state = {
+            query: '',
+        }
+    }
 
+    //update the text value in the search field
+    updateSearch = (value) => {
+        this.setState({ query: value });
+    }
 
-  static defaultProps = {
+    render() {
+        let search = this.state.query.toLowerCase().trim();
 
+        let results = this.context.restaurants;
 
-    history: {
-      push: () => {},
-    },
+        //search the database for search term
+        if (search.length !== 0) {
+            results = this.context.restaurants.filter(r => {
+                return (
+                    (r.rName.toLowerCase().indexOf(search) !== -1) ||
+                    (r.rType.toLowerCase().indexOf(search) !== -1) ||
+                    (r.rCity.toLowerCase().indexOf(search) !== -1) ||
+                    (r.rState.toLowerCase().indexOf(search) !== -1) ||
+                    (r.rZip.toLowerCase().indexOf(search) !== -1) ||
+                    (r.rAddress.toLowerCase().indexOf(search) !== -1)
+                )
+            })
+        }
 
-
-
-
-
-  }
-
-  /* constructor() {
-      super();
-      this.state={
-          search: '', 
-          results: [],
-      }
-  } */
-
-  state = { search: ''}
-
-  getSearchValue = (searchInput) => {
-      this.setState({search: searchInput});
-  }
-
-
-
-
-  handleRegistrationSuccess = user => {
-    const { history } = this.props
-    history.push('/login')
-
-
-
-  }
-
-  render() {
-    return (
-      <section className='SearchContent'>    
-        <SearchForm searchWord = {this.getSearchValue()}/>
-         <h2 className = "formTitle">Search Results</h2>
-        <div className="searchResults">
-
-            <p> {this.state.search} </p>
+        return (
+            <section className='SearchContent'>
+                <SearchForm updateSearch={this.updateSearch} />
+                <h2 className="formTitle">Restaurant List</h2>
+                <div className="searchResults">
 
 
 
 
+                    <ul className="resultList">
+                        {results.map(rest => {
+                            return (
+
+
+                                <NavLink to={{ pathname: `/restaurants/${rest.rId}` }}
+                                    className="resultButton"
+                                    key={rest.rId}>
+                                    <li className = "resultButtonBox">
+
+                                        {rest.rName}
+                                    </li>
+
+
+
+                                </NavLink>
 
 
 
 
-        </div>
-      </section>
-    )
-  }
+                            )
+                        })}
+
+
+
+
+
+                    </ul>
+                </div>
+            </section >
+        )
+    };
 }

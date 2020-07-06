@@ -1,12 +1,13 @@
 import React from 'react'
 
 export default React.createContext({
+  owners: [], 
+  users: [],
+  restaurants: [],
+  categories: [], 
 
 
-
-
- /*  notes: [],
-  folders: [],
+ /*  
   deleteNote: () => {},
   addNewFolder: () => {}, 
   addNewNote: () => {},

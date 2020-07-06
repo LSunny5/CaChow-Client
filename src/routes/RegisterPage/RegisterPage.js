@@ -9,16 +9,41 @@ export default class RegistrationPage extends Component {
     },
   }
 
+  constructor() {
+    super();
+    this.state = {
+        radioChoice: 'Owner',
+    }
+}
+
+  handleUserChoice = (choice) => {
+    //console.log(choice)
+    this.setState({ radioChoice: choice });
+  }
+
+
+
   handleRegistrationSuccess = user => {
     const { history } = this.props
-    history.push('/login')
+
+    //console.log(this.state.radioChoice);
+    if (this.state.radioChoice === "Owner"){
+      history.push('/addRestaurant')
+    } else {
+      history.push('/login')
+    }
+
+    
   }
 
   render() {
+    //let utype = this.state.radioChoice;
+
     return (
       <section className='formPage'>
         <h2 className = "formTitle">Register</h2>
         <RegistrationForm
+          handleUserChoice={this.handleUserChoice}
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />
       </section>

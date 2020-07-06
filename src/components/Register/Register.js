@@ -6,12 +6,24 @@ export default class RegistrationForm extends Component {
     onRegistrationSuccess: () => { }
   }
 
-  state = { error: null }
+  state = { 
+    error: null,
+    uType: ''
+  }
+
+  updateRadio = (event) => {
+    this.props.handleUserChoice(event.target.value);
+  }
 
   handleSubmit = ev => {
     ev.preventDefault();
 
+
+
+    
     this.props.onRegistrationSuccess()
+
+
     /* ev.preventDefault()
     const { full_name, nick_name, user_name, password } = ev.target
 
@@ -78,7 +90,33 @@ export default class RegistrationForm extends Component {
             id='passwordInput'>
           </input>
         </div>
-        <div className='nick_name'>
+
+        <p>User Type</p>
+        <div className='userType'>
+          
+          <label htmlFor='ownerType'>
+          <input type="radio" 
+            name='userSelect' 
+            value="Owner" 
+            defaultChecked
+            id='ownerType' 
+            required 
+            onChange={this.updateRadio}/>
+          Restaurant Owner
+          </label>
+          <label htmlFor='regularType'>
+          <input type="radio" 
+            name='userSelect' 
+            value="User" 
+            id='regularType' 
+            required 
+            onChange={this.updateRadio}/>
+          General User
+          </label>
+
+          
+        </div>
+        {/* <div className='nick_name'>
           <label htmlFor='nicknameInput'>
             Nickname
           </label>
@@ -88,7 +126,7 @@ export default class RegistrationForm extends Component {
             required
             id='nicknameInput'>
           </input>
-        </div>
+        </div> */}
         <button type='submit' className="registerButton">
           Register
         </button>

@@ -17,3 +17,23 @@
     right: 15px;
     top: 2%;
 }
+
+
+.searchButton {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 10px 30px;
+    margin: 0 10px;
+    font-size: 1.2em;
+    cursor: pointer; 
+    border-radius: 30px;
+
+    
+    width: 2.2rem;
+    height: 2.2rem;
+}
+
+.labelDesign {
+    position: relative;
+}

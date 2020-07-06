@@ -1,0 +1,42 @@
+.restaurantContent {
+    min-height: 80vh;
+    padding: 10px;
+}
+
+.restaurantInfo {
+    border: 1px solid black;
+    padding: 10px;
+}
+
+.restaurantMenu {
+    border: 1px dotted black;
+    padding: 10px;
+}
+
+.menuList {
+    text-align: left;
+    padding: 0;
+}
+
+.category {
+    list-style: none;
+    
+}
+
+.foodName{
+    list-style: none;
+    position: relative;
+}
+
+.price {
+    position: absolute;
+    right: 0px;
+}
+
+
+
+.userType {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
