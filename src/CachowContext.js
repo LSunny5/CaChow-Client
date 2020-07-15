@@ -1,11 +1,18 @@
 import React from 'react'
 
 export default React.createContext({
-  owners: [], 
-  users: [],
-  restaurants: [],
-  categories: [], 
 
+  users: [],
+
+
+
+  restaurants: [],
+  hours: [], 
+
+
+
+  categories: [], 
+  menu: []
 
  /*  
   deleteNote: () => {},

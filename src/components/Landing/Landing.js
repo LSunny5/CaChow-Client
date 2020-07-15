@@ -3,6 +3,7 @@ import './Landing.css';
 //import SearchForm from '../SearchForm/SearchForm';
 import { NavLink } from 'react-router-dom';
 //import SearchPage from '../../routes/SearchPage/SearchPage'
+//import IdleService from '../../services/idle-service';
 
 class LandingPage extends React.Component {
 

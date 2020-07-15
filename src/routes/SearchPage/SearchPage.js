@@ -21,7 +21,6 @@ export default class SearchPage extends Component {
 
     render() {
         let search = this.state.query.toLowerCase().trim();
-
         let results = this.context.restaurants;
 
         //search the database for search term
@@ -43,37 +42,20 @@ export default class SearchPage extends Component {
                 <SearchForm updateSearch={this.updateSearch} />
                 <h2 className="formTitle">Restaurant List</h2>
                 <div className="searchResults">
-
-
-
-
                     <ul className="resultList">
                         {results.map(rest => {
                             return (
-
-
-                                <NavLink to={{ pathname: `/restaurants/${rest.rId}` }}
+                                <NavLink
+                                    key={rest.r_id} 
+                                    to={{ pathname: `/restaurants/${rest.r_id}` }}
                                     className="resultButton"
-                                    key={rest.rId}>
+                                >
                                     <li className = "resultButtonBox">
-
-                                        {rest.rName}
+                                        {rest.r_name}
                                     </li>
-
-
-
                                 </NavLink>
-
-
-
-
                             )
                         })}
-
-
-
-
-
                     </ul>
                 </div>
             </section >

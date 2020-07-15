@@ -9,21 +9,22 @@ export default {
             "uId": 2,
             "uName": "Average Jane",
             "uUsername": "aj12345",
+            
         },
         {
             "uId": 3,
-            "oName": "Not Assigned",
-            "oUsername": "user123",
+            "uName": "Not Assigned",
+            "uUsername": "user123",
         },
         {
             "uId": 4,
-            "oName": "John Doe",
-            "oUsername": "jd12345",
+            "uName": "John Doe",
+            "uUsername": "jd12345",
         },
         {
             "uId": 5,
-            "oName": "Jane Doe",
-            "oUsername": "jd67890",
+            "uName": "Jane Doe",
+            "uUsername": "jd67890",
         },
     ],
 
@@ -39,7 +40,7 @@ export default {
             "rState": "NJ",
             "rZip": "08807",
             "rPhone": "(732) 347-8820",
-            "rHours": [
+            "rHours": 
                 {
                     "suOpen": "11:00AM",
                     "suClose": "9:00PM",
@@ -56,7 +57,7 @@ export default {
                     "saOpen": "11:00AM",
                     "saClose": "9:00PM",
                 }
-            ],
+            ,
             "menu": [
                 {
                     "mId": 1,
@@ -111,7 +112,7 @@ export default {
             "rState": "NJ",
             "rZip": "07728",
             "rPhone": "(732) 308-3402",
-            "hours": [
+            "rHours": 
                 {
                     "suOpen": "Closed",
                     "suClose": "Closed",
@@ -128,7 +129,7 @@ export default {
                     "saOpen": "11:00AM",
                     "saClose": "5:00PM",
                 }
-            ],
+            ,
             "menu": [
                 {
                     "mId": 1,

@@ -33,7 +33,9 @@
     right: 0px;
 }
 
-
+.hoursDisplay {
+    color: darkblue;
+}
 
 .userType {
     display: flex;
