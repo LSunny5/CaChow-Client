@@ -35,7 +35,7 @@ export default class EditMenuItemPage extends Component {
                 
                 <div className="buttonBox">
                         <NavLink
-                            to={`/ownerView`}
+                            to={`/account`}
                             className="button"
                             onClick={this.alertCompleteUser}
                         >

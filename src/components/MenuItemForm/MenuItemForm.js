@@ -11,6 +11,7 @@ class MenuItemForm extends React.Component {
 
     addItem = (event) => {
         event.preventDefault();
+
     }
 
     updateItem = () => {
@@ -31,7 +32,6 @@ class MenuItemForm extends React.Component {
 
     render() {
         return (
-            <form className="addForm" /* onSubmit={this.handleSubmit} */ >
                 <fieldset>
                     <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
                     <input
@@ -63,12 +63,9 @@ class MenuItemForm extends React.Component {
                         onChange={this.handleUpdate}
                     />
                     <br/>
-                    <button onClick={this.updateItem} className="itemButton">Update Item</button>
+                    {/* <button onClick={this.updateItem} className="itemButton">Update Item</button> */}
                     <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button>
                 </fieldset>
-                <button onClick={this.addItem} className="addItemButton"> + Add item </button>
-            </form>
-
         );
     };
 }

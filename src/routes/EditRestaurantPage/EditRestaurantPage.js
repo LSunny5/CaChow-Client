@@ -41,7 +41,7 @@ export default class EditRestaurantPage extends Component {
                         </NavLink>
                     <NavLink
                         className="button"
-                        to={`/ownerView`}
+                        to={`/account`}
                     >
                         Cancel
                         </NavLink>

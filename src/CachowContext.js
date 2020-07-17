@@ -4,19 +4,16 @@ export default React.createContext({
 
   users: [],
 
-
-
   restaurants: [],
   hours: [], 
-
-
-
   categories: [], 
-  menu: []
-
- /*  
-  deleteNote: () => {},
-  addNewFolder: () => {}, 
-  addNewNote: () => {},
-  deleteFolder: () => {} */
+  menu: [], 
+  addHours: () => {}, 
+  updateHours: () => {}, 
+  addItem: () => {}, 
+  updateItem: () => {}, 
+  deleteItem: () => {}, 
+  addRestaurant: () => {},
+  updateRestaurant: () => {}, 
+  deleteRestaurant: () => {},  
 })

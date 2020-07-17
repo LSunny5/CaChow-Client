@@ -54,7 +54,6 @@ class Restaurant extends React.Component {
 
 
 
-        console.log(categories);
 
 
         //for every item in the category group > 0 print 

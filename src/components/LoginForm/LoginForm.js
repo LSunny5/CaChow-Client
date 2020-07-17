@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-//import TokenService from '../../services/token-service';
+import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import './LoginForm.css';
 import { NavLink } from 'react-router-dom';
 
 export default class LoginForm extends Component {
   static defaultProps = {
-    onLoginSuccess: () => { }
+    onLoginSuccess: () => {}
   }
 
   state = { error: null }
@@ -16,21 +16,20 @@ export default class LoginForm extends Component {
     this.setState({ error: null })
     const { user_name, password } = ev.target
 
-    AuthApiService.postLogin({
+    AuthApiService.postLogin({ 
       user_name: user_name.value,
       password: password.value,
     })
       .then(res => {
-        user_name.value = ''
-        password.value = ''
-        //TokenService.saveAuthToken(res.authToken)
-        this.props.onLoginSuccess()
+        user_name.value = ""; 
+        password.value = "";
+        TokenService.saveAuthToken(res.authToken)
+        this.props.onLoginSuccess();
       })
       .catch(res => {
         this.setState({ error: res.error })
       })
   }
-
 
   render() {
     const { error } = this.state
@@ -65,7 +64,7 @@ export default class LoginForm extends Component {
           </input>
         </div>
         <button type='submit' className="loginButton">
-          Login
+          Log in
         </button>
         <div className="registerQuestionBox">
           <p className="registerDesc">
@@ -73,7 +72,7 @@ export default class LoginForm extends Component {
           </p>
           <NavLink to='/register' className="registerLink">
             Click here to Register!
-        </NavLink>
+          </NavLink>
         </div>
       </form>
     )

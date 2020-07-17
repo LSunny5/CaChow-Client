@@ -14,8 +14,8 @@ export default class DeleteRestaurantPage extends Component {
                     <div className = "buttonBox">
 
 
-                        <NavLink to={'/ownerView'} onClick={this.deleteRestaurant}>Delete</NavLink>
-                        <NavLink to={'/ownerView'}>Cancel</NavLink>
+                        <NavLink to={'/account'} onClick={this.deleteRestaurant}>Delete</NavLink>
+                        <NavLink to={'/account'}>Cancel</NavLink>
                    
                    
                     </div>

@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import CachowContext from '../../CachowContext';
 import { NavLink } from 'react-router-dom';
-import './OwnerView.css';
+import './Account.css';
 
 //import MenuItemForm from '../../components/MenuItemForm/MenuItemForm';
 //import RestaurantForm from '../../components/RestaurantForm/RestaurantForm';
 
-export default class OwnerView extends Component {
+export default class Account extends Component {
     static contextType = CachowContext;
     /* constructor() {
         super();

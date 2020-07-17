@@ -15,7 +15,7 @@ export default class DeleteUserPage extends Component {
 
 
                         <NavLink to={'/login'} onClick={this.deleteRestaurant}>Delete</NavLink>
-                        <NavLink to={'/ownerView'}>Cancel</NavLink>
+                        <NavLink to={'/account'}>Cancel</NavLink>
                    
                    
                     </div>

@@ -5,43 +5,35 @@ import '../../components/Register/Register.css';
 export default class RegistrationPage extends Component {
   static defaultProps = {
     history: {
-      push: () => {},
+      push: () => { },
     },
   }
 
   constructor() {
     super();
     this.state = {
-        radioChoice: 'Owner',
+      radioChoice: 'Owner',
     }
-}
-
-  handleUserChoice = (choice) => {
-    //console.log(choice)
-    this.setState({ radioChoice: choice });
   }
 
-
+  handleUserChoice = (choice) => {
+    this.setState({ radioChoice: choice });
+  }
 
   handleRegistrationSuccess = user => {
     const { history } = this.props
 
-    //console.log(this.state.radioChoice);
-    if (this.state.radioChoice === "Owner"){
+    if (this.state.radioChoice === "Owner") {
       history.push('/addRestaurant')
     } else {
       history.push('/login')
     }
-
-    
   }
 
   render() {
-    //let utype = this.state.radioChoice;
-
     return (
       <section className='formPage'>
-        <h2 className = "formTitle">Register</h2>
+        <h2 className="formTitle">Register</h2>
         <RegistrationForm
           handleUserChoice={this.handleUserChoice}
           onRegistrationSuccess={this.handleRegistrationSuccess}

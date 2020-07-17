@@ -13,7 +13,7 @@ class LoginPage extends React.Component {
     handleLoginSuccess = () => {
         const { location, history } = this.props
         const destination = (location.state || {}).from || '/search'
-        history.push(destination)
+        history.push(destination) 
     }
 
     render() {

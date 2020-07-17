@@ -23,16 +23,18 @@ export default class SearchPage extends Component {
         let search = this.state.query.toLowerCase().trim();
         let results = this.context.restaurants;
 
+        const {restaurants} = this.context;
+
         //search the database for search term
         if (search.length !== 0) {
-            results = this.context.restaurants.filter(r => {
+            results = restaurants.filter(r => {
                 return (
-                    (r.rName.toLowerCase().indexOf(search) !== -1) ||
-                    (r.rType.toLowerCase().indexOf(search) !== -1) ||
-                    (r.rCity.toLowerCase().indexOf(search) !== -1) ||
-                    (r.rState.toLowerCase().indexOf(search) !== -1) ||
-                    (r.rZip.toLowerCase().indexOf(search) !== -1) ||
-                    (r.rAddress.toLowerCase().indexOf(search) !== -1)
+                    (r.r_name.toLowerCase().indexOf(search) !== -1) ||
+                    (r.r_type.toLowerCase().indexOf(search) !== -1) ||
+                    (r.r_city.toLowerCase().indexOf(search) !== -1) ||
+                    (r.r_state.toLowerCase().indexOf(search) !== -1) ||
+                    (r.r_zip.toLowerCase().indexOf(search) !== -1) ||
+                    (r.r_address.toLowerCase().indexOf(search) !== -1)
                 )
             })
         }

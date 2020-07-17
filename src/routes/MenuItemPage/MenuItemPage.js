@@ -24,18 +24,26 @@ export default class MenuItemPage extends Component {
         this.setState({ [title]: value });
     }
  */
+
+    addItem = () => {
+        return (
+            <MenuItemForm />
+        )
+    }
+
     render() {
     
 
         return (
             <section className='RFormContent'>
                 <h2 className="formTitle">Add Menu Items</h2>
-                
-                <MenuItemForm />
-
+                <form className="addForm" /* onSubmit={this.handleSubmit} */ >
+                        <MenuItemForm />
+                <button onClick={this.addItem} className="addItemButton"> + Add item </button>
+            
                 <div className="buttonBox">
                         <NavLink
-                            to={`/ownerView`}
+                            to={`/account`}
                             className="button"
                             onClick={this.alertCompleteUser}
                         >
@@ -49,7 +57,9 @@ export default class MenuItemPage extends Component {
                             Cancel
                         </NavLink>
                     </div>
+                    </form>
             </section >
+            
         )
     };
 }

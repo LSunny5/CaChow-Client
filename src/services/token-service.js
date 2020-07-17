@@ -8,12 +8,11 @@ const TokenService = {
   saveAuthToken(token) {
     window.sessionStorage.setItem(config.TOKEN_KEY, token)
   },
-  getAuthToken(token) {
-    return window.sessionStorage.setItem(config.TOKEN_KEY, token)
+  getAuthToken() {
+    return window.sessionStorage.getItem(config.TOKEN_KEY)
   },
-  clearAuthToken(token) {
-    console.info('clearing the auth token')
-    window.sessionStorage.setItem(config.TOKEN_KEY, token)
+  clearAuthToken() {
+    window.sessionStorage.removeItem(config.TOKEN_KEY)
   },
   hasAuthToken() {
     return !!TokenService.getAuthToken()
