@@ -16,14 +16,15 @@ import RegisterPage from './routes/RegisterPage/RegisterPage';
 import SearchPage from './routes/SearchPage/SearchPage';
 
 import Restaurant from './components/Restaurant/Restaurant';
-import RestaurantFormPage from './routes/RestaurantFormPage/RestaurantFormPage';
-import AddMenuItemPage from './routes/MenuItemPage/MenuItemPage';
+import AddRestaurantPage from './routes/AddRestaurantPage/AddRestaurantPage';
+import AddItemPage from './routes/AddItemPage/AddItemPage';
 
 import Account from './components/Account/Account';
 import EditMenuItemPage from './routes/EditMenuItemPage/EditMenuItemPage';
 import EditRestaurantPage from './routes/EditRestaurantPage/EditRestaurantPage';
 import DeleteRestaurantPage from './routes/DeleteRestaurantPage/DeleteRestaurantPage';
 import DeleteUserPage from './routes/DeleteUserPage/DeleteUserPage';
+import AddHoursPage from './routes/AddHoursPage/AddHoursPage';
 
 class App extends React.Component {
   static contextType = CachowContext;
@@ -32,20 +33,16 @@ class App extends React.Component {
     hours: [],
     categories: [],
     menu: [],
-
-
-    users: [],
   }
 
   componentDidMount() {
     Promise.all([
-      /* fetch(`${config.}/users`),*/
       fetch(`${config.APIENDPOINT}/restaurants`),
       fetch(`${config.APIENDPOINT}/hours`),
       fetch(`${config.APIENDPOINT}/menu`),
       fetch(`${config.APIENDPOINT}/category`),
     ])
-      .then(([restaurantResponse, hoursResponse, menuResponse, catResponse/*, usersResponse */]) => {
+      .then(([restaurantResponse, hoursResponse, menuResponse, catResponse]) => {
         if (!hoursResponse.ok)
           return hoursResponse.json().then(event => Promise.reject(event));
         if (!restaurantResponse.ok)
@@ -54,17 +51,16 @@ class App extends React.Component {
           return catResponse.json().then(event => Promise.reject(event));
         if (!menuResponse.ok)
           return menuResponse.json().then(event => Promise.reject(event));
-        /* if (!usersResponse.ok)
-          return usersResponse.json().then(event => Promise.reject(event)); */
-        return Promise.all([restaurantResponse.json(), hoursResponse.json(), catResponse.json(), menuResponse.json()/* , usersResponse.json() */]);
+        return Promise.all([restaurantResponse.json(), hoursResponse.json(), catResponse.json(), menuResponse.json()]);
       })
-      .then(([restaurants, hours, categories, menu/* , users */]) => {
-        this.setState({ restaurants, hours, categories, menu/* , users */ });
+      .then(([restaurants, hours, categories, menu]) => {
+        this.setState({ restaurants, hours, categories, menu });
       })
       .catch(error => {
         console.error({ error });
         alert('Could not retrieve data - ' + error);
       });
+
     IdleService.setIdleCallback(this.logoutFromIdle)
     if (TokenService.hasAuthToken()) {
       IdleService.registerIdleTimerResets();
@@ -97,8 +93,9 @@ class App extends React.Component {
     this.setState({ hours: tempHours });
   }
 
-  addItem = newItem => {
-    this.setState({ menu: [...this.state.menu, newItem] })
+  addItem = newItems => {
+    this.setState({ menu: [...this.state.menu, newItems] })
+    /* this.setState({ menu: [...this.state.menu, ...newItems] }) */
   }
 
   updateItem = editedItem => {
@@ -127,6 +124,11 @@ class App extends React.Component {
     this.setState({ restaurants: tempRest });
   }
 
+/*   addUser = user => {
+    this.setState({ users: [...this.state.users, user] })
+    /* this.setState({ menu: [...this.state.menu, ...newItems] }) 
+  } */
+
   //routes for navigation bar
   renderNavRoutes() {
     return (
@@ -135,7 +137,7 @@ class App extends React.Component {
           <Route path='/' exact />
           <Route path='/login' exact />
           {/* Route for Login page */}
-          <Route component={NavBar} />
+          <Route path='*' component={NavBar} />
           {/* <Route component = {NavBar} /> */}
         </Switch>
       </header>
@@ -158,6 +160,18 @@ class App extends React.Component {
           {/* Route for Search results */}
           <Route path='/search' exact component={SearchPage} />
 
+          {/* Route for account screen for owner */}
+          <Route path='/account' exact component={Account} />
+
+          {/* Routes for Deleting User */}
+          <Route path='/deleteUser' exact component={DeleteUserPage} />
+
+          {/* Route for restaurant hours */}
+          <Route path='/restaurants/hours/add' exact component={AddHoursPage} />
+
+          {/* Route for adding a restaurant Page */}
+          <Route path='/restaurants/add' exact component={AddRestaurantPage} />
+
           {/* Routes for Restaurant Info */}
           {['/restaurants/:r_id'].map(path => (
             <Route
@@ -168,14 +182,19 @@ class App extends React.Component {
             />
           ))}
 
-          {/* Route for adding a restaurant Page */}
-          <Route path='/addRestaurant' exact component={RestaurantFormPage} />
-
           {/* Route for adding a menu item page */}
-          <Route path='/addMenuItem' exact component={AddMenuItemPage} />
+          <Route path='/restaurants/:r_id/addItem' exact component={AddItemPage} />
 
-          {/* Route for special screen for owner */}
-          <Route path='/account' exact component={Account} />
+
+
+
+
+
+
+
+
+
+
 
           {/* Routes for Editing Restaurant */}
           <Route path='/editRestaurant/:r_id' exact component={EditRestaurantPage} />
@@ -186,8 +205,7 @@ class App extends React.Component {
           {/* Routes for Deleting Restaurant */}
           <Route path='/deleteRestaurant/:r_id' exact component={DeleteRestaurantPage} />
 
-          {/* Routes for Deleting User */}
-          <Route path='/deleteUser/:user_id' exact component={DeleteUserPage} />
+          
 
           {/* Route for Page Not Found */}
           <Route path='*' component={PageNotFound} />
@@ -198,20 +216,21 @@ class App extends React.Component {
 
   render() {
     const contextValue = {
-      users: this.state.users,
-
+/*       users: this.state.users, */
       restaurants: this.state.restaurants,
       hours: this.state.hours,
       categories: this.state.categories,
       menu: this.state.menu,
-      addHours: this.addHours, 
-      updateHours: this.updateHours, 
-      addItem: this.addItem, 
-      updateItem: this.updateItem, 
+      addHours: this.addHours,
+      updateHours: this.updateHours,
+      addItem: this.addItem,
+      updateItem: this.updateItem,
       deleteItem: this.deleteItem,
       addRestaurant: this.addRestaurant,
-      updateRestaurant: this.updateRestaurant, 
-      deleteRestaurant: this.deleteRestaurant, 
+      updateRestaurant: this.updateRestaurant,
+      deleteRestaurant: this.deleteRestaurant,
+      deleteUser: this.deleteUser, 
+      addUser: this.addUser, 
     };
 
     return (

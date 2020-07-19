@@ -5,8 +5,13 @@
     justify-content: center;
 }
 
+.lForm {
+    height: 100%;
+    margin-top: 10vh;
+}
+
 .LoginForm {
-    height: 57%;
+    height: 90%;
     border: 1px solid black;
     padding: 1em;
     vertical-align: middle;
@@ -64,4 +69,15 @@
     margin: 10px;
     font-size: 1.2em;
     font-weight: 600;
+}
+
+.demoInstructions {
+    margin: 20px;
+    border: 1px dotted black;
+    padding: 10px;
+    background: lightblue;
+}
+
+.makeBold {
+    font-weight: bolder;
 }

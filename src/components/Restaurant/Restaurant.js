@@ -30,7 +30,7 @@ class Restaurant extends React.Component {
                             <ul>
                                 <li key={item.item_id} className="foodName">
                                     {item.item_name}
-                                    <span className="price">${item.item_price}</span>
+                                    <span className="price">{item.item_price}</span>
                                 </li>
 
                             </ul>

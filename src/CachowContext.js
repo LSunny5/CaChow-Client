@@ -2,7 +2,7 @@ import React from 'react'
 
 export default React.createContext({
 
-  users: [],
+/*   users: [], */
 
   restaurants: [],
   hours: [], 
@@ -16,4 +16,6 @@ export default React.createContext({
   addRestaurant: () => {},
   updateRestaurant: () => {}, 
   deleteRestaurant: () => {},  
+  deleteUser: () => {},
+  addUser: () => {}, 
 })

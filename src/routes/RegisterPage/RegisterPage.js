@@ -9,25 +9,26 @@ export default class RegistrationPage extends Component {
     },
   }
 
-  constructor() {
+  /* constructor() {
     super();
     this.state = {
       radioChoice: 'Owner',
     }
-  }
+  } */
 
-  handleUserChoice = (choice) => {
+  /* handleUserChoice = (choice) => {
     this.setState({ radioChoice: choice });
-  }
+  } */
 
   handleRegistrationSuccess = user => {
-    const { history } = this.props
-
-    if (this.state.radioChoice === "Owner") {
-      history.push('/addRestaurant')
+    alert('Registration Success!');
+    const { history } = this.props;
+    history.push('/login');
+    /* if (this.state.radioChoice === "Owner") {
+      history.push('/restaurants/add')
     } else {
       history.push('/login')
-    }
+    } */
   }
 
   render() {

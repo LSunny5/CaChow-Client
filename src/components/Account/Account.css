@@ -1,8 +1,10 @@
+/*container for restaurant and buttons associated*/
 .restaurantBox {
     border: 1px solid black;
     padding: 20px;
 }
 
+/*button look on account page*/
 .ownerButton {
     text-decoration: none;
     border: 1px solid black;
@@ -10,4 +12,29 @@
     padding: 5px;
     margin: 5px;
 
+}
+
+/*message for when no restaurants added*/
+.noRestaurants {
+    margin: 20px;
+    border: 1px dotted blue;
+    padding: 10px;
+}
+
+/*add restaurant button*/
+.addRestButton {
+    background-color: lightgreen;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+/*User remove button*/
+.removeButton {
+    color: red;
+    font-weight: bolder;
+    background: lightpink; 
+    border-radius: 10px;
+    padding: 10px;
 }

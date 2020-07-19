@@ -18,7 +18,7 @@ class LoginPage extends React.Component {
 
     render() {
         return (
-            <section className='formPage'>
+            <section className='formPage lForm'>
                 <button
                     className="backButton"
                     onClick={() => this.props.history.goBack()}>
@@ -27,6 +27,13 @@ class LoginPage extends React.Component {
                 </button>
                 <h2 className="formTitle">Login</h2>
                 <LoginForm onLoginSuccess={this.handleLoginSuccess}/>
+                <p className="demoInstructions">
+                    <span className = "makeBold">For Demo Version: </span>
+                    <br /> 
+                    Username: Guest
+                    <br /> 
+                    Password: Demo2020! 
+                </p>
             </section>
         )
     }

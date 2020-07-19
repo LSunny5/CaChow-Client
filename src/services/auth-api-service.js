@@ -36,14 +36,14 @@ const AuthApiService = {
                 TokenService.queueCallbackBeforeExpiry(() => {
                     AuthApiService.postRefreshToken()
                 })
-                return res
+                return res;
             })
     },
     postRefreshToken() {
         return fetch(`${config.APIENDPOINT}/auth/refresh`, {
             method: 'POST',
             headers: {
-                'authorization': `Bearer ${TokenService.getAuthToken()}`,
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
             .then(res =>
@@ -59,10 +59,10 @@ const AuthApiService = {
                 return res
             })
             .catch(err => {
-                console.log('refresh token request error')
+                console.log("refresh token request error");
                 console.error(err)
             })
     },
-}
+};
 
 export default AuthApiService;

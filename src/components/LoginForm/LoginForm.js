@@ -21,6 +21,7 @@ export default class LoginForm extends Component {
       password: password.value,
     })
       .then(res => {
+        localStorage.setItem('name', user_name.value);
         user_name.value = ""; 
         password.value = "";
         TokenService.saveAuthToken(res.authToken)
@@ -33,6 +34,8 @@ export default class LoginForm extends Component {
 
   render() {
     const { error } = this.state
+    localStorage.clear();
+    
     return (
       <form
         className='LoginForm'
@@ -44,7 +47,7 @@ export default class LoginForm extends Component {
         </div>
         <div className='user_name'>
           <label htmlFor='loginUserName'>
-            User name <span className="required">*</span>
+            Username <span className="required">*</span>
           </label>
           <input
             required
