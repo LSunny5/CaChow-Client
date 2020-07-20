@@ -22,6 +22,7 @@ import AddItemPage from './routes/AddItemPage/AddItemPage';
 import Account from './components/Account/Account';
 import EditMenuItemPage from './routes/EditMenuItemPage/EditMenuItemPage';
 import EditRestaurantPage from './routes/EditRestaurantPage/EditRestaurantPage';
+import EditHoursPage from './routes/EditHoursPage/EditHoursPage';
 import DeleteRestaurantPage from './routes/DeleteRestaurantPage/DeleteRestaurantPage';
 import DeleteUserPage from './routes/DeleteUserPage/DeleteUserPage';
 import AddHoursPage from './routes/AddHoursPage/AddHoursPage';
@@ -76,10 +77,11 @@ class App extends React.Component {
   }
 
   logoutFromIdle = () => {
-    TokenService.clearAuthToken()
-    TokenService.clearCallbackBeforeExpiry()
-    IdleService.unRegisterIdleResets()
-    this.forceUpdate()
+    TokenService.clearAuthToken();
+    TokenService.clearCallbackBeforeExpiry();
+    IdleService.unRegisterIdleResets();
+    this.forceUpdate();
+    window.location.href='/login';
   }
 
   //functions for post, patch, delete
@@ -124,11 +126,6 @@ class App extends React.Component {
     this.setState({ restaurants: tempRest });
   }
 
-/*   addUser = user => {
-    this.setState({ users: [...this.state.users, user] })
-    /* this.setState({ menu: [...this.state.menu, ...newItems] }) 
-  } */
-
   //routes for navigation bar
   renderNavRoutes() {
     return (
@@ -136,9 +133,7 @@ class App extends React.Component {
         <Switch>
           <Route path='/' exact />
           <Route path='/login' exact />
-          {/* Route for Login page */}
           <Route path='*' component={NavBar} />
-          {/* <Route component = {NavBar} /> */}
         </Switch>
       </header>
     );
@@ -185,27 +180,17 @@ class App extends React.Component {
           {/* Route for adding a menu item page */}
           <Route path='/restaurants/:r_id/addItem' exact component={AddItemPage} />
 
-
-
-
-
-
-
-
-
-
-
+          {/* Routes for Deleting Restaurant */}
+          <Route path='/restaurants/:r_id/delete' exact component={DeleteRestaurantPage} />
 
           {/* Routes for Editing Restaurant */}
-          <Route path='/editRestaurant/:r_id' exact component={EditRestaurantPage} />
+          <Route path='/restaurants/:r_id/edit' exact component={EditRestaurantPage} />
 
           {/* Routes for Editing Menu Items */}
-          <Route path='/restaurants/:rId/editMenuItems' exact component={EditMenuItemPage} />
+          <Route path='/restaurants/:r_id/hours' exact component={EditHoursPage} />
 
-          {/* Routes for Deleting Restaurant */}
-          <Route path='/deleteRestaurant/:r_id' exact component={DeleteRestaurantPage} />
-
-          
+          {/* Routes for Editing Menu Items */}
+          <Route path='/restaurants/:r_id/editItems' exact component={EditMenuItemPage} />
 
           {/* Route for Page Not Found */}
           <Route path='*' component={PageNotFound} />
@@ -216,7 +201,6 @@ class App extends React.Component {
 
   render() {
     const contextValue = {
-/*       users: this.state.users, */
       restaurants: this.state.restaurants,
       hours: this.state.hours,
       categories: this.state.categories,
@@ -229,8 +213,6 @@ class App extends React.Component {
       addRestaurant: this.addRestaurant,
       updateRestaurant: this.updateRestaurant,
       deleteRestaurant: this.deleteRestaurant,
-      deleteUser: this.deleteUser, 
-      addUser: this.addUser, 
     };
 
     return (

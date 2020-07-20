@@ -17,7 +17,7 @@ export default class LoginForm extends Component {
     const { user_name, password } = ev.target
 
     AuthApiService.postLogin({ 
-      user_name: user_name.value,
+      user_name: user_name.value.trim(),
       password: password.value,
     })
       .then(res => {

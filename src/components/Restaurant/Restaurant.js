@@ -1,24 +1,10 @@
 import React from 'react';
 import './Restaurant.css';
 import CachowContext from '../../CachowContext';
-//import {findRestaurant, findHours} from '../../CachowHelpers';
+import { findRest, findRestaurantHours, getMenuItems } from '../../CachowHelpers';
 
 class Restaurant extends React.Component {
     static contextType = CachowContext;
-
-    findRestaurant = (restaurants = [], id) => {
-        return restaurants.find(rest => rest.r_id === parseInt(id));
-    }
-
-    findHours = (hours = [], hoursId) => {
-        return hours.find(h => h.hours_id === parseInt(hoursId));
-    }
-
-    getItems = (menu = [], restId) => {
-        return (!restId) ? menu : menu.filter(item => item.item_restaurant === restId)
-    };
-
-
 
     printItem = (item, categories, cat) => {
         for (let i = 1; i <= categories.length; i++) {
@@ -41,16 +27,13 @@ class Restaurant extends React.Component {
                 }
             }
         }
-   
-
 
     render() {
         const { restaurants = [], hours = [], menu = [], categories = [] } = this.context;
         const { r_id } = this.props.match.params;
-
-        const targetRestaurant = this.findRestaurant(restaurants, r_id) || {};
-        const targetHours = this.findHours(hours, targetRestaurant.r_hours) || {};
-        const targetItems = this.getItems(menu, r_id);
+        const targetRestaurant = findRest(restaurants, r_id) || {};
+        const targetHours = findRestaurantHours(hours, targetRestaurant.r_hours) || {};
+        const targetItems = getMenuItems(menu, r_id);
 
 
 

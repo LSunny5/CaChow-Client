@@ -23,7 +23,7 @@ export default class RegistrationForm extends Component {
 
     this.setState({ error: null })
     AuthApiService.postUser({
-      user_name: user_name.value,
+      user_name: user_name.value.trim(),
       password: password.value,
       full_name: full_name.value,
     })
@@ -31,7 +31,6 @@ export default class RegistrationForm extends Component {
         full_name.value = ''
         user_name.value = ''
         password.value = ''
-        this.context.addUser(user);
         this.props.onRegistrationSuccess()
       })
       .catch(res => {

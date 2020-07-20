@@ -1,17 +1,37 @@
 /*container for restaurant and buttons associated*/
 .restaurantBox {
     border: 1px solid black;
-    padding: 20px;
+    padding: 5%;
+    margin: 5px;
+    border-radius: 10px;
 }
 
 /*button look on account page*/
 .ownerButton {
+    display: block;
     text-decoration: none;
     border: 1px solid black;
     color: black;
-    padding: 5px;
-    margin: 5px;
+    padding: 7px;
+    margin: 7px;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
+/*div for restaurant title*/
+.RestaurantName {
+    margin-bottom: 1rem;
+}
+
+/*div for button boxes*/
+.buttonsboxes {
+    margin: 1.3rem auto;
+}
+
+/*restaurant title text*/
+.rView {
+    font-size: 1.6em;
+    font-weight: bold;
 }
 
 /*message for when no restaurants added*/
@@ -23,6 +43,9 @@
 
 /*add restaurant button*/
 .addRestButton {
+    display: block;
+    width: 50%;
+    margin: 0 auto 1.5rem;
     background-color: lightgreen;
     text-decoration: none;
     border: 1px solid black;
@@ -37,4 +60,15 @@
     background: lightpink; 
     border-radius: 10px;
     padding: 10px;
+}
+
+/*make text red and bold*/
+.redandbold {
+    color: red;
+    font-weight: bold;
+}
+
+/*make text green*/
+.green {
+    color: green;
 }

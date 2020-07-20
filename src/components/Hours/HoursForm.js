@@ -15,6 +15,8 @@ class HoursForm extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
+        let uname = localStorage.getItem('name');
+
         const newHours = {
             sun_open: event.target['SundayOpen'].value,
             sun_close: event.target['SundayClose'].value,
@@ -30,6 +32,7 @@ class HoursForm extends React.Component {
             fri_close: event.target['FridayClose'].value,
             sat_open: event.target['SaturdayOpen'].value,
             sat_close: event.target['SaturdayClose'].value,
+            hours_owner: uname,
         }
 
         fetch(`${config.APIENDPOINT}/hours`, {

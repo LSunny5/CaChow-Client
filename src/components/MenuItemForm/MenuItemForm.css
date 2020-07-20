@@ -1,3 +1,8 @@
 .extraMargin {
     margin-top: 30px;
 }
+
+/*Edit page Box for each item*/
+.editItemBox {
+    margin: 15px auto;
+}

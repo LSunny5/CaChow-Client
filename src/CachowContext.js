@@ -1,9 +1,6 @@
 import React from 'react'
 
 export default React.createContext({
-
-/*   users: [], */
-
   restaurants: [],
   hours: [], 
   categories: [], 
@@ -16,6 +13,4 @@ export default React.createContext({
   addRestaurant: () => {},
   updateRestaurant: () => {}, 
   deleteRestaurant: () => {},  
-  deleteUser: () => {},
-  addUser: () => {}, 
 })

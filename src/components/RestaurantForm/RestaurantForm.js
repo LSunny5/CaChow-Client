@@ -15,6 +15,7 @@ class RestaurantForm extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         let uname = localStorage.getItem('name');
+        let lastH = this.context.hours[this.context.hours.length - 1];
 
         const newRestaurant = {
             r_owner: uname,
@@ -26,7 +27,7 @@ class RestaurantForm extends React.Component {
             r_state: event.target['restaurantState'].value,
             r_zip: event.target['restaurantZip'].value,
             r_phone: event.target['restaurantPhone'].value,
-            r_hours: this.context.hours.length - 1,
+            r_hours: lastH.hours_id,
         }
 
         fetch(`${config.APIENDPOINT}/restaurants`, {

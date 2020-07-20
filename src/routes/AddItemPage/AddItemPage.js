@@ -4,12 +4,18 @@ import MenuItemForm from '../../components/MenuItemForm/MenuItemForm';
 
 export default class AddItemPage extends Component {
     render() {
+        const { r_id } = this.props.match.params;
         return (
             <section className='RFormContent'>
                 <h2 className="formTitle">Add Menu Items</h2>
+                    <MenuItemForm restId={r_id}/>
+
+                
+
+
                {/*  <form className="addForm" onSubmit={this.handleSubmit}> */}
-                        <MenuItemForm />
-                {/* <button onClick={this.addItem} className="addItemButton"> + Add item </button> */}
+                        
+                <button onClick={this.addItem} className="addItemButton"> + Add item </button>
             
                 {/* <div className="buttonBox extraMargin">
                         <button type='submit' className="button">

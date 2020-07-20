@@ -1,6 +1,6 @@
 let _timeoutId
 let _idleCallback = null
-let _notIdleEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart' ]
+let _notIdleEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart']
 let _FIVE_MINUTES_IN_MS = 5 * 60 * 1000;
 
 const IdleService = {
@@ -12,7 +12,7 @@ const IdleService = {
     clearTimeout(_timeoutId)
     _timeoutId = setTimeout(_idleCallback, _FIVE_MINUTES_IN_MS)
   },
-registerIdleTimerResets() {
+  registerIdleTimerResets() {
     _notIdleEvents.forEach(event =>
       document.addEventListener(event, IdleService.resetIdleTimer, true)
     )

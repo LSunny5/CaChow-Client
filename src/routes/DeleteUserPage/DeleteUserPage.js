@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import './DeleteUser.css';
-import CachowContext from '../../CachowContext';
 import config from '../../config';
 import TokenService from '../../services/token-service';
 
 export default class DeleteUserPage extends Component {
-    static contextType = CachowContext;
-
     handleDelete = (event) => {
         event.preventDefault();
         let uname = localStorage.getItem('name');
@@ -14,7 +11,7 @@ export default class DeleteUserPage extends Component {
         fetch(`${config.APIENDPOINT}/users/${uname}`, {
             method: 'DELETE',
             headers: {
-                'content-type': 'application/json', 
+                'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
         })
@@ -24,7 +21,6 @@ export default class DeleteUserPage extends Component {
                 return response
             })
             .then(() => {
-                this.context.deleteUser(uname);
                 alert('User has been successfully deleted!');
                 this.props.history.push('/login');
             })
@@ -46,11 +42,11 @@ export default class DeleteUserPage extends Component {
                 <h2 className="deleteHeading">Deleting User...</h2>
                 <div className="restaurantBox">
                     <p className="deleteMessage">
-                        Are you sure you want to delete this account?
+                        Are you sure you want to <span className="redandbold">delete</span> this account?
                     </p>
-                    <div className = "buttonBox">
-                        <button onClick={this.handleDelete}>Delete</button>
-                        <button onClick={this.handleCancel}>Cancel</button>
+                    <div className="buttonBox">
+                        <button className="deleteButton redandbold" onClick={this.handleDelete}>Delete</button>
+                        <button className="deleteButton" onClick={this.handleCancel}>Cancel</button>
                     </div>
                 </div>
             </section >

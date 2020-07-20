@@ -1,39 +1,19 @@
-export const getUserId = (users = [], name) =>
-    users.find(user => user.user_name === name);
+//get all the restaurants associated with the username
+export const getRest = (restaurants = [], username) =>
+    (!username) ? restaurants : restaurants.filter(r => r.r_owner === username);
 
+//get the restaurant object by its id
+export const findRest = (restaurants = [], id) =>
+    restaurants.find(r => r.r_id === parseInt(id));
 
-/* export const getTips = (tips = [], categoryId) => (
-    (!categoryId)
-        ? tips
-        : tips.filter(tip => tip.category_id === categoryId)
-); */
+//get the hours entry for the restaurant
+export const findRestaurantHours = (hours = [], hoursId) =>
+    hours.find(h => h.hours_id === parseInt(hoursId));
 
-/* 
-export const findRestaurant = (restaurants = [], id) => {
-    return restaurants.find(rest => rest.r_id === parseInt(id));
-}
+//get all the menu items and info of the restaurant by restaurant id
+export const getMenuItems = (menu = [], restId) =>
+    (!restId) ? menu : menu.filter(item => item.item_restaurant === restId);
 
-export const findHours = (hours = [], hoursId) => {
-    return hours.find(h => h.hours_id === parseInt(hoursId));
-} */
-
-//get the hours id for the restaurant
-/* export const getHourId = (hours = [], hourId) => (
-    (!hourId) ? hours : hours.filter(hour => hour.hours_id === hourId)
-); */
-
-
-//find user id
-/* export const getUserId = (users, name) => {
-    let temp = (!name) ? users : users.filter(user => user.user_name === name);
-    let userid= temp.map(user => user.user_id);
-    console.log(userid);
-    return temp.user_id;
-} */
-
-
-
-
-export const getRest = (restaurants = [], id) => 
-    (!id) ? restaurants : restaurants.filter(r => r.r_owner === id)
-
+//find the menu entry using restaurant id
+export const findMenuId = (menu = [], restId) =>
+    menu.find(m => m.item_restaurant === restId);

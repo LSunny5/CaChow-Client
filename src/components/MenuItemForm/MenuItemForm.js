@@ -13,14 +13,11 @@ class MenuItemForm extends React.Component {
         this.setState({ [title]: value.trim() });
     }
 
-
     handleSubmit = event => {
         event.preventDefault();
-
-        const {restaurants} = this.context;
-
+    
         const newItem = {
-            item_restaurant: restaurants.length, 
+            item_restaurant: this.props.restId,
             item_name: event.target['itemName'].value,
             item_cat: event.target['category'].value,
             item_price: event.target['itemPrice'].value,
@@ -41,13 +38,7 @@ class MenuItemForm extends React.Component {
             })
             .then(tip => {
                 this.context.addItem(newItem);
-                
                 alert('Item was added!');
-                
-                //this.props.history.push(`/restaurant/${menu[menu.length-1].item_id}`);
-                //this.props.history.push(`/restaurants/${newItem.item_id}`);
-                //this.props.history.push(`/restaurants/`);
-                //window.location.reload();
                 window.location.href = `/restaurants/${newItem.item_restaurant}`;
             })
             .catch(error => {
@@ -58,13 +49,6 @@ class MenuItemForm extends React.Component {
 
 
 
-    updateItem = () => {
-        console.log('item is updated');
-    }
-
-    deleteItem = () => {
-        console.log('item is deleted');
-    }
 
     /* alertCancelUser = () => {
         alert('Sorry, you did not finish registration, back to login screen...')
@@ -76,6 +60,7 @@ class MenuItemForm extends React.Component {
 
     render() {
         const { categories } = this.context;
+
         return (
             <form className="addForm" onSubmit={this.handleSubmit}>
             <fieldset>
@@ -118,7 +103,6 @@ class MenuItemForm extends React.Component {
                     onChange={this.handleUpdate}
                 />
                 <br />
-                {/* <button onClick={this.updateItem} className="itemButton">Update Item</button> */}
                 {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
             </fieldset>
             <div className="buttonBox extraMargin">
