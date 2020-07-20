@@ -10,12 +10,12 @@ export default class AddItemPage extends Component {
                 <h2 className="formTitle">Add Menu Items</h2>
                     <MenuItemForm restId={r_id}/>
 
-                
+
 
 
                {/*  <form className="addForm" onSubmit={this.handleSubmit}> */}
                         
-                <button onClick={this.addItem} className="addItemButton"> + Add item </button>
+                {/* <button onClick={this.addItem} className="addItemButton"> + Add item </button> */}
             
                 {/* <div className="buttonBox extraMargin">
                         <button type='submit' className="button">
