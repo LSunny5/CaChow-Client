@@ -95,6 +95,12 @@ class App extends React.Component {
     this.setState({ hours: tempHours });
   }
 
+  deleteHours = hoursId => {
+    const tempHours = this.state.menu.filter(hour => hour.hours_id !== hoursId);
+    this.setState({ hours: tempHours });
+
+  }
+
   addItem = newItems => {
     this.setState({ menu: [...this.state.menu, newItems] })
     /* this.setState({ menu: [...this.state.menu, ...newItems] }) */
@@ -207,6 +213,7 @@ class App extends React.Component {
       menu: this.state.menu,
       addHours: this.addHours,
       updateHours: this.updateHours,
+      deleteHours: this.deleteHours, 
       addItem: this.addItem,
       updateItem: this.updateItem,
       deleteItem: this.deleteItem,

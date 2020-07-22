@@ -1,7 +1,6 @@
 import React from 'react';
 import './RestaurantForm.css';
 import config from '../../config';
-import { NavLink } from 'react-router-dom';
 import CachowContext from '../../CachowContext';
 import TokenService from '../../services/token-service';
 
@@ -45,8 +44,36 @@ class RestaurantForm extends React.Component {
             })
             .then(restaurant => {
                 this.context.addRestaurant(restaurant);
+                let lastR = this.context.restaurants[this.context.restaurants.length - 1];
                 alert('Restaurant successfully added!');
-                window.location.href = `/restaurants/${this.context.restaurants.length}/addItem`;
+                window.location.href = `/restaurants/${lastR.r_id}/addItem`;
+            })
+            .catch(error => {
+                console.error({ error })
+                alert('Error! ' + error);
+            })
+    }
+
+    handleCancel = (event) => {
+        event.preventDefault();
+        let lastH = this.context.hours[this.context.hours.length - 1];
+
+        fetch(`${config.APIENDPOINT}/hours/${lastH.hours_id}`, {
+            method: 'DELETE',
+            headers: {
+                'content-type': 'application/json',
+                'authorization': `bearer ${TokenService.getAuthToken()}`,
+            },
+        })
+            .then(response => {
+                if (!response.ok)
+                    return response.json().then(e => Promise.reject(e))
+                return response
+            })
+            .then(rHours => {
+                this.context.deleteHours(rHours.hours_id);
+                alert('Adding Restaurant process cancelled, returning to account screen...');
+                window.location.href = `/account`;
             })
             .catch(error => {
                 console.error({ error })
@@ -141,9 +168,9 @@ class RestaurantForm extends React.Component {
                         <button type='submit' className="button">
                             Next
                         </button>
-                        <NavLink className="button" to={`/account`}>
+                        <button onClick={this.handleCancel} className="button">
                             Cancel
-                        </NavLink>
+                        </button>
                     </div>
                 </fieldset>
             </form>

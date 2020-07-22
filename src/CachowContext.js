@@ -7,6 +7,7 @@ export default React.createContext({
   menu: [], 
   addHours: () => {}, 
   updateHours: () => {}, 
+  deleteHours: () => {},
   addItem: () => {}, 
   updateItem: () => {}, 
   deleteItem: () => {}, 

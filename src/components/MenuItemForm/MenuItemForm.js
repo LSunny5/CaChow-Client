@@ -2,11 +2,24 @@ import React from 'react';
 import './MenuItemForm.css';
 import config from '../../config';
 import TokenService from '../../services/token-service';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import CachowContext from '../../CachowContext';
 
 class MenuItemForm extends React.Component {
     static contextType = CachowContext;
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputs: ['item1'], 
+            show: true
+        };
+
+
+    }
+
+
+
 
     handleUpdate = event => {
         const { title, value } = event.target;
@@ -15,7 +28,7 @@ class MenuItemForm extends React.Component {
 
     handleSubmit = event => {
         event.preventDefault();
-    
+
         const newItem = {
             item_restaurant: this.props.restId,
             item_name: event.target['itemName'].value,
@@ -26,7 +39,7 @@ class MenuItemForm extends React.Component {
         fetch(`${config.APIENDPOINT}/menu`, {
             method: 'POST',
             headers: {
-                'content-type': 'application/json', 
+                'content-type': 'application/json',
                 'authorization': `bearer ${TokenService.getAuthToken()}`,
             },
             body: JSON.stringify(newItem),
@@ -38,93 +51,210 @@ class MenuItemForm extends React.Component {
             })
             .then(tip => {
                 this.context.addItem(newItem);
-                alert('Item was added!');
-                window.location.href = `/restaurants/${newItem.item_restaurant}`;
+                var newInput = `item${this.state.inputs.length + 1}`;
+                this.setState(prevState => ({ inputs: prevState.inputs.concat([newInput])}));
+                /* alert('Item was added!'); */
+                /* window.location.href = `/restaurants/${newItem.item_restaurant}`; */
             })
             .catch(error => {
                 console.error({ error })
                 alert('Error! Item was not added:  ' + error);
             })
+
     };
 
 
-
-
-    /* alertCancelUser = () => {
-        alert('Sorry, you did not finish registration, back to login screen...')
-    }
-
-    alertCompleteUser = () => {
-        alert('Congrats you have completed the registration process!')
-    } */
+    /*     appendInput = () => {
+            var newInput = `item${++this.state.inputs.length}`;
+            this.setState(prevState => ({ inputs: prevState.inputs.concat([newInput]) }));
+        } */
 
     render() {
         const { categories } = this.context;
 
         return (
-            <form className="addForm" onSubmit={this.handleSubmit}>
-            <fieldset>
-                <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
-                <input
-                    type="text"
-                    id="itemName"
-                    name="itemName"
-                    className="textField"
-                    placeholder="Add name of menu item here..."
-                    onChange={this.handleUpdate}
-                />
-                <br />
-                <label htmlFor="category" className="inputLabel">Category: </label>
+            <div>
 
-                <select id="category" className="inputEdit"
-                    value={categories.cat_id}
-                    required
-                    onChange={this.handleUpdate}
-                >
-                    {categories.slice(0, categories.length).map(category =>
-                        <option
-                            key={category.cat_id}
-                            value={category.cat_id}
+                {/* <form className="addForm"  */}{/* /* onSubmit={this.handleSubmit} *//* > */}
+                {/* <fieldset>
+                        <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
+                        <input
+                            type="text"
+                            id="itemName"
+                            name="itemName"
+                            className="textField"
+                            placeholder="Add name of menu item here..."
+                            onChange={this.handleUpdate}
+                        />
+                        <br />
+                        <label htmlFor="category" className="inputLabel">Category: </label>
+
+                        <select id="category" className="inputEdit"
+                            value={categories.cat_id}
+                            required
+                            onChange={this.handleUpdate}
                         >
-                            {category.cat_name}
-                        </option>
-                    )}
-                </select>
-                <br />
-                <label htmlFor="itemPrice" className="inputLabel">Price: </label>
-                <input
-                    type="number"
-                    id="itemPrice"
-                    name="itemPrice"
-                    className="textField"
-                    step={0.01} 
-                    precision={2}
-                    placeholder="Add price (ex. 0.00)"
-                    onChange={this.handleUpdate}
-                />
-                <br />
+                            {categories */}{/* /* .slice(0, categories.length) *//* .map(category =>
+                                <option
+                                    key={category.cat_id}
+                                    value={category.cat_id}
+                                >
+                                    {category.cat_name}
+                                </option>
+                            )}
+                        </select>
+                        <br />
+                        <label htmlFor="itemPrice" className="inputLabel">Price: </label>
+                        <input
+                            type="number"
+                            id="itemPrice"
+                            name="itemPrice"
+                            className="textField"
+                            step={0.01}
+                            precision={2}
+                            placeholder="Add price (ex. 0.00)"
+                            onChange={this.handleUpdate}
+                        />
+                        <br /> */ }
                 {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
-            </fieldset>
-            <div className="buttonBox extraMargin">
-                        <button type='submit' className="button">
+                {/*          </fieldset>
+
+
+
+
+
+
+                    <div className="buttonBox extraMargin"> */}
+                {/* <button type='submit' className="button">
                             Add Item
-                        </button>
-                        {/* <NavLink
+                        </button> */}
+
+
+
+                {/* <button onClick={this.handleSubmit} className="itemButton"> + Add Item</button> */}
+
+
+                {/* <NavLink
                             to={`/account`}
                             className="button"
                             onClick={this.alertCompleteUser}
                         >
                             Complete
                         </NavLink> */}
-                        <NavLink
-                            onClick={this.alertCancelUser}
-                            className="button"
-                            to={`/account`}
-                        >
-                            Cancel
-                        </NavLink>
+
+
+                {/* 
                     </div>
-            </form>
+                </form> */}
+
+                {this.state.inputs.map(input =>
+
+
+
+
+
+
+                    <form className="addForm" key={input} onSubmit={this.handleSubmit}/* {this.appendInput} */>
+                        <fieldset>
+                            <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
+                            <input
+                                type="text"
+                                id="itemName"
+                                name="itemName"
+                                className="textField"
+                                placeholder="Add name of menu item here..."
+                                onChange={this.handleUpdate}
+                            />
+                            <br />
+                            <label htmlFor="category" className="inputLabel">Category: </label>
+
+                            <select id="category" className="inputEdit"
+                                value={categories.cat_id}
+                                required
+                                onChange={this.handleUpdate}
+                            >
+                                {categories/* .slice(0, categories.length) */.map(category =>
+                                    <option
+                                        key={category.cat_id}
+                                        value={category.cat_id}
+                                    >
+                                        {category.cat_name}
+                                    </option>
+                                )}
+                            </select>
+                            <br />
+                            <label htmlFor="itemPrice" className="inputLabel">Price: </label>
+                            <input
+                                type="number"
+                                id="itemPrice"
+                                name="itemPrice"
+                                className="textField"
+                                step={0.01}
+                                precision={2}
+                                placeholder="Add price (ex. 0.00)"
+                                onChange={this.handleUpdate}
+                            />
+                            <br />
+                            {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
+                        </fieldset>
+
+
+
+
+
+
+                        <div className="buttonBox extraMargin">
+                            {/* <button type='submit' className="button">
+        Add Item
+    </button> */}
+
+{/* <button type='submit'>
+                    CLICK ME TO ADD AN INPUT
+               </button> */}
+
+                            {/* <button onClick={this.handleSubmit} className="itemButton"> + Add Item</button> */}
+
+                         
+                            {/* <NavLink
+        to={`/account`}
+        className="button"
+        onClick={this.alertCompleteUser}
+    >
+        Complete
+    </NavLink> */}
+{(this.state.show) && 
+
+<button type='submit' /* onClick={this.handleSubmit} */>
+                    CLICK ME TO ADD AN INPUT
+               </button>}
+
+{/* <button onClick={this.appendInput}>
+                    CLICK ME TO ADD AN INPUT
+               </button> */}
+
+                        </div>
+                    </form>
+
+
+
+
+                )}
+
+
+{/* <button onClick={this.handleSubmit}>
+                    CLICK ME TO ADD AN INPUT
+               </button> */}
+
+
+
+                <NavLink
+                    className="button"
+                    to={`/account`}
+                >
+                    Cancel
+                </NavLink>
+
+            </div>
         );
     };
 }
