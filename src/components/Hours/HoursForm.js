@@ -34,7 +34,7 @@ class HoursForm extends React.Component {
             sat_close: event.target['SaturdayClose'].value,
             hours_owner: uname,
         }
-
+        
         fetch(`${config.APIENDPOINT}/hours`, {
             method: 'POST',
             headers: {
