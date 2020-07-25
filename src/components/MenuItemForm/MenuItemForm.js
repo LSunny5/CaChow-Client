@@ -8,16 +8,16 @@ import CachowContext from '../../CachowContext';
 class MenuItemForm extends React.Component {
     static contextType = CachowContext;
 
-    constructor(props) {
+    /* constructor(props) {
         super(props);
         this.state = {
-            inputs: ['item1'], 
+            inputs: ['item1'],
             show: true
         };
 
 
     }
-
+ */
 
 
 
@@ -51,10 +51,10 @@ class MenuItemForm extends React.Component {
             })
             .then(tip => {
                 this.context.addItem(newItem);
-                var newInput = `item${this.state.inputs.length + 1}`;
-                this.setState(prevState => ({ inputs: prevState.inputs.concat([newInput])}));
-                /* alert('Item was added!'); */
-                /* window.location.href = `/restaurants/${newItem.item_restaurant}`; */
+                /* var newInput = `item${this.state.inputs.length + 1}`; */
+                /* this.setState(prevState => ({ inputs: prevState.inputs.concat([newInput]) })); */
+                alert('Item was added!');
+                window.location.href = `/restaurants/${newItem.item_restaurant}`;
             })
             .catch(error => {
                 console.error({ error })
@@ -64,7 +64,7 @@ class MenuItemForm extends React.Component {
     };
 
 
-    /*     appendInput = () => {
+    /*    appendInput = () => {
             var newInput = `item${++this.state.inputs.length}`;
             this.setState(prevState => ({ inputs: prevState.inputs.concat([newInput]) }));
         } */
@@ -75,8 +75,8 @@ class MenuItemForm extends React.Component {
         return (
             <div>
 
-                {/* <form className="addForm"  */}{/* /* onSubmit={this.handleSubmit} *//* > */}
-                {/* <fieldset>
+                <form className="addForm" onSubmit={this.handleSubmit} >
+                    <fieldset>
                         <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
                         <input
                             type="text"
@@ -94,7 +94,7 @@ class MenuItemForm extends React.Component {
                             required
                             onChange={this.handleUpdate}
                         >
-                            {categories */}{/* /* .slice(0, categories.length) *//* .map(category =>
+                            {categories.map(category =>
                                 <option
                                     key={category.cat_id}
                                     value={category.cat_id}
@@ -115,9 +115,9 @@ class MenuItemForm extends React.Component {
                             placeholder="Add price (ex. 0.00)"
                             onChange={this.handleUpdate}
                         />
-                        <br /> */ }
-                {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
-                {/*          </fieldset>
+                        <br />
+                        {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
+                        {/*          </fieldset>
 
 
 
@@ -125,16 +125,16 @@ class MenuItemForm extends React.Component {
 
 
                     <div className="buttonBox extraMargin"> */}
-                {/* <button type='submit' className="button">
+                        {/* <button type='submit' className="button">
                             Add Item
                         </button> */}
 
 
 
-                {/* <button onClick={this.handleSubmit} className="itemButton"> + Add Item</button> */}
+                        {/* <button onClick={this.handleSubmit} className="itemButton"> + Add Item</button> */}
 
 
-                {/* <NavLink
+                        {/* <NavLink
                             to={`/account`}
                             className="button"
                             onClick={this.alertCompleteUser}
@@ -143,19 +143,14 @@ class MenuItemForm extends React.Component {
                         </NavLink> */}
 
 
-                {/* 
+                        {/* 
                     </div>
                 </form> */}
 
-                {this.state.inputs.map(input =>
+                        {/* {this.state.inputs.map(input =>
 
-
-
-
-
-
-                    <form className="addForm" key={input} onSubmit={this.handleSubmit}/* {this.appendInput} */>
-                        <fieldset>
+                            <form className="addForm" key={input} onSubmit={this.handleSubmit} */}{/* /* {this.appendInput} > */}
+                        {/* <fieldset>
                             <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
                             <input
                                 type="text"
@@ -173,7 +168,7 @@ class MenuItemForm extends React.Component {
                                 required
                                 onChange={this.handleUpdate}
                             >
-                                {categories/* .slice(0, categories.length) */.map(category =>
+                                {categories.map(category =>
                                     <option
                                         key={category.cat_id}
                                         value={category.cat_id}
@@ -194,9 +189,9 @@ class MenuItemForm extends React.Component {
                                 placeholder="Add price (ex. 0.00)"
                                 onChange={this.handleUpdate}
                             />
-                            <br />
-                            {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
-                        </fieldset>
+                            <br /> */}
+                        {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
+                        {/* </fieldset> */}
 
 
 
@@ -204,17 +199,17 @@ class MenuItemForm extends React.Component {
 
 
                         <div className="buttonBox extraMargin">
-                            {/* <button type='submit' className="button">
-        Add Item
-    </button> */}
+                            <button type='submit' className="button">
+                                Add Item
+                            </button>
 
-{/* <button type='submit'>
+                            {/* <button type='submit'>
                     CLICK ME TO ADD AN INPUT
                </button> */}
 
                             {/* <button onClick={this.handleSubmit} className="itemButton"> + Add Item</button> */}
 
-                         
+
                             {/* <NavLink
         to={`/account`}
         className="button"
@@ -222,39 +217,46 @@ class MenuItemForm extends React.Component {
     >
         Complete
     </NavLink> */}
-{(this.state.show) && 
+                            {/* {(this.state.show) && */}
 
-<button type='submit' /* onClick={this.handleSubmit} */>
-                    CLICK ME TO ADD AN INPUT
-               </button>}
+                            {/* <button type='submit' onClick={this.handleSubmit}>
+                                            CLICK ME TO ADD AN INPUT
+               </button>} */}
 
-{/* <button onClick={this.appendInput}>
+                            {/* <button onClick={this.appendInput}>
                     CLICK ME TO ADD AN INPUT
                </button> */}
 
+                            {/* </div>
+                            </form>
+
+
+
+
+                        )}
+ */}
+
+                            {/* <button onClick={this.handleSubmit}>
+                    CLICK ME TO ADD AN INPUT
+               </button> */}
+
+
+
+                            <NavLink
+                                className="button"
+                                to={`/account`}
+                            >
+                                Cancel
+                            </NavLink>
                         </div>
-                    </form>
+
+                    </fieldset>
+                </form>
 
 
-
-
-                )}
-
-
-{/* <button onClick={this.handleSubmit}>
-                    CLICK ME TO ADD AN INPUT
-               </button> */}
-
-
-
-                <NavLink
-                    className="button"
-                    to={`/account`}
-                >
-                    Cancel
-                </NavLink>
 
             </div>
+
         );
     };
 }

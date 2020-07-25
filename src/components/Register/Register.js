@@ -23,7 +23,7 @@ export default class RegistrationForm extends Component {
 
     this.setState({ error: null })
     AuthApiService.postUser({
-      user_name: user_name.value.trim(),
+      user_name: user_name.value.toLowerCase().trim(),
       password: password.value,
       full_name: full_name.value,
     })

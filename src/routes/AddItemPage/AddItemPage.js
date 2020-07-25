@@ -12,7 +12,7 @@ export default class AddItemPage extends Component {
 
 
 
-
+                {/*//TODO:  do a submission after entire process is over*/}
                {/*  <form className="addForm" onSubmit={this.handleSubmit}> */}
                         
                 {/* <button onClick={this.addItem} className="addItemButton"> + Add item </button> */}
