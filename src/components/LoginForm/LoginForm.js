@@ -21,7 +21,7 @@ export default class LoginForm extends Component {
       password: password.value,
     })
       .then(res => {
-        localStorage.setItem('name', user_name.value);
+        localStorage.setItem('name', user_name.value.toLowerCase().trim());
         user_name.value = ""; 
         password.value = "";
         TokenService.saveAuthToken(res.authToken)

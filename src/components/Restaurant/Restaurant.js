@@ -28,19 +28,13 @@ class Restaurant extends React.Component {
             }
         }
 
+
     render() {
         const { restaurants = [], hours = [], menu = [], categories = [] } = this.context;
         const { r_id } = this.props.match.params;
         const targetRestaurant = findRest(restaurants, r_id) || {};
         const targetHours = findRestaurantHours(hours, targetRestaurant.r_hours) || {};
         const targetItems = getMenuItems(menu, r_id);
-
-
-
-
-
-        //for every item in the category group > 0 print 
-
         return (
             <div className="restaurantContent">
                 <section className="restaurantInfo">
@@ -63,32 +57,26 @@ class Restaurant extends React.Component {
                 </section>
                 <br />
                 <section className="restaurantMenu">
-                    <h2 className="menuHeading">Menu</h2>
+                    <h2 className="menuHeading">Menu Update</h2>
                     <ul className="menuList">
 
                         {targetItems.map(item => this.printItem(item, categories, item.item_cat))}
 
+                    
 
 
-
-
-                        {/*  {targetItems.map(item =>
-                        <li key={item.item_id} className="category">
+                        {/* {targetItems.map(item =>
+                            <li key={item.item_id} className="category">
                                 {item.item_cat}
                                 <ul>
-
-
+                                    
                                     <li className="foodName">
                                         {item.item_name}
                                         <span className="price">${item.item_price}</span>
-
-
                                     </li>
-
                                 </ul>
                             </li>
-                        )
-    } */}
+                        )} */}
 
                         {/* {for (let i = 1; i <= categories.length; i++) {
                                 if (item.item_cat === i) {
