@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Restaurant component renders the Restaurant form 1`] = `
+<div
+  className="restaurantContent"
+>
+  <section
+    className="restaurantInfo"
+  >
+    <p
+      className="restaurantName"
+    >
+      (
+      )
+    </p>
+    <h1
+      className="restaurantName"
+    />
+    <p
+      className="restaurantName"
+    />
+    <p
+      className="restaurantName"
+    >
+      , 
+        
+    </p>
+    <p
+      className="restaurantName"
+    />
+    <br />
+    <div
+      className="hoursBox"
+    >
+      <h3
+        className="hoursHeading"
+      >
+        Hours: 
+      </h3>
+      <p>
+        Sunday: 
+        <span
+          className="hoursDisplay"
+        />
+         to 
+        <span
+          className="hoursDisplay"
+        />
+         
+      </p>
+      <p>
+        Monday: 
+        <span
+          className="hoursDisplay"
+        />
+         to 
+        <span
+          className="hoursDisplay"
+        />
+          
+      </p>
+      <p>
+        Tuesday: 
+        <span
+          className="hoursDisplay"
+        />
+         to 
+        <span
+          className="hoursDisplay"
+        />
+         
+      </p>
+      <p>
+        Wednesday: 
+        <span
+          className="hoursDisplay"
+        />
+         to 
+        <span
+          className="hoursDisplay"
+        />
+         
+      </p>
+      <p>
+        Thursday: 
+        <span
+          className="hoursDisplay"
+        />
+         to 
+        <span
+          className="hoursDisplay"
+        />
+         
+      </p>
+      <p>
+        Friday: 
+        <span
+          className="hoursDisplay"
+        />
+         to 
+        <span
+          className="hoursDisplay"
+        />
+         
+      </p>
+      <p>
+        Saturday: 
+        <span
+          className="hoursDisplay"
+        />
+         to 
+        <span
+          className="hoursDisplay"
+        />
+         
+      </p>
+    </div>
+  </section>
+  <br />
+  <section
+    className="restaurantMenu"
+  >
+    <h2
+      className="menuHeading"
+    >
+      Menu Update
+    </h2>
+    <ul
+      className="menuList"
+    />
+  </section>
+</div>
+`;

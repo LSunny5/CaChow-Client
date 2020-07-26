@@ -1,12 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import CachowContext from '../../CachowContext';
 import '../../components/RestaurantForm/RestaurantForm.css';
 import { findRest } from '../../CachowHelpers';
 import { NavLink } from 'react-router-dom';
 import config from '../../config';
 import TokenService from '../../services/token-service';
+import PropTypes from 'prop-types';
 
-export default class EditRestaurantPage extends Component {
+class EditRestaurantPage extends React.Component {
     static contextType = CachowContext;
     handleUpdate = event => {
         const { title, value } = event.target;
@@ -19,8 +20,6 @@ export default class EditRestaurantPage extends Component {
         const { restaurants } = this.context;
         const { r_id } = this.props.match.params;
         let rest = findRest(restaurants, r_id) || {};
-
-        console.log(event.target);
 
         const editedRestaurant = {
             r_owner: uname,
@@ -170,3 +169,24 @@ export default class EditRestaurantPage extends Component {
         );
     };
 }
+
+EditRestaurantPage.propTypes = {
+    restaurants: PropTypes.arrayOf(
+        PropTypes.shape({
+            r_id: PropTypes.number.isRequired,
+            r_owner: PropTypes.string.isRequired,
+            r_image: PropTypes.string,
+            r_type: PropTypes.string,
+            r_name: PropTypes.string,
+            r_address: PropTypes.string,
+            r_city: PropTypes.string,
+            r_state: PropTypes.string,
+            r_zip: PropTypes.string,
+            r_phone: PropTypes.string,
+            r_hours: PropTypes.number.isRequired
+        })
+    ),
+    r_id: PropTypes.number.isRequired,
+};
+
+module.exports = EditRestaurantPage;

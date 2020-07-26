@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginPage route renders the LoginPage form 1`] = `
+<section
+  className="formPage lForm"
+>
+  <button
+    className="backButton"
+    onClick={[Function]}
+  >
+    <img
+      alt="Go back"
+      className="backArrow"
+      src="/images/backarrow.png"
+    />
+    Back
+  </button>
+  <h2
+    className="formTitle"
+  >
+    Login
+  </h2>
+  <LoginForm
+    onLoginSuccess={[Function]}
+  />
+  <p
+    className="demoInstructions"
+  >
+    <span
+      className="makeBold"
+    >
+      For Demo Version: 
+    </span>
+    <br />
+    Username: Guest
+    <br />
+    Password: Demo2020!
+  </p>
+</section>
+`;

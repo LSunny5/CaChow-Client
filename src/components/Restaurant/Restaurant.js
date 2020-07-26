@@ -2,6 +2,7 @@ import React from 'react';
 import './Restaurant.css';
 import CachowContext from '../../CachowContext';
 import { findRest, findRestaurantHours, getMenuItems } from '../../CachowHelpers';
+import PropTypes from 'prop-types';
 
 class Restaurant extends React.Component {
     static contextType = CachowContext;
@@ -9,25 +10,21 @@ class Restaurant extends React.Component {
     printItem = (item, categories, cat) => {
         for (let i = 1; i <= categories.length; i++) {
             if (parseInt(item.item_cat) === i) {
+                return (
+                    <li key={item.item_id} className="category">
+                        {categories[i - 1].cat_name}
+                        <ul>
+                            <li key={item.item_id} className="foodName">
+                                {item.item_name}
+                                <span className="price">{item.item_price}</span>
+                            </li>
 
-                    return (
-                        <li key={item.item_id} className="category">
-                            {categories[i - 1].cat_name}
-                            <ul>
-                                <li key={item.item_id} className="foodName">
-                                    {item.item_name}
-                                    <span className="price">{item.item_price}</span>
-                                </li>
-
-                            </ul>
-                        </li>
-
-                    )
-
-                }
+                        </ul>
+                    </li>
+                )
             }
         }
-
+    }
 
     render() {
         const { restaurants = [], hours = [], menu = [], categories = [] } = this.context;
@@ -62,119 +59,77 @@ class Restaurant extends React.Component {
 
                         {targetItems.map(item => this.printItem(item, categories, item.item_cat))}
 
-                    
 
-
-                        {/* {targetItems.map(item =>
-                            <li key={item.item_id} className="category">
-                                {item.item_cat}
-                                <ul>
-                                    
-                                    <li className="foodName">
-                                        {item.item_name}
-                                        <span className="price">${item.item_price}</span>
-                                    </li>
-                                </ul>
-                            </li>
-                        )} */}
-
+                        {/*TODO:  Arrange items by category */}
                         {/* {for (let i = 1; i <= categories.length; i++) {
                                 if (item.item_cat === i) {
-
-                                    
                                         <li key={item.item_id} className="category">
                                             {item.item_cat}
                                             <ul>
-
-
                                                 <li className="foodName">
                                                     {item.item_name}
                                                     <span className="price">${item.item_price}</span>
-
-
                                                 </li>
-
                                             </ul>
-                                        </li>
-
-
-                                    
-
-
-
-
-                                }  */}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                        {/*  {targetRestaurant.menu.forEach(item => {
-                        <li> 
-                            {menu.catId}
-                        </li>
-                    })
-                     } */}
-
-                        {/* <li className="category">
-                            Burgers
-                            <ul>
-                                <li className="foodName">Single ShackBurger <span className="price">${targetRestaurant.menu[0].price}</span></li>
-                                <li className="foodName">Single SmokeStack <span className="price">$7.39</span></li>
-                            </ul>
-                        </li>
-                        <li className="category">Chicken
-                            <ul>
-                            <li className="foodName">Chick'n Shack <span className="price">$7.19</span></li>
-                            </ul>
-                        </li>
-                        <li className="category">Sides
-                            <ul>
-                            <li className="foodName">Cheese Fries <span className="price">$4.09</span></li>
-                            </ul>
-                        </li>
-                        <li className="category">Desserts
-                            <ul>
-                            <li className="foodName">S'mores Shake <span className="price">$5.99</span></li>
-                            </ul>
-                        </li>
-                        <li className="category">Drinks
-                            <ul>
-                            <li className="foodName">Small Pink Lemonade <span className="price">$3.09</span></li>
-                            </ul>
-                        </li>
-                     */}
+                                        </li>*/}
                     </ul>
                 </section>
             </div>
         );
     }
+}
+
+Restaurant.propTypes = {
+    restaurants: PropTypes.arrayOf(
+        PropTypes.shape({
+            r_id: PropTypes.number.isRequired,
+            r_owner: PropTypes.string.isRequired,
+            r_image: PropTypes.string,
+            r_type: PropTypes.string,
+            r_name: PropTypes.string,
+            r_address: PropTypes.string,
+            r_city: PropTypes.string,
+            r_state: PropTypes.string,
+            r_zip: PropTypes.string,
+            r_phone: PropTypes.string,
+            r_hours: PropTypes.number.isRequired
+        })
+    ),
+    menu: PropTypes.arrayOf(
+        PropTypes.shape({
+            item_id: PropTypes.number.isRequired,
+            item_restaurant: PropTypes.number.isRequired,
+            item_name: PropTypes.string.isRequired,
+            item_cat: PropTypes.number.isRequired,
+            item_price: PropTypes.number,
+        })
+    ),
+    hours: PropTypes.arrayOf(
+        PropTypes.shape({
+            sun_open: PropTypes.string,
+            sun_close: PropTypes.string,
+            mon_open: PropTypes.string,
+            mon_close: PropTypes.string,
+            tues_open: PropTypes.string,
+            tues_close: PropTypes.string,
+            wed_open: PropTypes.string,
+            wed_close: PropTypes.string,
+            thu_open: PropTypes.string,
+            thu_close: PropTypes.string,
+            fri_open: PropTypes.string,
+            fri_close: PropTypes.string,
+            sat_open: PropTypes.string,
+            sat_close: PropTypes.string,
+            hours_owner: PropTypes.string.isRequired,
+        })
+    ),
+    categories: PropTypes.arrayOf(
+        PropTypes.shape({
+            cat_id: PropTypes.number.isRequired,
+            cat_name: PropTypes.string.isRequired,
+        })
+    ),
+    r_id: PropTypes.number.isRequired,
 }
 
 export default Restaurant;

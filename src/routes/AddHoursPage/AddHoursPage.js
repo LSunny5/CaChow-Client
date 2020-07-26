@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import HoursForm from '../../components/Hours/HoursForm';
 import '../../components/Hours/HoursForm.css';
 
-export default class AddRestaurantPage extends Component {
+export default class AddHoursPage extends Component {
     render() {
         return (
             <section className='HFormContent'>

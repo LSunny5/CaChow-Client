@@ -1,0 +1,77 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm route renders the LoginForm form 1`] = `
+<form
+  className="LoginForm"
+  onSubmit={[Function]}
+>
+  <legend
+    className="loginDirect"
+  >
+    Please enter your username and password. 
+  </legend>
+  <div
+    role="alert"
+  />
+  <div
+    className="user_name"
+  >
+    <label
+      htmlFor="loginUserName"
+    >
+      Username 
+      <span
+        className="required"
+      >
+        *
+      </span>
+    </label>
+    <input
+      id="loginUserName"
+      name="user_name"
+      required={true}
+    />
+  </div>
+  <div
+    className="password"
+  >
+    <label
+      htmlFor="loginPassword"
+    >
+      Password 
+      <span
+        className="required"
+      >
+        *
+      </span>
+    </label>
+    <input
+      id="loginPassword"
+      name="password"
+      required={true}
+      type="password"
+    />
+  </div>
+  <button
+    className="loginButton"
+    type="submit"
+  >
+    Log in
+  </button>
+  <div
+    className="registerQuestionBox"
+  >
+    <p
+      className="registerDesc"
+    >
+      No Account? No Problem!
+    </p>
+    <NavLink
+      className="registerLink"
+      to="/register"
+    >
+      Click here to Register!
+    </NavLink>
+  </div>
+</form>
+`;

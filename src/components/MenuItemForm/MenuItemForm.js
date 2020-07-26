@@ -4,6 +4,7 @@ import config from '../../config';
 import TokenService from '../../services/token-service';
 import { NavLink } from 'react-router-dom';
 import CachowContext from '../../CachowContext';
+import PropTypes from 'prop-types';
 
 class MenuItemForm extends React.Component {
     static contextType = CachowContext;
@@ -14,13 +15,8 @@ class MenuItemForm extends React.Component {
             inputs: ['item1'],
             show: true
         };
-
-
     }
  */
-
-
-
     handleUpdate = event => {
         const { title, value } = event.target;
         this.setState({ [title]: value.trim() });
@@ -259,6 +255,31 @@ class MenuItemForm extends React.Component {
 
         );
     };
+}
+
+MenuItemForm.propTypes = {
+    restaurants: PropTypes.arrayOf(
+        PropTypes.shape({
+            r_id: PropTypes.number.isRequired,
+            r_owner: PropTypes.string.isRequired,
+            r_image: PropTypes.string,
+            r_type: PropTypes.string,
+            r_name: PropTypes.string,
+            r_address: PropTypes.string,
+            r_city: PropTypes.string,
+            r_state: PropTypes.string,
+            r_zip: PropTypes.string,
+            r_phone: PropTypes.string,
+            r_hours: PropTypes.number.isRequired
+        })
+    ),
+    categories: PropTypes.arrayOf(
+        PropTypes.shape({
+            cat_id: PropTypes.number.isRequired,
+            cat_name: PropTypes.string.isRequired,
+        })
+    ),
+    restId: PropTypes.number, 
 }
 
 export default MenuItemForm;

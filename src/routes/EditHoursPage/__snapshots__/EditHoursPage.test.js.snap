@@ -1,0 +1,246 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditHoursPage route renders the EditHoursPage form 1`] = `
+<section
+  className="RFormContent"
+>
+  <h2
+    className="formTitle"
+  >
+    Edit Hours for Restaurant
+  </h2>
+  <form
+    className="addHourForm"
+    onSubmit={[Function]}
+  >
+    <fieldset>
+      <label
+        className="inputLabel"
+        htmlFor="SundayOpen"
+      >
+        Time Open on Sunday: 
+      </label>
+      <input
+        className="textField"
+        id="SundayOpen"
+        name="SundayOpen"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="SundayClose"
+      >
+        Time Close on Sunday: 
+      </label>
+      <input
+        className="textField"
+        id="SundayClose"
+        name="SundayClose"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="MondayOpen"
+      >
+        Time Open on Monday: 
+      </label>
+      <input
+        className="textField"
+        id="MondayOpen"
+        name="MondayOpen"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="MondayClose"
+      >
+        Time Close on Monday: 
+      </label>
+      <input
+        className="textField"
+        id="MondayClose"
+        name="MondayClose"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="TuesdayOpen"
+      >
+        Time Open on Tuesday: 
+      </label>
+      <input
+        className="textField"
+        id="TuesdayOpen"
+        name="TuesdayOpen"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="TuesdayClose"
+      >
+        Time Close on Tuesday: 
+      </label>
+      <input
+        className="textField"
+        id="TuesdayClose"
+        name="TuesdayClose"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="WednesdayOpen"
+      >
+        Time Open on Wednesday: 
+      </label>
+      <input
+        className="textField"
+        id="WednesdayOpen"
+        name="WednesdayOpen"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="WednesdayClose"
+      >
+        Time Close on Wednesday: 
+      </label>
+      <input
+        className="textField"
+        id="WednesdayClose"
+        name="WednesdayClose"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="ThursdayOpen"
+      >
+        Time Open on Thursday: 
+      </label>
+      <input
+        className="textField"
+        id="ThursdayOpen"
+        name="ThursdayOpen"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="ThursdayClose"
+      >
+        Time Close on Thursday: 
+      </label>
+      <input
+        className="textField"
+        id="ThursdayClose"
+        name="ThursdayClose"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="FridayOpen"
+      >
+        Time Open on Friday: 
+      </label>
+      <input
+        className="textField"
+        id="FridayOpen"
+        name="FridayOpen"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="FridayClose"
+      >
+        Time Close on Friday: 
+      </label>
+      <input
+        className="textField"
+        id="FridayClose"
+        name="FridayClose"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="SaturdayOpen"
+      >
+        Time Open on Saturday: 
+      </label>
+      <input
+        className="textField"
+        id="SaturdayOpen"
+        name="SaturdayOpen"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="SaturdayClose"
+      >
+        Time Close on Saturday: 
+      </label>
+      <input
+        className="textField"
+        id="SaturdayClose"
+        name="SaturdayClose"
+        onChange={[Function]}
+        placeholder="ex. 12:00AM"
+        type="text"
+      />
+      <br />
+      <div
+        className="buttonBox"
+      >
+        <button
+          className="button"
+          type="submit"
+        >
+          Update
+        </button>
+        <NavLink
+          className="button"
+          to="/account"
+        >
+          Cancel
+        </NavLink>
+      </div>
+    </fieldset>
+  </form>
+</section>
+`;

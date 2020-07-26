@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Account component renders the Account form 1`] = `
+<section
+  className="AccountPage"
+>
+  <h2
+    className="formTitle"
+  >
+    Welcome 
+    !
+  </h2>
+  <div
+    className="otherButtonBox"
+  >
+    <NavLink
+      className="addRestButton"
+      to="/restaurants/hours/add"
+    >
+      + Add Restaurant
+    </NavLink>
+  </div>
+  <div
+    className="noRestaurants"
+  >
+    You have not added any restaurants at this time...
+  </div>
+  <br />
+  <div
+    className="otherButtonBox"
+  >
+    <NavLink
+      className="ownerButton removeButton"
+      to="/deleteUser"
+    >
+      Remove Account
+    </NavLink>
+  </div>
+  <br />
+  <br />
+</section>
+`;

@@ -4,6 +4,7 @@ import config from '../../config';
 import { NavLink } from 'react-router-dom';
 import CachowContext from '../../CachowContext';
 import TokenService from '../../services/token-service';
+import PropTypes from 'prop-types';
 
 class HoursForm extends React.Component {
     static contextType = CachowContext;
@@ -215,6 +216,10 @@ class HoursForm extends React.Component {
             </form>
         );
     };
+}
+
+HoursForm.propTypes = {
+    nextLocation: PropTypes.string, 
 }
 
 export default HoursForm;

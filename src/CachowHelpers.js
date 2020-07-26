@@ -11,10 +11,10 @@ export const findRestaurantHours = (hours = [], hoursId) =>
     hours.find(h => h.hours_id === parseInt(hoursId));
 
 //get all the menu items and info of the restaurant by restaurant id
-export const getMenuItems = (menu = [], restId) =>{
+export const getMenuItems = (menu = [], restId) => {
     return (!restId) ? menu : menu.filter(item => item.item_restaurant === parseInt(restId));
 }
-    
+
 //find the menu entry using restaurant id
 export const findMenuId = (menu = [], restId) =>
     menu.find(m => m.item_restaurant === parseInt(restId));

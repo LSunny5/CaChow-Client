@@ -3,6 +3,7 @@ import './RestaurantForm.css';
 import config from '../../config';
 import CachowContext from '../../CachowContext';
 import TokenService from '../../services/token-service';
+import PropTypes from 'prop-types';
 
 class RestaurantForm extends React.Component {
     static contextType = CachowContext;
@@ -176,6 +177,29 @@ class RestaurantForm extends React.Component {
             </form>
         );
     };
+}
+
+
+RestaurantForm.propTypes = {
+    hours: PropTypes.arrayOf(
+        PropTypes.shape({
+            sun_open: PropTypes.string,
+            sun_close: PropTypes.string,
+            mon_open: PropTypes.string,
+            mon_close: PropTypes.string,
+            tues_open: PropTypes.string,
+            tues_close: PropTypes.string,
+            wed_open: PropTypes.string,
+            wed_close: PropTypes.string,
+            thu_open: PropTypes.string,
+            thu_close: PropTypes.string,
+            fri_open: PropTypes.string,
+            fri_close: PropTypes.string,
+            sat_open: PropTypes.string,
+            sat_close: PropTypes.string,
+            hours_owner: PropTypes.string.isRequired,
+        })
+    ),
 }
 
 export default RestaurantForm;

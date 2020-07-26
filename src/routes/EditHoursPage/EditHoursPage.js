@@ -5,8 +5,9 @@ import { NavLink } from 'react-router-dom';
 import CachowContext from '../../CachowContext';
 import TokenService from '../../services/token-service';
 import { findRest, findRestaurantHours } from '../../CachowHelpers';
+import PropTypes from 'prop-types';
 
-class HoursForm extends React.Component {
+class EditHoursPage extends React.Component {
     static contextType = CachowContext;
 
     handleUpdate = event => {
@@ -244,4 +245,178 @@ class HoursForm extends React.Component {
     };
 }
 
-export default HoursForm;
+EditHoursPage.propTypes = {
+    restaurants: PropTypes.arrayOf(
+        PropTypes.shape({
+            r_id: PropTypes.number.isRequired,
+            r_owner: PropTypes.string.isRequired,
+            r_image: PropTypes.string,
+            r_type: PropTypes.string,
+            r_name: PropTypes.string,
+            r_address: PropTypes.string,
+            r_city: PropTypes.string,
+            r_state: PropTypes.string,
+            r_zip: PropTypes.string,
+            r_phone: PropTypes.string,
+            r_hours: PropTypes.number.isRequired
+        })
+    ),
+    hours: PropTypes.arrayOf(
+        PropTypes.shape({
+            sun_open: PropTypes.string,
+            sun_close: PropTypes.string,
+            mon_open: PropTypes.string,
+            mon_close: PropTypes.string,
+            tues_open: PropTypes.string,
+            tues_close: PropTypes.string,
+            wed_open: PropTypes.string,
+            wed_close: PropTypes.string,
+            thu_open: PropTypes.string,
+            thu_close: PropTypes.string,
+            fri_open: PropTypes.string,
+            fri_close: PropTypes.string,
+            sat_open: PropTypes.string,
+            sat_close: PropTypes.string,
+            hours_owner: PropTypes.string.isRequired,
+        })
+    ),
+    r_id: PropTypes.number.isRequired,
+}
+
+export default EditHoursPage;
+
+
+/*
+
+import PropTypes from 'prop-types';
+
+
+LoginPage.propTypes = {
+restaurants: PropTypes.arrayOf(
+   PropTypes.shape({
+       r_id: PropTypes.number.isRequired,
+       r_owner: PropTypes.string.isRequired,
+       r_image: PropTypes.string,
+       r_type: PropTypes.string,
+       r_name: PropTypes.string,
+       r_address: PropTypes.string,
+       r_city: PropTypes.string,
+       r_state: PropTypes.string,
+       r_zip: PropTypes.string,
+       r_phone: PropTypes.string,
+       r_hours: PropTypes.number.isRequired
+  })
+),
+categories: PropTypes.arrayOf(
+    PropTypes.shape({
+        cat_id: PropTypes.number.isRequired,
+        cat_name: PropTypes.string.isRequired,
+    })
+),
+
+menu: PropTypes.arrayOf(
+  PropTypes.shape({
+
+
+
+    id: PropTypes.number.isRequired,
+    category_id: PropTypes.number.isRequired,
+    tipname: PropTypes.string.isRequired,
+    tipdescription: PropTypes.string.isRequired,
+    directions: PropTypes.string.isRequired,
+    sourcetitle: PropTypes.string,
+    sourceurl: PropTypes.string,
+    rating: PropTypes.number.isRequired,
+    numraters: PropTypes.number.isRequired,
+
+
+
+
+  })
+),
+hours: PropTypes.arrayOf(
+    PropTypes.shape({
+
+
+         sun_open: PropTypes.string,
+            sun_close: PropTypes.string,
+            mon_open: PropTypes.string,
+            mon_close: PropTypes.string,
+            tues_open: PropTypes.string,
+            tues_close: PropTypes.string,
+            wed_open: PropTypes.string,
+            wed_close: PropTypes.string,
+            thu_open: PropTypes.string,
+            thu_close: PropTypes.string,
+            fri_open: PropTypes.string,
+            fri_close: PropTypes.string,
+            sat_open: PropTypes.string,
+            sat_close: PropTypes.string,
+            hours_owner: PropTypes.string.isRequired,
+
+
+    })
+)
+name: PropTypes.string,
+   })
+),
+
+Account.propTypes = {
+    restaurants: PropTypes.arrayOf(
+        PropTypes.shape({
+            r_id: PropTypes.number.isRequired,
+            r_owner: PropTypes.string.isRequired,
+            r_image: PropTypes.string,
+            r_type: PropTypes.string,
+            r_name: PropTypes.string,
+            r_address: PropTypes.string,
+            r_city: PropTypes.string,
+            r_state: PropTypes.string,
+            r_zip: PropTypes.string,
+            r_phone: PropTypes.string,
+            r_hours: PropTypes.number.isRequired
+        })
+    ),
+}
+
+import React from 'react';
+import ReactDOM from 'react-dom';
+import Account from './Account';
+import toJson from 'enzyme-to-json'
+import { shallow } from 'enzyme'
+import { BrowserRouter } from 'react-router-dom';
+
+describe(`Account component`, () => {
+    const props = {
+        r_id: 1,
+        r_owner: 'OwnerS',
+        r_image: 'NoneS',
+        r_type: 'Fast',
+        r_name: 'Restaurant Two',
+        r_address: 'Address2',
+        r_city: 'City2',
+        r_state: 'State2',
+        r_zip: 'Zip2',
+        r_phone: 'Phone2',
+        r_hours: 1
+    }
+
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <BrowserRouter>
+                <Account {...props} />
+            </BrowserRouter>, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
+
+    it('renders the Account form', () => {
+        const wrapper = shallow(<Account {...props} />)
+        expect(toJson(wrapper)).toMatchSnapshot()
+    })
+});
+
+
+
+
+*/

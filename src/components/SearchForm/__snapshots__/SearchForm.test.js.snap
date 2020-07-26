@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SearchForm component renders the SearchForm form 1`] = `
+<form>
+  <label
+    className="labelDesign"
+    htmlFor="searchBar"
+  >
+    <input
+      autoComplete="off"
+      className="searchText"
+      id="searchBar"
+      name="searchBar"
+      onChange={[Function]}
+      placeholder="Search..."
+      type="text"
+    />
+  </label>
+</form>
+`;

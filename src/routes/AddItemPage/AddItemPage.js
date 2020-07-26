@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../../components/MenuItemForm/MenuItemForm.css';
 import MenuItemForm from '../../components/MenuItemForm/MenuItemForm';
+import PropTypes from 'prop-types';
 
 export default class AddItemPage extends Component {
     render() {
@@ -11,33 +12,32 @@ export default class AddItemPage extends Component {
                     <MenuItemForm restId={r_id}/>
 
 
-
                 {/*//TODO:  do a submission after entire process is over*/}
-               {/*  <form className="addForm" onSubmit={this.handleSubmit}> */}
-                        
-                {/* <button onClick={this.addItem} className="addItemButton"> + Add item </button> */}
-            
-                {/* <div className="buttonBox extraMargin">
+               {/*  <form className="addForm" onSubmit={this.handleSubmit}> 
+               <button onClick={this.addItem} className="addItemButton"> + Add item </button> 
+               <div className="buttonBox extraMargin">
                         <button type='submit' className="button">
                             Add Item
-                        </button> */}
-                        {/* <NavLink
+                        </button> 
+                         <NavLink
                             to={`/account`}
                             className="button"
-                            onClick={this.alertCompleteUser}
-                        >
+                            onClick={this.alertCompleteUser}    >
                             Complete
-                        </NavLink> */}
-                        {/* <NavLink
+                        </NavLink>
+                        <NavLink
                             onClick={this.alertCancelUser}
                             className="button"
-                            to={`/account`}
-                        >
+                            to={`/account`} >
                             Cancel
                         </NavLink>
-                    </div> */}
-                {/*     </form> */}
+                    </div>
+                 </form> */}
             </section >
         )
     };
+};
+
+AddItemPage.propTypes = {
+    r_id: PropTypes.string, 
 }

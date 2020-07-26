@@ -81,7 +81,7 @@ class App extends React.Component {
     TokenService.clearCallbackBeforeExpiry();
     IdleService.unRegisterIdleResets();
     this.forceUpdate();
-    window.location.href='/login';
+    window.location.href = '/login';
   }
 
   //functions for post, patch, delete
@@ -213,7 +213,7 @@ class App extends React.Component {
       menu: this.state.menu,
       addHours: this.addHours,
       updateHours: this.updateHours,
-      deleteHours: this.deleteHours, 
+      deleteHours: this.deleteHours,
       addItem: this.addItem,
       updateItem: this.updateItem,
       deleteItem: this.deleteItem,

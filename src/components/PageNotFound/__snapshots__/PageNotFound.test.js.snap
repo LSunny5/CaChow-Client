@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageNotFound component renders the PageNotFound by default 1`] = `
+<section
+  className="noPageContent"
+>
+  <h1
+    className="noPageHeading"
+  >
+    Page Not Found!
+  </h1>
+  <br />
+  <div
+    className="noPageDescription"
+  >
+    Sorry the page you are looking for cannot be found! Please check the url and try again!
+  </div>
+</section>
+`;

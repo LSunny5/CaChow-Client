@@ -4,6 +4,7 @@ import config from '../../config';
 import TokenService from '../../services/token-service';
 import CachowContext from '../../CachowContext';
 import { findRest } from '../../CachowHelpers';
+import PropTypes from 'prop-types';
 
 export default class DeleteRestaurantPage extends Component {
     static contextType = CachowContext;
@@ -59,3 +60,23 @@ export default class DeleteRestaurantPage extends Component {
         )
     };
 }
+
+DeleteRestaurantPage.propTypes = {
+    restaurants: PropTypes.arrayOf(
+        PropTypes.shape({
+            r_id: PropTypes.number.isRequired,
+            r_owner: PropTypes.string.isRequired,
+            r_image: PropTypes.string,
+            r_type: PropTypes.string,
+            r_name: PropTypes.string,
+            r_address: PropTypes.string,
+            r_city: PropTypes.string,
+            r_state: PropTypes.string,
+            r_zip: PropTypes.string,
+            r_phone: PropTypes.string,
+            r_hours: PropTypes.number.isRequired
+        })
+    ),
+    r_id: PropTypes.number.isRequired,
+    history: PropTypes.object,
+};

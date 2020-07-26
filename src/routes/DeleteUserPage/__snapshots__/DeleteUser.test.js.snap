@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteUserPage route renders the DeleteUserPage form 1`] = `
+<section
+  className="deleteContent"
+>
+  <h2
+    className="deleteHeading"
+  >
+    Deleting User...
+  </h2>
+  <div
+    className="restaurantBox"
+  >
+    <p
+      className="deleteMessage"
+    >
+      Are you sure you want to 
+      <span
+        className="redandbold"
+      >
+        delete
+      </span>
+       this account?
+    </p>
+    <div
+      className="buttonBox"
+    >
+      <button
+        className="deleteButton redandbold"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+      <button
+        className="deleteButton"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</section>
+`;

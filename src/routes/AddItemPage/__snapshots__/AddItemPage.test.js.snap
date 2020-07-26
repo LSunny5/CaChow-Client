@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddItemPage component renders the AddItemPage form 1`] = `
+<section
+  className="RFormContent"
+>
+  <h2
+    className="formTitle"
+  >
+    Add Menu Items
+  </h2>
+  <MenuItemForm
+    restId={1}
+  />
+</section>
+`;

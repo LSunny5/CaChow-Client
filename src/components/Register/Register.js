@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AuthApiService from '../../services/auth-api-service';
 import CachowContext from '../../CachowContext';
+import PropTypes from 'prop-types';
 
 export default class RegistrationForm extends Component {
   static contextType = CachowContext;
@@ -98,7 +99,7 @@ export default class RegistrationForm extends Component {
           </input>
         </div>
 
-       {/*  <p>User Type</p>
+        {/*  <p>User Type</p>
         <div className='userType'>
           <label htmlFor='ownerType'>
             <input type="radio"
@@ -120,11 +121,16 @@ export default class RegistrationForm extends Component {
           General User
           </label>
         </div> */}
-        
+
         <button type='submit' className="registerButton">
           Register
         </button>
       </form>
     )
   }
+}
+
+RegistrationForm.propTypes = {
+  onRegistrationSuccess: PropTypes.func, 
+  error: PropTypes.object,
 }

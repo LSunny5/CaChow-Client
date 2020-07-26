@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditMenuItemPage component renders the EditMenuItemPage form 1`] = `
+<section
+  className="RFormContent"
+>
+  <h2
+    className="formTitle"
+  >
+    Edit Menu Items
+  </h2>
+  <div
+    className="noItemsBox"
+  >
+    There are no items to edit for this restaurant...
+  </div>
+  <div
+    className="buttonBox"
+  >
+    <NavLink
+      className="button"
+      to="/restaurants/1"
+    >
+      Finished
+    </NavLink>
+    <NavLink
+      className="button"
+      to="/account"
+    >
+      Cancel
+    </NavLink>
+  </div>
+</section>
+`;

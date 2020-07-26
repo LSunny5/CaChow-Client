@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Landing Page component renders the Landing Page by default 1`] = `
+<section
+  className="LandingContent"
+>
+  <h1
+    className="LandingHeading"
+  >
+    CaChow!
+  </h1>
+  <div
+    className="LandingDescription"
+  >
+    Welcome to the site that keeps all your menus in one place! Instead of having to navigate to several different websites to view their menus, this site allows you to click and see the restaurant's information and menu!
+    <br />
+    <br />
+  </div>
+  <form
+    className="LandingForm"
+  >
+    <NavLink
+      className="beginButton"
+      to="/login"
+    >
+      Let's Begin
+    </NavLink>
+  </form>
+</section>
+`;

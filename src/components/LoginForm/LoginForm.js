@@ -3,26 +3,27 @@ import TokenService from '../../services/token-service';
 import AuthApiService from '../../services/auth-api-service';
 import './LoginForm.css';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default class LoginForm extends Component {
   static defaultProps = {
-    onLoginSuccess: () => {}
+    onLoginSuccess: () => { }
   }
 
   state = { error: null }
 
-  handleSubmitJwtAuth = ev => {
-    ev.preventDefault();
+  handleSubmitJwtAuth = event => {
+    event.preventDefault();
     this.setState({ error: null })
-    const { user_name, password } = ev.target
+    const { user_name, password } = event.target
 
-    AuthApiService.postLogin({ 
+    AuthApiService.postLogin({
       user_name: user_name.value.toLowerCase().trim(),
       password: password.value,
     })
       .then(res => {
         localStorage.setItem('name', user_name.value.toLowerCase().trim());
-        user_name.value = ""; 
+        user_name.value = "";
         password.value = "";
         TokenService.saveAuthToken(res.authToken)
         this.props.onLoginSuccess();
@@ -35,7 +36,7 @@ export default class LoginForm extends Component {
   render() {
     const { error } = this.state
     localStorage.clear();
-    
+
     return (
       <form
         className='LoginForm'
@@ -80,4 +81,9 @@ export default class LoginForm extends Component {
       </form>
     )
   }
+}
+
+LoginForm.propTypes = {
+  onLoginSuccess: PropTypes.func, 
+  error: PropTypes.object,
 }

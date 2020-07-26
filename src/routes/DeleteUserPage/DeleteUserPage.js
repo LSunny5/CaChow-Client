@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './DeleteUser.css';
 import config from '../../config';
 import TokenService from '../../services/token-service';
+import PropTypes from 'prop-types';
 
 export default class DeleteUserPage extends Component {
     handleDelete = (event) => {
@@ -52,4 +53,8 @@ export default class DeleteUserPage extends Component {
             </section >
         )
     };
-}
+};
+
+DeleteUserPage.propTypes = {
+    history: PropTypes.object,
+};

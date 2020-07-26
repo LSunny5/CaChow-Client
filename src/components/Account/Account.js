@@ -3,6 +3,7 @@ import CachowContext from '../../CachowContext';
 import { NavLink } from 'react-router-dom';
 import './Account.css';
 import { getRest } from '../../CachowHelpers';
+import PropTypes from 'prop-types';
 
 export default class Account extends Component {
     static contextType = CachowContext;
@@ -51,7 +52,7 @@ export default class Account extends Component {
                                 <NavLink to={`/restaurants/${restaurant.r_id}/delete`}
                                     className="ownerButton redandbold">
                                     Delete Restaurant
-                                </NavLink>                               
+                                </NavLink>
                             </div>
                         </div>
                     )) : (
@@ -71,4 +72,22 @@ export default class Account extends Component {
             </section >
         )
     };
+}
+
+Account.propTypes = {
+    restaurants: PropTypes.arrayOf(
+        PropTypes.shape({
+            r_id: PropTypes.number.isRequired,
+            r_owner: PropTypes.string.isRequired,
+            r_image: PropTypes.string,
+            r_type: PropTypes.string,
+            r_name: PropTypes.string,
+            r_address: PropTypes.string,
+            r_city: PropTypes.string,
+            r_state: PropTypes.string,
+            r_zip: PropTypes.string,
+            r_phone: PropTypes.string,
+            r_hours: PropTypes.number.isRequired
+        })
+    ),
 }

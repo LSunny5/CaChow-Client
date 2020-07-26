@@ -1,5 +1,6 @@
 import React from 'react';
 import './Search.css';
+import PropTypes from 'prop-types';
 
 class SearchForm extends React.Component {
     updateSearchTerm = (event) => {
@@ -22,6 +23,10 @@ class SearchForm extends React.Component {
             </form>
         );
     };
+}
+
+SearchForm.propTypes = {
+    updateSearch:  PropTypes.func, 
 }
 
 export default SearchForm;

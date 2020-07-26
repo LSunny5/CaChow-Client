@@ -1,0 +1,155 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`EditRestaurantPage route renders the EditRestaurantPage form 1`] = `
+<section
+  className="RFormContent"
+>
+  <h2
+    className="formTitle"
+  >
+    Edit Restaurant
+  </h2>
+  <form
+    className="addForm"
+    onSubmit={[Function]}
+  >
+    <fieldset>
+      <label
+        className="inputLabel"
+        htmlFor="restaurantName"
+      >
+        Name of Restaurant: 
+      </label>
+      <input
+        className="textField"
+        id="restaurantName"
+        name="restaurantName"
+        onChange={[Function]}
+        placeholder="Add name of restaurant here..."
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="restaurantImage"
+      >
+        Add an image: 
+      </label>
+      <input
+        className="textField"
+        id="restaurantImage"
+        name="restaurantImage"
+        onChange={[Function]}
+        placeholder="Add url of image here..."
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="restaurantType"
+      >
+        What type of restaurant? 
+      </label>
+      <input
+        className="textField"
+        id="restaurantType"
+        name="restaurantType"
+        onChange={[Function]}
+        placeholder="Add type here..."
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="restaurantAddress"
+      >
+        Address: 
+      </label>
+      <input
+        className="textField"
+        id="restaurantAddress"
+        name="restaurantAddress"
+        onChange={[Function]}
+        placeholder="Add address here..."
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="restaurantCity"
+      >
+        City: 
+      </label>
+      <input
+        className="textField"
+        id="restaurantCity"
+        name="restaurantCity"
+        onChange={[Function]}
+        placeholder="Add city here..."
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="restaurantState"
+      >
+        State: 
+      </label>
+      <input
+        className="textField"
+        id="restaurantState"
+        name="restaurantState"
+        onChange={[Function]}
+        placeholder="Add state here..."
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="restaurantZip"
+      >
+        ZipCode: 
+      </label>
+      <input
+        className="textField"
+        id="restaurantZip"
+        name="restaurantZip"
+        onChange={[Function]}
+        placeholder="Enter zipcode "
+        type="text"
+      />
+      <br />
+      <label
+        className="inputLabel"
+        htmlFor="restaurantPhone"
+      >
+        Phone Number: 
+      </label>
+      <input
+        className="textField"
+        id="restaurantPhone"
+        name="restaurantPhone"
+        onChange={[Function]}
+        placeholder="Add phone number here..."
+        type="text"
+      />
+      <div
+        className="buttonBox"
+      >
+        <button
+          className="button"
+          type="submit"
+        >
+          Update
+        </button>
+        <NavLink
+          className="button"
+          to="/account"
+        >
+          Cancel
+        </NavLink>
+      </div>
+    </fieldset>
+  </form>
+</section>
+`;

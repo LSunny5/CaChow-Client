@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteRestaurantPage route renders the EditRestaurantPage form 1`] = `
+<section
+  className="deleteContent"
+>
+  <h2
+    className="deleteHeading"
+  >
+    Deleting Restaurant...
+  </h2>
+  <div
+    className="restaurantBox"
+  >
+    <p
+      className="deleteMessage"
+    >
+      Are you sure you want to 
+      <span
+        className="redandbold"
+      >
+        delete
+      </span>
+       the restaurant and all the information?
+    </p>
+    <div
+      className="buttonBox"
+    >
+      <button
+        className="deleteButton redandbold"
+        onClick={[Function]}
+      >
+        Delete
+      </button>
+      <button
+        className="deleteButton"
+        onClick={[Function]}
+      >
+        Cancel
+      </button>
+    </div>
+  </div>
+</section>
+`;

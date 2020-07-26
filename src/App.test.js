@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import ReactDOM from 'react-dom';
 
 test('renders learn react link', () => {
-  const { getByText } = render(  
+  const { getByText } = render(
     <BrowserRouter>
       <App />
     </BrowserRouter>);
@@ -15,13 +15,13 @@ test('renders learn react link', () => {
 
 describe(`App component`, () => {
   it('renders without crashing', () => {
-      const div = document.createElement('div');
-      ReactDOM.render(
-          <BrowserRouter>
-              <App />
-          </BrowserRouter>,
-          div
-      );
-      ReactDOM.unmountComponentAtNode(div);
+    const div = document.createElement('div');
+    ReactDOM.render(
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>,
+      div
+    );
+    ReactDOM.unmountComponentAtNode(div);
   });
 });

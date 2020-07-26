@@ -3,6 +3,7 @@ import './NavBar.css';
 import { NavLink } from 'react-router-dom';
 import TokenService from '../../services/token-service';
 import IdleService from '../../services/idle-service';
+import PropTypes from 'prop-types';
 
 class NavBar extends React.Component {
     handleLogoutClick = () => {
@@ -70,6 +71,10 @@ class NavBar extends React.Component {
             </nav>
         );
     }
+}
+
+NavBar.propTypes = {
+    history: PropTypes.object,
 }
 
 export default NavBar;

@@ -1,12 +1,8 @@
 import React, { Component } from 'react';
 import RestaurantForm from '../../components/RestaurantForm/RestaurantForm';
 import '../../components/RestaurantForm/RestaurantForm.css';
-import CachowContext from '../../CachowContext';
 
 export default class AddRestaurantPage extends Component {
-    static contextType = CachowContext;
-    
-
     render() {
         return (
             <section className='RFormContent'>
@@ -15,4 +11,4 @@ export default class AddRestaurantPage extends Component {
             </section >
         )
     };
-}
+};

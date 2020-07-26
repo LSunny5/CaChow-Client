@@ -5,11 +5,11 @@ import TokenService from '../../services/token-service';
 import { findMenuId, getMenuItems } from '../../CachowHelpers';
 import CachowContext from '../../CachowContext';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export default class EditMenuItemPage extends Component {
     static contextType = CachowContext;
 
-    
     handleUpdate = event => {
         const { title, value } = event.target;
         this.setState({ [title]: value.trim() });
@@ -132,7 +132,7 @@ export default class EditMenuItemPage extends Component {
                                     <div className="editButtonBox">
                                         <button type='submit'>Update</button>
                                         <button onClick={() => {
-                                            if (window.confirm('Are you sure you wish to delete this item?') ? this.handleDelete(item.item_id) : this.handleCancel()) 
+                                            if (window.confirm('Are you sure you wish to delete this item?') ? this.handleDelete(item.item_id) : this.handleCancel())
                                                 this.handleCancel()
                                         }}>
                                             Delete
@@ -164,4 +164,23 @@ export default class EditMenuItemPage extends Component {
             </section >
         )
     };
+}
+
+EditMenuItemPage.propTypes = {
+    categories: PropTypes.arrayOf(
+        PropTypes.shape({
+            cat_id: PropTypes.number.isRequired,
+            cat_name: PropTypes.string.isRequired,
+        })
+    ),
+    menu: PropTypes.arrayOf(
+        PropTypes.shape({
+            item_id: PropTypes.number.isRequired,
+            item_restaurant: PropTypes.number.isRequired,
+            item_name: PropTypes.string.isRequired,
+            item_cat: PropTypes.number.isRequired,
+            item_price: PropTypes.number,
+        })
+    ),
+    r_id: PropTypes.number,
 }
