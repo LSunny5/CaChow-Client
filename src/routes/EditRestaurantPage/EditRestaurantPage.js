@@ -189,4 +189,4 @@ EditRestaurantPage.propTypes = {
     r_id: PropTypes.number.isRequired,
 };
 
-module.exports = EditRestaurantPage;
+export default EditRestaurantPage;
