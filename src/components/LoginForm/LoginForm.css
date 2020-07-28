@@ -1,3 +1,14 @@
+.lForm {
+    height: 100%;
+    margin-top: 10vh;
+    background: url(/images/LeavesBorder.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Delius', cursive;
+}
+
 .formPage {
     height: 80vh;
     display: flex;
@@ -5,10 +16,6 @@
     justify-content: center;
 }
 
-.lForm {
-    height: 100%;
-    margin-top: 10vh;
-}
 
 .LoginForm {
     height: 90%;
@@ -18,7 +25,7 @@
     width: 90%;
     margin: 0 auto;
     border-radius: 30px;
-    background: lightgray;
+    /* background: lightgray; */
 }
 
 .formTitle {

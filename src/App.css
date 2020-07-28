@@ -12,7 +12,7 @@ main {
 }
 
 .content {
-  padding: 1rem;
+  padding: 0;
   min-height: 90vh;
   width: 100%;
 }

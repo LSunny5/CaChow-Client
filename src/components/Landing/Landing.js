@@ -6,17 +6,31 @@ class LandingPage extends React.Component {
     render() {
         return (
             <section className="LandingContent">
-                <h1 className="LandingHeading">CaChow!</h1>
-                <div className="LandingDescription">
-                    Welcome to the site that keeps all your menus in one place!
-                    Instead of having to navigate to several different websites to view their menus, this site
-                    allows you to click and see the restaurant's information and menu!
-                    <br />
-                    <br />
+                <div className="LandingTop">
+                    <img src="images/LogoResized.png" className="LandingImage" />
+                    <h1 className="LandingHeading">CaChow!</h1>
                 </div>
-                <form className="LandingForm" onSubmit={this.handleSubmit}>
-                    <NavLink to='/login' className="beginButton" >Let's Begin</NavLink>
-                </form>
+                <div className="LandingBottom" onSubmit={this.handleSubmit}>
+                    <div className="LandingDescription">
+                        Welcome to the site that keeps all your menus in one place!
+                        Instead of having to navigate to several different websites to view menus
+                        and restaurant information, keep all your menus in one place!
+                    </div>
+
+                    <div className="ButtonTextBox">
+                        <div className="ButtonText">Let's Begin</div>
+                        <div className="ButtonWrapper">
+                            <div className="ButtonArrow"></div>
+                            <NavLink to='/login'>
+                                <div className="ButtonCircleBorder"></div>
+
+                                <div className="ButtonCircleCover">
+                                    <div className="SmallCircle"></div>
+                                </div>
+                            </NavLink>
+                        </div>
+                    </div>
+                </div>
             </section>
         );
     }

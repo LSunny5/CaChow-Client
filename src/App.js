@@ -7,6 +7,8 @@ import config from './config';
 import TokenService from '../src/services/token-service';
 import AuthApiService from '../src/services/auth-api-service';
 import IdleService from '../src/services/idle-service';
+import PrivateRoute from '../src/components/Utils/PrivateRoute'
+import PublicOnlyRoute from '../src/components/Utils/PublicOnlyRoute'
 
 import LandingPage from './components/Landing/Landing';
 import NavBar from './components/NavBar/NavBar';
@@ -14,11 +16,9 @@ import PageNotFound from './components/PageNotFound/PageNotFound';
 import LoginPage from './routes/LoginPage/LoginPage';
 import RegisterPage from './routes/RegisterPage/RegisterPage';
 import SearchPage from './routes/SearchPage/SearchPage';
-
 import Restaurant from './components/Restaurant/Restaurant';
 import AddRestaurantPage from './routes/AddRestaurantPage/AddRestaurantPage';
 import AddItemPage from './routes/AddItemPage/AddItemPage';
-
 import Account from './components/Account/Account';
 import EditMenuItemPage from './routes/EditMenuItemPage/EditMenuItemPage';
 import EditRestaurantPage from './routes/EditRestaurantPage/EditRestaurantPage';
@@ -150,32 +150,32 @@ class App extends React.Component {
     return (
       <div>
         <Switch>
-          <Route path='/' exact component={LandingPage} />
+          <PublicOnlyRoute path='/' exact component={LandingPage} />
 
           {/* Route for Login page */}
-          <Route path='/login' exact component={LoginPage} />
+          <PublicOnlyRoute path='/login' exact component={LoginPage} />
 
           {/* Route for Register User */}
-          <Route path='/register' exact component={RegisterPage} />
+          <PublicOnlyRoute path='/register' exact component={RegisterPage} />
 
           {/* Route for Search results */}
-          <Route path='/search' exact component={SearchPage} />
+          <PrivateRoute path='/search' exact component={SearchPage} />
 
           {/* Route for account screen for owner */}
-          <Route path='/account' exact component={Account} />
+          <PrivateRoute path='/account' exact component={Account} />
 
           {/* Routes for Deleting User */}
-          <Route path='/deleteUser' exact component={DeleteUserPage} />
+          <PrivateRoute path='/deleteUser' exact component={DeleteUserPage} />
 
           {/* Route for restaurant hours */}
-          <Route path='/restaurants/hours/add' exact component={AddHoursPage} />
+          <PrivateRoute path='/restaurants/hours/add' exact component={AddHoursPage} />
 
           {/* Route for adding a restaurant Page */}
-          <Route path='/restaurants/add' exact component={AddRestaurantPage} />
+          <PrivateRoute path='/restaurants/add' exact component={AddRestaurantPage} />
 
           {/* Routes for Restaurant Info */}
           {['/restaurants/:r_id'].map(path => (
-            <Route
+            <PrivateRoute
               key={path}
               path={path}
               exact
@@ -184,22 +184,22 @@ class App extends React.Component {
           ))}
 
           {/* Route for adding a menu item page */}
-          <Route path='/restaurants/:r_id/addItem' exact component={AddItemPage} />
+          <PrivateRoute path='/restaurants/:r_id/addItem' exact component={AddItemPage} />
 
           {/* Routes for Deleting Restaurant */}
-          <Route path='/restaurants/:r_id/delete' exact component={DeleteRestaurantPage} />
+          <PrivateRoute path='/restaurants/:r_id/delete' exact component={DeleteRestaurantPage} />
 
           {/* Routes for Editing Restaurant */}
-          <Route path='/restaurants/:r_id/edit' exact component={EditRestaurantPage} />
+          <PrivateRoute path='/restaurants/:r_id/edit' exact component={EditRestaurantPage} />
 
           {/* Routes for Editing Menu Items */}
-          <Route path='/restaurants/:r_id/hours' exact component={EditHoursPage} />
+          <PrivateRoute path='/restaurants/:r_id/hours' exact component={EditHoursPage} />
 
           {/* Routes for Editing Menu Items */}
-          <Route path='/restaurants/:r_id/editItems' exact component={EditMenuItemPage} />
+          <PrivateRoute path='/restaurants/:r_id/editItems' exact component={EditMenuItemPage} />
 
           {/* Route for Page Not Found */}
-          <Route path='*' component={PageNotFound} />
+          <PublicOnlyRoute path='*' component={PageNotFound} />
         </Switch>
       </div>
     );

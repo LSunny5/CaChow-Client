@@ -1,32 +1,277 @@
+/*Landing Page*/
 .LandingContent {
-    height: 80vh;
-    margin: 15px auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.LandingDescription {
-    font-size: 1em;
-    margin: 10% auto;
-    width: 80%;
-}
-
-.beginButton {
-    text-decoration: none;
-    color: black;
-    border: 1px solid black;
-    padding: 10px 30px;
-    margin: 0 10px;
-    font-size: 1.2em;
-    cursor: pointer; 
-    border-radius: 30px;
-
-    
-    width: 2.2rem;
-    height: 2.2rem;
-}
-
-.labelDesign {
+    min-height: 100vh;
     position: relative;
+    font-size: 2em;
+    font-family: 'Cinzel', serif;
+    background: url(/images/greenfork.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    font-family: 'Delius', cursive;
+}
+
+/*Container for top half of landing page*/
+.LandingTop {
+    padding-top: 3.5rem;
+    width: 100%;
+}
+
+/*Container for bottom half of landing page*/
+.LandingBottom {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+}
+
+/*Cachow logo*/
+.LandingImage{
+    height: 20vh;
+    width: 50vw;
+}
+
+/*Landing Title*/
+.LandingHeading {
+    font-size: 1.5em;
+}
+
+/*Description for Landing Page*/
+.LandingDescription {
+    font-size: 0.5em;
+    margin: 10% auto 9%;
+    width: 80%;
+    font-family: 'Delius', cursive;
+}
+
+/*Container for entire button*/
+.ButtonTextBox {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    margin: 10px auto;
+    width: 100%;
+    justify-content: center; 
+}
+
+/*Text for Button*/
+.ButtonText {
+    z-index: 1;
+    font-size: 1rem;
+    margin-right: -18px;
+    color: white;
+    letter-spacing: 0.05em;
+}
+
+/*container for button arrow*/
+.ButtonWrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/*Arrow tail*/
+.ButtonArrow {
+    position: absolute;
+    align-items: center;
+    display: flex;
+    height: 3px;
+    width: 60px;
+    left: 25px;
+    background-color: yellow;
+}
+
+/*Arrow*/
+.ButtonArrow:after {
+    width: 0;
+    height: 0; 
+    top: -5px;
+    right: -7px;
+    position: absolute;
+    border-top: 7px solid transparent;
+    border-bottom: 7px solid transparent;
+    border-left: 7px solid yellow;
+    content: '';
+}
+
+/*cover for small circle*/
+.ButtonCircleCover {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top:0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    clip-path: circle(25px);
+    transition: clip-path 987ms;
+}
+
+/*Move the circle to cover the Button*/
+.ButtonTextBox:hover .ButtonCircleCover{
+    clip-path: circle(25px at 85px);
+}
+
+/*Border for button circle*/
+.ButtonCircleBorder {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid #DC143C;
+    transition: transform 1s;
+}
+
+/*Move the circle to end for Button*/
+.ButtonTextBox:hover .ButtonCircleBorder{
+    transform: translateX(60px);
+}
+
+/*small circle on hover*/
+.SmallCircle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    transform: translateX(60px);
+    background-color: yellow;
+    position:absolute;
+}
+
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*Container for top half of landing page*/
+    .LandingTop {
+        padding-top: 3vh;
+    }
+
+    /*Container for bottom half of landing page*/
+    .LandingBottom {
+        position: absolute;
+        bottom: 3vh;
+        width: 100%;
+    }
+
+    /*Cachow logo*/
+    .LandingImage{
+        height: 25vh;
+        width: 40vh;
+    }
+
+    /*Description for Landing Page*/
+    .LandingDescription {
+        font-size: 0.6em;
+        margin-bottom: 5vh;
+    }
+
+    /*Text for Button*/
+    .ButtonText {
+        font-size: 1.8rem;
+    }
+
+    /*Arrow tail*/
+    .ButtonArrow {
+        height: 8px;
+        width: 80px;
+    }
+
+    /*Arrow*/
+    .ButtonArrow:after { 
+        top: -10px;
+        right: -15px;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-left: 15px solid yellow;
+    }
+
+    /*cover for small circle*/
+    .ButtonCircleCover {
+        width: 105px;
+        height: 75px;
+    }
+
+    /*Move the circle to cover the Button*/
+    .ButtonTextBox:hover .ButtonCircleCover{
+        clip-path: circle(30px at 120px);
+    }
+
+    /*Border for button circle*/
+    .ButtonCircleBorder {
+        width: 75px;
+        height: 75px;
+        border: 3px solid #DC143C;
+    }
+
+    /*Move the circle to end for Button*/
+    .ButtonTextBox:hover .ButtonCircleBorder{
+        transform: translateX(73px);
+    }
+
+    /*small circle on hover*/
+    .SmallCircle {
+        width: 33px;
+        height: 33px;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*Container for top half of landing page*/
+    .LandingTop {
+        padding-top: 5vh;
+    }
+
+    /*Container for bottom half of landing page*/
+    .LandingBottom {
+        bottom: 3vh;
+    }
+
+    /*Cachow logo*/
+    .LandingImage{
+        height: 160px;
+        width: 260px;
+    }
+    
+    /*Text for Button*/
+    .ButtonText {
+        font-size: 1.5rem;
+    }
+
+    /*Arrow tail*/
+    .ButtonArrow {
+        height: 5px;
+    }
+
+    /*Arrow*/
+    .ButtonArrow:after { 
+        top: -9px;
+        right: -10px;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        border-left: 12px solid yellow;
+    }
+    
+    /*cover for small circle*/
+    .ButtonCircleCover {
+        width: 90px;
+        height: 55px;
+    }
+
+    /*Border for button circle*/
+    .ButtonCircleBorder {
+        width: 55px;
+        height: 55px;
+    }
+
+    /*Move the circle to end for Button*/
+    .ButtonTextBox:hover .ButtonCircleBorder{
+        transform: translateX(77px);
+    }
+
+    /*small circle on hover*/
+    .SmallCircle {
+        width: 27px;
+        height: 27px;
+    }
 }
