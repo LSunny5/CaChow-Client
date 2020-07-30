@@ -26,11 +26,9 @@ class LoginPage extends React.Component {
                     <img src="/images/backarrow.png" alt="Go back" className="backArrow" />
                     Back
                 </button>
-                <h2 className="formTitle">Login</h2>
                 <LoginForm onLoginSuccess={this.handleLoginSuccess} />
                 <p className="demoInstructions">
-                    <span className="makeBold">For Demo Version: </span>
-                    <br />
+                    <p className="makeBold">For Demo Version: </p>
                     Username: Guest
                     <br />
                     Password: Demo2020!

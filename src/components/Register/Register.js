@@ -62,6 +62,7 @@ export default class RegistrationForm extends Component {
         className='RegistrationForm'
         onSubmit={this.handleSubmit}
       >
+        <legend className="formTitle">Register</legend>
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
@@ -121,16 +122,23 @@ export default class RegistrationForm extends Component {
           General User
           </label>
         </div> */}
+        <div>
+          <div className="buttonBox">
+            <button type='submit' className="borderButton">
+              Register
+            </button>
+          </div>
+        </div>
 
-        <button type='submit' className="registerButton">
-          Register
-        </button>
+        {/*         <button type='submit' className="registerButton">
+        Register
+        </button> */}
       </form>
     )
   }
 }
 
 RegistrationForm.propTypes = {
-  onRegistrationSuccess: PropTypes.func, 
+  onRegistrationSuccess: PropTypes.func,
   error: PropTypes.object,
 }

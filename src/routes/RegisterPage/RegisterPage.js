@@ -37,7 +37,13 @@ export default class RegistrationPage extends Component {
   render() {
     return (
       <section className='formPage'>
-        <h2 className="formTitle">Register</h2>
+        <button
+          className="backButton"
+          onClick={() => this.props.history.goBack()}>
+          <img src="/images/backarrow.png" alt="Go back" className="backArrow" />
+            Back
+        </button>
+        
         <RegistrationForm
           handleUserChoice={this.handleUserChoice}
           onRegistrationSuccess={this.handleRegistrationSuccess}

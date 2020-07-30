@@ -1,90 +1,165 @@
+/*form pages*/
+.formPage {
+    font-family: 'Delius', cursive;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/*Login Page*/
 .lForm {
-    height: 100%;
-    margin-top: 10vh;
     background: url(/images/LeavesBorder.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    font-family: 'Delius', cursive;
 }
 
-.formPage {
-    height: 80vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-
+/*form on login page*/
 .LoginForm {
     height: 90%;
-    border: 1px solid black;
-    padding: 1em;
+    padding: 1.5em;
     vertical-align: middle;
     width: 90%;
-    margin: 0 auto;
+    margin: 4rem auto 0;
     border-radius: 30px;
-    /* background: lightgray; */
 }
 
+fieldset {
+    border: 0;
+}
+
+/*Login form title "login" legend*/
 .formTitle {
-    font-size: 2em;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
+    font-weight: bolder;
+    font-family: 'Cinzel', serif;
+    font-size: 2.7rem;
 }
 
+/*login directions*/
 .loginDirect {
     margin: 0 auto 15px;
     width: 90%;
+    font-size: 1rem;
 }
 
+/*labels for login form*/
 .user_name, .password {
     font-weight: bold;
+    font-size: 1rem;
 }
 
+/*text field for username and password*/
 #loginUserName, #loginPassword {
-    border: 1px solid #ddd;
-    border-bottom: 1px solid blue;
+    border: 1px solid lightyellow;
+    background: rgb(250, 250, 233);
+    border-bottom: 1px solid black;
     display: block;
     font-size: 1.1em;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     padding: 10px;
     text-align: left;
     width: 100%;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-.loginButton, .registerButton {
-    margin: 15px auto 20px;
-    order: 1px solid #aaa;
-    background-color: #eee;
-    font-size: 1.1em;
-    border-radius: 10px;
-    padding: 8px 12px;
-    font-weight: bold;
-}
-
+/*description for register*/
 .registerDesc {
     margin-bottom: 5px;
+    color: black;
+    font-weight: bolder;
 }
 
-.red {
-    color: red;
-    background: white;
-    border: 1px solid black;
-    padding: 10px;
-    margin: 10px;
+/*container for login button*/
+.buttonBox {
+    height: 5rem;
+}
+
+/*button appearance for login and register page*/
+.borderButton {
+    font-family: 'Cinzel', serif;
+    background-color: lightgoldenrodyellow;
+    color: black;
+    height: 50%;
+    font-size: 1em;
+    font-weight: bold;
+    border-radius: 30px;
+    padding: 5px 30px;
+    margin: 15px auto 20px;
+    animation: moveInBottom 5s ease-out;
+    animation-fill-mode: backwards;
+    transition: all .2s;
+}
+
+/*hover effects for button*/
+.borderButton:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
     font-size: 1.2em;
-    font-weight: 600;
 }
 
+/*active effects for button*/
+.borderButton:active {
+    transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+/*register link*/
+.registerLink {
+    font-size: 1em;
+    font-weight: bolder;
+}
+
+/*red star for required fields*/
+.required {
+    color: #CA1551;
+    font-weight: bold;
+    font-size: 1.2em;
+  }
+
+/*box with demo information*/
 .demoInstructions {
-    margin: 20px;
+    margin: 0 auto 5rem;
     border: 1px dotted black;
     padding: 10px;
-    background: lightblue;
+    background: lightgreen;
+    border-radius: 10px;
+    width: 70%;
 }
 
+/*make text bold*/
 .makeBold {
     font-weight: bolder;
+}
+
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*text field for username and password*/
+    #loginUserName, #loginPassword {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    /*box with demo information*/
+    .demoInstructions {
+        width: 30%;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*text field for username and password*/
+    #loginUserName, #loginPassword {
+        width: 30%;
+        margin: 0 auto;
+    }
+
+    /*box with demo information*/
+    .demoInstructions {
+        width: 25%;
+    }
 }

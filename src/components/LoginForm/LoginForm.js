@@ -42,7 +42,8 @@ export default class LoginForm extends Component {
         className='LoginForm'
         onSubmit={this.handleSubmitJwtAuth}
       >
-        <legend className="loginDirect">Please enter your username and password. </legend>
+        <legend className="formTitle">Login</legend>
+        <p className="loginDirect">Please enter your username and password. </p>
         <div role='alert'>
           {error && <p className='red'>{error}</p>}
         </div>
@@ -67,9 +68,11 @@ export default class LoginForm extends Component {
             id='loginPassword'>
           </input>
         </div>
-        <button type='submit' className="loginButton">
-          Log in
-        </button>
+          <div className="buttonBox">
+            <button type='submit' className="borderButton">
+              Log in
+            </button>
+          </div>
         <div className="registerQuestionBox">
           <p className="registerDesc">
             No Account? No Problem!
@@ -84,6 +87,6 @@ export default class LoginForm extends Component {
 }
 
 LoginForm.propTypes = {
-  onLoginSuccess: PropTypes.func, 
+  onLoginSuccess: PropTypes.func,
   error: PropTypes.object,
 }

@@ -1,13 +1,68 @@
+/*no content page*/
 .noPageContent {
-    height: 90vh;
+    height: 91vh;
     margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 75%;
+    width: 100%;
+    background: url(/images/sadplate.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+/*title for no page found*/
+.noPageHeading {
+    font-size: 2rem;
+    padding-top: 18vh;
     color: red;
 }
 
+/*Page not found text*/
 .noPageDescription {
     color: black;
+    margin-top: 30vh;
+    position: absolute;
+    right: 10vw;
+    width: 50%;
+}
+
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*no content page* */
+    .noPageContent {
+        height: 93vh;
+    }
+    
+    /*title for no page found*/
+    .noPageHeading {
+        font-size: 2.5rem;
+    }
+    
+    /*Page not found text*/
+    .noPageDescription {
+        right: 15vw;
+        width: 40%;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*no content page* */
+    .noPageContent {
+        height: 91vh;
+    }
+    
+    /*title for no page found*/
+    .noPageHeading {
+        padding-top: 18vh;
+    }
+    
+    /*Page not found text*/
+    .noPageDescription {
+        right: 30vw;
+        margin-top: 32vh;
+        width: 25%;
+    }
 }
