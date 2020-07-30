@@ -7,7 +7,7 @@ class LandingPage extends React.Component {
         return (
             <section className="LandingContent">
                 <div className="LandingTop">
-                    <img src="images/LogoResized.png" className="LandingImage" />
+                    <img src="images/LogoResized.png" className="LandingImage" alt="Cachow Logo" />
                     <h1 className="LandingHeading">CaChow!</h1>
                 </div>
                 <div className="LandingBottom" onSubmit={this.handleSubmit}>

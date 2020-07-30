@@ -20,20 +20,20 @@ describe(`Restaurant component`, () => {
         r_hours: 1,
         cat_id: 1,
         cat_name: 'Cat 1',
-        hours_id: 1, 
-        sun_open: 'Open', 
+        hours_id: 1,
+        sun_open: 'Open',
         sun_close: 'Closed',
-        mon_open: 'Open', 
+        mon_open: 'Open',
         mon_close: 'Closed',
-        tues_open: 'Open', 
+        tues_open: 'Open',
         tues_close: 'Closed',
-        wed_open: 'Open', 
+        wed_open: 'Open',
         wed_close: 'Closed',
-        thu_open: 'Open', 
+        thu_open: 'Open',
         thu_close: 'Closed',
-        fri_open: 'Open', 
+        fri_open: 'Open',
         fri_close: 'Closed',
-        sat_open: 'Open', 
+        sat_open: 'Open',
         sat_close: 'Closed',
         hours_owner: 'owner 1',
         item_id: 1,
@@ -48,14 +48,14 @@ describe(`Restaurant component`, () => {
         },
     };
 
-        it('renders without crashing', () => {
-            const div = document.createElement('div');
-            ReactDOM.render(
-                <BrowserRouter>
-                    <Restaurant {...props} />
-                </BrowserRouter>, div);
-            ReactDOM.unmountComponentAtNode(div);
-        });
+    it('renders without crashing', () => {
+        const div = document.createElement('div');
+        ReactDOM.render(
+            <BrowserRouter>
+                <Restaurant {...props} />
+            </BrowserRouter>, div);
+        ReactDOM.unmountComponentAtNode(div);
+    });
 
     it('renders the Restaurant form', () => {
         const wrapper = shallow(<Restaurant {...props} />)

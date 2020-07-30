@@ -280,7 +280,7 @@ EditHoursPage.propTypes = {
             hours_owner: PropTypes.string.isRequired,
         })
     ),
-    r_id: PropTypes.number.isRequired,
+    r_id: PropTypes.number,
 }
 
 export default EditHoursPage;

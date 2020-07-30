@@ -77,6 +77,6 @@ DeleteRestaurantPage.propTypes = {
             r_hours: PropTypes.number.isRequired
         })
     ),
-    r_id: PropTypes.number.isRequired,
+    r_id: PropTypes.number,
     history: PropTypes.object,
 };

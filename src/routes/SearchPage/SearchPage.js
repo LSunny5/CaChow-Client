@@ -42,7 +42,7 @@ class SearchPage extends React.Component {
         return (
             <section className='SearchContent'>
                 <SearchForm updateSearch={this.updateSearch} />
-                <h2 className="formTitle">Restaurant List</h2>
+                <h2 className="searchTitle">Restaurant List</h2>
                 <div className="searchResults">
                     <ul className="resultList">
                         {results.map(rest => {
@@ -51,10 +51,9 @@ class SearchPage extends React.Component {
                                     key={rest.r_id}
                                     to={{ pathname: `/restaurants/${rest.r_id}` }}
                                     className="resultButton"
+                                    data-front={rest.r_name}
+                                    data-back={rest.r_name}
                                 >
-                                    <li className="resultButtonBox">
-                                        {rest.r_name}
-                                    </li>
                                 </NavLink>
                             )
                         })}

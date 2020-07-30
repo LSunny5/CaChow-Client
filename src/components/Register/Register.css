@@ -1,21 +1,28 @@
+/*entire page for register*/
+.registerPage {
+    background: url(/images/groceries.jpeg) no-repeat center right fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 92vh;
+}
+
+/*form for register*/
 .RegistrationForm {
     height: 55%;
-    border: 1px solid black;
+    border: 1px solid gray;
     padding: 1.5em 1em;
-    vertical-align: middle;
+    background: white;
     width: 90%;
     margin: 0 auto;
     border-radius: 30px;
-    background: lightgray;
 }
 
-.fullName, .nick_name {
-    font-weight: bold;
-}
-
+/*text fields for register page*/
 #fullNameInput, #userNameInput, #passwordInput, #nicknameInput {
-    border: 1px solid #ddd;
-    border-bottom: 1px solid blue;
+    border: none;
+    border-bottom: 1px solid rgb(19, 65, 19);
     display: block;
     font-size: 1.1em;
     margin-bottom: 10px;
@@ -25,14 +32,59 @@
     border-radius: 4px;
 } 
 
-
-  
+/*error message red*/
 .red {
     color: red;
     background: white;
-    border: 1px solid black;
     padding: 10px;
-    margin: 10px;
+    margin: 10px auto;
     font-size: 1.2em;
-    font-weight: 600;
+    font-weight: bolder;
+    border: 2px dotted red;
+}
+
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*entire page for register*/
+    .registerPage {
+        background: url(/images/groceries.jpeg) no-repeat center center fixed; 
+        opacity: 0.75;
+        min-height: 93vh;
+    }
+
+    /*form for register*/
+    .RegistrationForm {
+        width: 60%;
+    }
+
+    /*text fields for register page*/
+    #fullNameInput, #userNameInput, #passwordInput, #nicknameInput {
+        border-bottom: 2px solid rgb(19, 65, 19);
+        font-size: 1.5em;
+        margin: 1rem auto;
+        width: 80%;
+    } 
+
+    /*error message red*/
+    .red {
+        width: 50%;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*entire page for register*/
+    .registerPage {
+        background: url(/images/groceries.jpeg) no-repeat center center fixed; 
+        opacity: 1;
+        min-height: 91vh;
+    }
+
+    /*form for register*/
+    .RegistrationForm {
+        width: 45%;
+        margin-right: 1.6rem;
+    }
 }

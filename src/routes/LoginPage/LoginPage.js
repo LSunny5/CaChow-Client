@@ -27,12 +27,12 @@ class LoginPage extends React.Component {
                     Back
                 </button>
                 <LoginForm onLoginSuccess={this.handleLoginSuccess} />
-                <p className="demoInstructions">
+                <div className="demoInstructions">
                     <p className="makeBold">For Demo Version: </p>
                     Username: Guest
                     <br />
                     Password: Demo2020!
-                </p>
+                </div>
             </section>
         )
     }

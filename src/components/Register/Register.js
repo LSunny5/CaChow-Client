@@ -37,22 +37,6 @@ export default class RegistrationForm extends Component {
       .catch(res => {
         this.setState({ error: res.error })
       })
-
-    /* AuthApiService.postLogin({
-      user_name: user_name.value,
-      password: password.value,
-    })
-      .then(res => {
-        console.log('here')
-        user_name.value = "";
-        password.value = "";
-        TokenService.saveAuthToken(res.authToken)
-        //this.props.onLoginSuccess();
-        this.props.onRegistrationSuccess()
-      })
-      .catch(res => {
-        this.setState({ error: res.error })
-      }) */
   }
 
   render() {
@@ -99,29 +83,6 @@ export default class RegistrationForm extends Component {
             id='passwordInput'>
           </input>
         </div>
-
-        {/*  <p>User Type</p>
-        <div className='userType'>
-          <label htmlFor='ownerType'>
-            <input type="radio"
-              name='userSelect'
-              value="Owner"
-              defaultChecked
-              id='ownerType'
-              required
-              onChange={this.updateRadio} />
-          Restaurant Owner
-          </label>
-          <label htmlFor='regularType'>
-            <input type="radio"
-              name='userSelect'
-              value="User"
-              id='regularType'
-              required
-              onChange={this.updateRadio} />
-          General User
-          </label>
-        </div> */}
         <div>
           <div className="buttonBox">
             <button type='submit' className="borderButton">
@@ -129,10 +90,6 @@ export default class RegistrationForm extends Component {
             </button>
           </div>
         </div>
-
-        {/*         <button type='submit' className="registerButton">
-        Register
-        </button> */}
       </form>
     )
   }

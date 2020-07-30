@@ -129,7 +129,7 @@ Restaurant.propTypes = {
             cat_name: PropTypes.string.isRequired,
         })
     ),
-    r_id: PropTypes.number.isRequired,
+    r_id: PropTypes.number,
 }
 
 export default Restaurant;

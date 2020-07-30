@@ -1,35 +1,152 @@
+/*search page*/
 .SearchContent {
-    width: 80%;
-    margin: 0 auto;
+    background: url(/images/editedrestaurant.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    min-height: 92vh;
 }
 
-
-.searchImage {
-    width: 1.5rem;
-    height: 1.5rem;
-    margin: 0 10px;
-    position: absolute;
-    top: 0;
+/*heading title*/
+.searchTitle {
+    font-family: 'Cinzel', serif;
+    font-size: 2em;
+    margin: 1rem;
 }
 
+/*search text field*/
 #searchBar {
-    width: 75%;
-    font-size: 1.3em;
-    margin: 10px auto;
+    width: 70%;
+    font-size: 1.5em;
+    margin: 15px auto 0;
     border: none;
-    border-bottom: 1px solid blue;
+    border-bottom: 2px solid rgb(16, 73, 16);
+    border-radius: 3px;
+    font-family: 'Delius', cursive;
+    padding: 5px;
 }
 
+/*box for search results*/
 .resultList {
     list-style: none;
     padding: 0;
+    display: flex;
+    flex-direction: column;    
 }
 
-
-.resultButtonBox {
-    border: 1px solid black;
+/*restaurant button front*/
+.resultButton {
     width: 60%;
-    margin: 0 auto 10px;
-    padding: 20px;
-    cursor: pointer;
+    margin: 7px auto;
+    font-family: 'Delius', cursive;
+    text-decoration: none;
+    line-height: 25px;
+    letter-spacing: 1px;
+    position: relative;
+}
+
+/*after view of button*/
+.resultButton:hover:after {
+    opacity: 1;
+    transform: translateY(0) rotateX(0);
+    
+}
+
+/*front of button rotating down*/
+.resultButton:hover:before {
+    transform: translateY(50%) rotateX(90deg);
+}
+
+/*button before*/
+.resultButton:before {
+    top: 0;
+    left: 0;
+    opacity: 1;
+    color: white;
+    transition: 0.5s;
+    background: #323237;
+    content: attr(data-front);
+    line-height: 5rem;
+    display: block;
+    position: relative;
+    transform: translateY(0) rotateX(0);
+    padding: 0 30px;
+    border: 1px solid black;
+}
+
+/*button look on hover*/
+.resultButton:after {
+    top: 0;
+    left: 0;
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    transition: 0.5s;
+    transform: translateY(-50%) rotateX(90deg);
+    background: url(/images/spread.jpeg);
+    background-size: cover;
+    content: attr(data-back);
+    line-height: 5rem;
+    border: 1px solid black;
+    color: white;
+    font-weight: bolder;
+}
+
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*search text field*/
+    #searchBar {
+        width: 40%;
+    }
+
+    /*box for search results*/
+    .resultList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 5px auto;
+        width: 80%;
+    }
+
+    /*restaurant button front*/
+    .resultButton {
+        display: block;
+        margin: 10px auto;
+        width: 40%;
+    }
+
+    /*button before*/  /*button look on hover*/
+    .resultButton:before, .resultButton:after {
+        line-height: 6rem;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*search text field*/
+    #searchBar {
+        width: 30%;
+    }
+
+    /*box for search results*/
+    .resultList {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin: 5px auto;
+        width: 80%;
+    }
+
+    /*restaurant button front*/
+    .resultButton {
+        display: block;
+        margin: 10px auto;
+        width: 30%;
+    }
+
+    /*button before*/  /*button look on hover*/
+    .resultButton:before, .resultButton:after {
+        line-height: 6rem;
+    }
 }
