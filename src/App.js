@@ -58,7 +58,6 @@ class App extends React.Component {
         this.setState({ restaurants, hours, categories, menu });
       })
       .catch(error => {
-        console.error({ error });
         alert('Could not retrieve data - ' + error);
       });
 
@@ -103,7 +102,6 @@ class App extends React.Component {
 
   addItem = newItems => {
     this.setState({ menu: [...this.state.menu, newItems] })
-    /* this.setState({ menu: [...this.state.menu, ...newItems] }) */
   }
 
   updateItem = editedItem => {

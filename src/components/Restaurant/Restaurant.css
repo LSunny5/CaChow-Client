@@ -50,17 +50,24 @@
     color: darkgreen;
 }
 
+/*container for hours for restaurants*/
+.hoursBox {
+    display: flex;
+    flex-direction: column;
+}
+
 /*Hours title "hours"*/
 .hoursHeading {
     font-family: 'Cinzel', serif;
 }
 
+/*row for Sunday, monday, etc*/
 .day {
     font-size: 0.8rem;
 }
 
 /*hours time text*/
-.hoursDisplay {
+.showHours {
     color: darkblue;
 }
 

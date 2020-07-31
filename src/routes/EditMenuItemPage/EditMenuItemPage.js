@@ -72,7 +72,6 @@ export default class EditMenuItemPage extends Component {
                 window.location.reload();
             })
             .catch(error => {
-                console.error({ error })
                 alert('Error! Item was not updated:  ' + error);
             })
     };

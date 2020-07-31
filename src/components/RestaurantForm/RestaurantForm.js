@@ -50,7 +50,6 @@ class RestaurantForm extends React.Component {
                 window.location.href = `/restaurants/${lastR.r_id}/addItem`;
             })
             .catch(error => {
-                console.error({ error })
                 alert('Error! ' + error);
             })
     }
@@ -77,7 +76,6 @@ class RestaurantForm extends React.Component {
                 window.location.href = `/account`;
             })
             .catch(error => {
-                console.error({ error })
                 alert('Error! ' + error);
             })
     }

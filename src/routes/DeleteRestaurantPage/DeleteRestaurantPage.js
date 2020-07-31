@@ -33,7 +33,6 @@ export default class DeleteRestaurantPage extends Component {
                 window.location.href = '/account';
             })
             .catch(error => {
-                console.error({ error })
                 alert('Error! Restaurant was not deleted:  ' + error);
             })
     }

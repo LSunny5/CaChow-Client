@@ -13,11 +13,12 @@ Cachow is a site where you can see and enter menus for different restaurants and
 React, Javascript, HTML5/CSS3
 
 ### Screenshots
-
-
-
-<!-- ![Landing Desktop](screenshots/Desktop.png)
-![Landing Mobile](screenshots/TipsDeckMobileLanding.png) -->
+![Landing Desktop](screenshots/CachowHome.png)
+![Login Desktop](screenshots/login.png)
+![Login Mobile](screenshots/LoginMobile.png)
+![Register Desktop](screenshots/RegisterDesktop.png)
+![Menu Desktop](screenshots/menu.png)
+![Add Hours Form Desktop](screenshots/AddHours.png)
 
 ### Hosted on 
 Vercel 

@@ -53,7 +53,6 @@ class EditRestaurantPage extends React.Component {
                 window.location.href = `/restaurants/${r_id}`;
             })
             .catch(error => {
-                console.error({ error })
                 alert('Error! ' + error);
             })
     }

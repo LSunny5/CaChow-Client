@@ -43,7 +43,6 @@ class MenuItemForm extends React.Component {
                 window.location.href = `/restaurants/${newItem.item_restaurant}`;
             })
             .catch(error => {
-                console.error({ error })
                 alert('Error! Item was not added:  ' + error);
             })
     };

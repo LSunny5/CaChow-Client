@@ -58,9 +58,8 @@ const AuthApiService = {
                 })
                 return res
             })
-            .catch(err => {
-                console.log("refresh token request error");
-                console.error(err)
+            .catch(error => {
+                alert('Token Request Error, please log in again: ' + error);
             })
     },
 };

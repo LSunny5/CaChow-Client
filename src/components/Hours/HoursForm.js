@@ -55,7 +55,6 @@ class HoursForm extends React.Component {
                 window.location.href = `${this.props.nextLocation}`;
             })
             .catch(error => {
-                console.error({ error })
                 alert('Error! ' + error);
             })
     }

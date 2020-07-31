@@ -30,7 +30,6 @@ export default class DeleteUserPage extends Component {
                 this.props.history.push('/login');
             })
             .catch(error => {
-                console.error({ error })
                 alert('Error! User was not deleted:  ' + error);
             })
     }

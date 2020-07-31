@@ -45,13 +45,13 @@ class Restaurant extends React.Component {
                     <br />
                     <div className="hoursBox">
                         <h3 className="hoursHeading">Hours: </h3>
-                        <p className="day">Sunday: <span className="hoursDisplay">{targetHours.sun_open}</span> to <span className="hoursDisplay">{targetHours.sun_close}</span> </p>
-                        <p className="day">Monday: <span className="hoursDisplay">{targetHours.mon_open}</span> to <span className="hoursDisplay">{targetHours.mon_close}</span>  </p>
-                        <p className="day">Tuesday: <span className="hoursDisplay">{targetHours.tues_open}</span> to <span className="hoursDisplay">{targetHours.tues_close}</span> </p>
-                        <p className="day">Wednesday: <span className="hoursDisplay">{targetHours.wed_open}</span> to <span className="hoursDisplay">{targetHours.wed_close}</span> </p>
-                        <p className="day">Thursday: <span className="hoursDisplay">{targetHours.thu_open}</span> to <span className="hoursDisplay">{targetHours.thu_close}</span> </p>
-                        <p className="day">Friday: <span className="hoursDisplay">{targetHours.fri_open}</span> to <span className="hoursDisplay">{targetHours.fri_close}</span> </p>
-                        <p className="day">Saturday: <span className="hoursDisplay">{targetHours.sat_open}</span> to <span className="hoursDisplay">{targetHours.sat_close}</span> </p>
+                        <p className="day">Sunday: <span className="showHours">{targetHours.sun_open}</span> to <span className="showHours">{targetHours.sun_close}</span> </p>
+                        <p className="day">Monday: <span className="showHours">{targetHours.mon_open}</span> to <span className="showHours">{targetHours.mon_close}</span>  </p>
+                        <p className="day">Tuesday: <span className="showHours">{targetHours.tues_open}</span> to <span className="showHours">{targetHours.tues_close}</span> </p>
+                        <p className="day">Wednesday: <span className="showHours">{targetHours.wed_open}</span> to <span className="showHours">{targetHours.wed_close}</span> </p>
+                        <p className="day">Thursday: <span className="showHours">{targetHours.thu_open}</span> to <span className="showHours">{targetHours.thu_close}</span> </p>
+                        <p className="day">Friday: <span className="showHours">{targetHours.fri_open}</span> to <span className="showHours">{targetHours.fri_close}</span> </p>
+                        <p className="day">Saturday: <span className="showHours">{targetHours.sat_open}</span> to <span className="showHours">{targetHours.sat_close}</span> </p>
                     </div>
                 </section>
                 <br />
