@@ -1,8 +1,122 @@
-.extraMargin {
-    margin-top: 30px;
-}
-
 /*Edit page Box for each item*/
 .editItemBox {
     margin: 15px auto;
+    background: rgb(247, 247, 218);
+    border-radius: 12px;
+    border: 1px solid rgb(8, 75, 8);
+}
+
+/*select pull down for category*/
+.inputEdit {
+    width: 90%;
+    font-size: 1rem;
+    padding: 5px;
+    font-family: 'Delius', cursive;
+}
+
+.smaller {
+    width: 70%;
+    margin-left: .8rem;
+}
+
+/*no items to edit*/
+.noItemsBox {
+    width: 80%;
+    margin: 3rem auto;
+    color: red;
+    font-weight: bolder;
+    font-size: 1.2rem;
+}
+
+/*directions for edit items*/
+.editItemDesc {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/*container for the update and delete buttons for items*/
+.editButtonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    margin: .3rem auto;
+    height: 5vh;
+}
+
+/*CSS for additional buttons on menu item page*/
+.extraButtons {
+    position: relative;
+    width: 30%;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    color: black;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.7rem;
+}
+
+/*update button small*/
+.update2 {
+    background: lightgreen;
+}
+
+/*cancel button small*/
+.cancel2 {
+    background: lightcoral;
+}
+
+/*update button small hover*/
+.update2:hover {
+    background: rgb(6, 90, 6);
+    color: white;
+}
+
+/*cancel button small hover*/
+.cancel2:hover {
+    background: red;
+    color: white;
+}
+
+/*update button small active*/
+.update2:active {
+    font-size: 1rem;
+}
+
+/*cancel button small active*/
+.cancel2:active {
+    font-size: 1rem;
+}
+  
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*container for all the items*/
+    .itemBox {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /*Edit page Box for each item*/
+    .editItemBox {
+        width: 45%;
+        margin: 1rem;
+    }
+    
+    /*container for the update and delete buttons for items*/
+    .editButtonBox {
+        height: 4.5vh;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*Edit page Box for each item*/
+    .editItemBox {
+        width: 25%;
+        margin: 1rem auto;
+    }
 }

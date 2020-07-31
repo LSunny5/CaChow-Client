@@ -31,14 +31,6 @@ fieldset {
     border: 0;
 }
 
-/*Login form title "login" legend*/
-.formTitle {
-    padding-bottom: 10px;
-    font-weight: bolder;
-    font-family: 'Cinzel', serif;
-    font-size: 2.7rem;
-}
-
 /*login directions*/
 .loginDirect {
     margin: 0 auto 15px;

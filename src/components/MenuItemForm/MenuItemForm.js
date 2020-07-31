@@ -9,14 +9,6 @@ import PropTypes from 'prop-types';
 class MenuItemForm extends React.Component {
     static contextType = CachowContext;
 
-    /* constructor(props) {
-        super(props);
-        this.state = {
-            inputs: ['item1'],
-            show: true
-        };
-    }
- */
     handleUpdate = event => {
         const { title, value } = event.target;
         this.setState({ [title]: value.trim() });
@@ -47,8 +39,6 @@ class MenuItemForm extends React.Component {
             })
             .then(tip => {
                 this.context.addItem(newItem);
-                /* var newInput = `item${this.state.inputs.length + 1}`; */
-                /* this.setState(prevState => ({ inputs: prevState.inputs.concat([newInput]) })); */
                 alert('Item was added!');
                 window.location.href = `/restaurants/${newItem.item_restaurant}`;
             })
@@ -56,22 +46,14 @@ class MenuItemForm extends React.Component {
                 console.error({ error })
                 alert('Error! Item was not added:  ' + error);
             })
-
     };
-
-
-    /*    appendInput = () => {
-            var newInput = `item${++this.state.inputs.length}`;
-            this.setState(prevState => ({ inputs: prevState.inputs.concat([newInput]) }));
-        } */
 
     render() {
         const { categories } = this.context;
 
         return (
             <div>
-
-                <form className="addForm" onSubmit={this.handleSubmit} >
+                <form className="formBox" onSubmit={this.handleSubmit} >
                     <fieldset>
                         <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
                         <input
@@ -83,9 +65,9 @@ class MenuItemForm extends React.Component {
                             onChange={this.handleUpdate}
                         />
                         <br />
+                        <br />
                         <label htmlFor="category" className="inputLabel">Category: </label>
-
-                        <select id="category" className="inputEdit"
+                        <select id="category" className="inputEdit smaller"
                             value={categories.cat_id}
                             required
                             onChange={this.handleUpdate}
@@ -100,6 +82,7 @@ class MenuItemForm extends React.Component {
                             )}
                         </select>
                         <br />
+                        <br />
                         <label htmlFor="itemPrice" className="inputLabel">Price: </label>
                         <input
                             type="number"
@@ -111,148 +94,20 @@ class MenuItemForm extends React.Component {
                             placeholder="Add price (ex. 0.00)"
                             onChange={this.handleUpdate}
                         />
-                        <br />
-                        {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
-                        {/*          </fieldset>
-
-
-
-
-
-
-                    <div className="buttonBox extraMargin"> */}
-                        {/* <button type='submit' className="button">
-                            Add Item
-                        </button> */}
-
-
-
-                        {/* <button onClick={this.handleSubmit} className="itemButton"> + Add Item</button> */}
-
-
-                        {/* <NavLink
-                            to={`/account`}
-                            className="button"
-                            onClick={this.alertCompleteUser}
-                        >
-                            Complete
-                        </NavLink> */}
-
-
-                        {/* 
-                    </div>
-                </form> */}
-
-                        {/* {this.state.inputs.map(input =>
-
-                            <form className="addForm" key={input} onSubmit={this.handleSubmit} */}{/* /* {this.appendInput} > */}
-                        {/* <fieldset>
-                            <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
-                            <input
-                                type="text"
-                                id="itemName"
-                                name="itemName"
-                                className="textField"
-                                placeholder="Add name of menu item here..."
-                                onChange={this.handleUpdate}
-                            />
-                            <br />
-                            <label htmlFor="category" className="inputLabel">Category: </label>
-
-                            <select id="category" className="inputEdit"
-                                value={categories.cat_id}
-                                required
-                                onChange={this.handleUpdate}
-                            >
-                                {categories.map(category =>
-                                    <option
-                                        key={category.cat_id}
-                                        value={category.cat_id}
-                                    >
-                                        {category.cat_name}
-                                    </option>
-                                )}
-                            </select>
-                            <br />
-                            <label htmlFor="itemPrice" className="inputLabel">Price: </label>
-                            <input
-                                type="number"
-                                id="itemPrice"
-                                name="itemPrice"
-                                className="textField"
-                                step={0.01}
-                                precision={2}
-                                placeholder="Add price (ex. 0.00)"
-                                onChange={this.handleUpdate}
-                            />
-                            <br /> */}
-                        {/* <button onClick={this.deleteItem} className="itemButton"> - Remove Item</button> */}
-                        {/* </fieldset> */}
-
-
-
-
-
-
-                        <div className="buttonBox extraMargin">
-                            <button type='submit' className="button">
-                                Add Item
+                        <div className="buttonBox">
+                            <button type='submit' className="generalButton submit">
+                                Add
                             </button>
-
-                            {/* <button type='submit'>
-                    CLICK ME TO ADD AN INPUT
-               </button> */}
-
-                            {/* <button onClick={this.handleSubmit} className="itemButton"> + Add Item</button> */}
-
-
-                            {/* <NavLink
-        to={`/account`}
-        className="button"
-        onClick={this.alertCompleteUser}
-    >
-        Complete
-    </NavLink> */}
-                            {/* {(this.state.show) && */}
-
-                            {/* <button type='submit' onClick={this.handleSubmit}>
-                                            CLICK ME TO ADD AN INPUT
-               </button>} */}
-
-                            {/* <button onClick={this.appendInput}>
-                    CLICK ME TO ADD AN INPUT
-               </button> */}
-
-                            {/* </div>
-                            </form>
-
-
-
-
-                        )}
- */}
-
-                            {/* <button onClick={this.handleSubmit}>
-                    CLICK ME TO ADD AN INPUT
-               </button> */}
-
-
-
                             <NavLink
-                                className="button"
+                                className="generalButton cancel"
                                 to={`/account`}
                             >
                                 Cancel
                             </NavLink>
                         </div>
-
                     </fieldset>
                 </form>
-
-
-
             </div>
-
         );
     };
 }
@@ -279,7 +134,7 @@ MenuItemForm.propTypes = {
             cat_name: PropTypes.string.isRequired,
         })
     ),
-    restId: PropTypes.number, 
+    restId: PropTypes.number,
 }
 
 export default MenuItemForm;

@@ -4,36 +4,135 @@
     padding: 1rem;
 }
 
-
-
-
-
-
-.addForm {
+/*form container*/
+.formBox {
     text-align: left;
-    
+    width: 95%;
+    margin: 0 auto;
+    background: white;
+    padding: 1rem 0.5rem;
+    border-radius: 30px
 }
 
+/*labels for fields*/
+.inputLabel  {
+    font-weight: bold;
+    font-size: 1.2rem;
+    font-family: 'Cinzel', serif;
+}
+
+
+/*fields for inputs*/
 .textField {
     margin: 10px;
+    font-size: 1rem;
+    font-family: 'Delius', cursive;
+    width: 90%;
+    border: none;
+    border-bottom: 2px solid black; 
+    padding: 0.5rem;
 }
 
-label {
-    font-weight: bold;
-}
-
-
+/*container for buttons*/
 .buttonBox {
     text-align: center;
     display:flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: center;
+    margin: 1rem auto 0;
 }
 
-.button {
+/*button look*/
+.generalButton {
+    display: inline-block;
     text-decoration: none;
-    padding: 10px;
-    border: 1px solid black;
-    border-radius: 10px;
-    width: 25%;
+    border-radius: 5px;
+    border: none;
+    font-family: 'Delius', cursive;
+    margin: 0.3rem;
+    width: 40%;
+    padding: 0.7rem 1.5rem;
+    outline: none;
+    font-size: 1.25rem;
+    color: white;
+    line-height: 1.5rem;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 150ms ease-out;
+}
+
+/*update, add button*/
+.submit {
+    background-color:green;
+    transition-duration: 75ms;
+    box-shadow: 0 0 0 0.2rem green;
+}
+
+/*submit hover*/
+.submit:hover {
+    box-shadow: 0 0 0 0.2rem white, 0 0 0 0.4rem green;
+}
+
+/*onclick update add button*/
+.submit:focus {
+    box-shadow: 0 0 0 0.4rem green;
+}
+
+/*cancel button*/
+.cancel {
+    background-color:red;
+    transition-duration: 75ms;
+    box-shadow: 0 0 0 0.2rem red;
+}
+
+/*cancel hover*/
+.cancel:hover {
+    box-shadow: 0 0 0 0.2rem white, 0 0 0 0.4rem red;
+}
+
+/*onclick cancel button*/
+.cancel:focus {
+    box-shadow: 0 0 0 0.4rem red;
+}
+
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*form container*/
+    .formBox {
+        width: 85%;
+    }
+
+    /*container for buttons*/
+    .buttonBox {
+        justify-content: space-between;
+        width: 80%;
+    }
+
+    /*button look*/
+    .generalButton {
+        margin: 0.5rem;
+        width: 35%;
+        padding: 1rem 1.5rem;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*form container*/
+    .formBox {
+        width: 75%;
+        padding: 1rem;
+    }
+
+    .textField {
+        width: 95%;
+    }
+
+    /*container for buttons*/
+    .buttonBox {
+        width: 60%;
+    }
 }

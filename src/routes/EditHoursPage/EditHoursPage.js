@@ -72,171 +72,222 @@ class EditHoursPage extends React.Component {
         let foundHours = findRestaurantHours(hours, rest.r_hours) || {};
 
         return (
-            <section className='RFormContent'>
+            <section className='HFormContent'>
                 <h2 className="formTitle">Edit Hours for Restaurant</h2>
                 <form className="addHourForm" onSubmit={this.handleSubmit}>
-                    <fieldset>
-                        <label htmlFor="SundayOpen" className="inputLabel">Time Open on Sunday: </label>
-                        <input
-                            type="text"
-                            id="SundayOpen"
-                            name="SundayOpen"
-                            className="textField"
-                            defaultValue={foundHours.sun_open}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="SundayClose" className="inputLabel">Time Close on Sunday: </label>
-                        <input
-                            type="text"
-                            id="SundayClose"
-                            name="SundayClose"
-                            className="textField"
-                            defaultValue={foundHours.sun_close}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="MondayOpen" className="inputLabel">Time Open on Monday: </label>
-                        <input
-                            type="text"
-                            id="MondayOpen"
-                            name="MondayOpen"
-                            className="textField"
-                            defaultValue={foundHours.mon_open}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="MondayClose" className="inputLabel">Time Close on Monday: </label>
-                        <input
-                            type="text"
-                            id="MondayClose"
-                            name="MondayClose"
-                            className="textField"
-                            defaultValue={foundHours.mon_close}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="TuesdayOpen" className="inputLabel">Time Open on Tuesday: </label>
-                        <input
-                            type="text"
-                            id="TuesdayOpen"
-                            name="TuesdayOpen"
-                            className="textField"
-                            defaultValue={foundHours.tues_open}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="TuesdayClose" className="inputLabel">Time Close on Tuesday: </label>
-                        <input
-                            type="text"
-                            id="TuesdayClose"
-                            name="TuesdayClose"
-                            className="textField"
-                            defaultValue={foundHours.tues_close}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="WednesdayOpen" className="inputLabel">Time Open on Wednesday: </label>
-                        <input
-                            type="text"
-                            id="WednesdayOpen"
-                            name="WednesdayOpen"
-                            className="textField"
-                            defaultValue={foundHours.wed_open}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="WednesdayClose" className="inputLabel">Time Close on Wednesday: </label>
-                        <input
-                            type="text"
-                            id="WednesdayClose"
-                            name="WednesdayClose"
-                            className="textField"
-                            defaultValue={foundHours.wed_close}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="ThursdayOpen" className="inputLabel">Time Open on Thursday: </label>
-                        <input
-                            type="text"
-                            id="ThursdayOpen"
-                            name="ThursdayOpen"
-                            className="textField"
-                            defaultValue={foundHours.thu_open}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="ThursdayClose" className="inputLabel">Time Close on Thursday: </label>
-                        <input
-                            type="text"
-                            id="ThursdayClose"
-                            name="ThursdayClose"
-                            className="textField"
-                            defaultValue={foundHours.thu_close}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="FridayOpen" className="inputLabel">Time Open on Friday: </label>
-                        <input
-                            type="text"
-                            id="FridayOpen"
-                            name="FridayOpen"
-                            className="textField"
-                            defaultValue={foundHours.fri_open}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="FridayClose" className="inputLabel">Time Close on Friday: </label>
-                        <input
-                            type="text"
-                            id="FridayClose"
-                            name="FridayClose"
-                            className="textField"
-                            defaultValue={foundHours.fri_close}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="SaturdayOpen" className="inputLabel">Time Open on Saturday: </label>
-                        <input
-                            type="text"
-                            id="SaturdayOpen"
-                            name="SaturdayOpen"
-                            className="textField"
-                            defaultValue={foundHours.sat_open}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
-                        <label htmlFor="SaturdayClose" className="inputLabel">Time Close on Saturday: </label>
-                        <input
-                            type="text"
-                            id="SaturdayClose"
-                            name="SaturdayClose"
-                            className="textField"
-                            defaultValue={foundHours.sat_close}
-                            placeholder="ex. 12:00AM"
-                            onChange={this.handleUpdate}
-                        />
-                        <br />
+                    <fieldset className="hoursFieldset">
+                        <div className="hoursDisplay">
+                            <div className="hoursGroup">
+                                <h3>Sunday</h3>
+                                <div className="hoursSection">
+                                    <div>
+                                        <label htmlFor="SundayOpen" className="inputLabel timeDesc">Time Open: </label>
+                                        <input
+                                            type="text"
+                                            id="SundayOpen"
+                                            name="SundayOpen"
+                                            className="textField"
+                                            defaultValue={foundHours.sun_open}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="SundayClose" className="inputLabel timeDesc">Time Close: </label>
+                                        <input
+                                            type="text"
+                                            id="SundayClose"
+                                            name="SundayClose"
+                                            className="textField"
+                                            defaultValue={foundHours.sun_close}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hoursGroup">
+                                <h3>Monday</h3>
+                                <div className="hoursSection">
+                                    <div>
+                                        <label htmlFor="MondayOpen" className="inputLabel timeDesc">Time Open: </label>
+                                        <input
+                                            type="text"
+                                            id="MondayOpen"
+                                            name="MondayOpen"
+                                            className="textField"
+                                            defaultValue={foundHours.mon_open}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="MondayClose" className="inputLabel timeDesc">Time Close: </label>
+                                        <input
+                                            type="text"
+                                            id="MondayClose"
+                                            name="MondayClose"
+                                            className="textField"
+                                            defaultValue={foundHours.mon_close}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hoursGroup">
+                                <h3>Tuesday</h3>
+                                <div className="hoursSection">
+                                    <div>
+                                        <label htmlFor="TuesdayOpen" className="inputLabel timeDesc">Time Open: </label>
+                                        <input
+                                            type="text"
+                                            id="TuesdayOpen"
+                                            name="TuesdayOpen"
+                                            className="textField"
+                                            defaultValue={foundHours.tues_open}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="TuesdayClose" className="inputLabel timeDesc">Time Close: </label>
+                                        <input
+                                            type="text"
+                                            id="TuesdayClose"
+                                            name="TuesdayClose"
+                                            className="textField"
+                                            defaultValue={foundHours.tues_close}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hoursGroup">
+                                <h3>Wednesday</h3>
+                                <div className="hoursSection">
+                                    <div>
+                                        <label htmlFor="WednesdayOpen" className="inputLabel timeDesc">Time Open: </label>
+                                        <input
+                                            type="text"
+                                            id="WednesdayOpen"
+                                            name="WednesdayOpen"
+                                            className="textField"
+                                            defaultValue={foundHours.wed_open}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="WednesdayClose" className="inputLabel timeDesc">Time Close: </label>
+                                        <input
+                                            type="text"
+                                            id="WednesdayClose"
+                                            name="WednesdayClose"
+                                            className="textField"
+                                            defaultValue={foundHours.wed_close}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hoursGroup">
+                                <h3>Thursday</h3>
+                                <div className="hoursSection">
+                                    <div>
+                                        <label htmlFor="ThursdayOpen" className="inputLabel timeDesc">Time Open: </label>
+                                        <input
+                                            type="text"
+                                            id="ThursdayOpen"
+                                            name="ThursdayOpen"
+                                            className="textField"
+                                            defaultValue={foundHours.thu_open}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="ThursdayClose" className="inputLabel timeDesc">Time Close: </label>
+                                        <input
+                                            type="text"
+                                            id="ThursdayClose"
+                                            name="ThursdayClose"
+                                            className="textField"
+                                            defaultValue={foundHours.thu_close}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hoursGroup">
+                                <h3>Friday</h3>
+                                <div className="hoursSection">
+                                    <div>
+                                        <label htmlFor="FridayOpen" className="inputLabel timeDesc">Time Open: </label>
+                                        <input
+                                            type="text"
+                                            id="FridayOpen"
+                                            name="FridayOpen"
+                                            className="textField"
+                                            defaultValue={foundHours.fri_open}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="FridayClose" className="inputLabel timeDesc">Time Close: </label>
+                                        <input
+                                            type="text"
+                                            id="FridayClose"
+                                            name="FridayClose"
+                                            className="textField"
+                                            defaultValue={foundHours.fri_close}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hoursGroup">
+                                <h3>Saturday</h3>
+                                <div className="hoursSection">
+                                    <div>
+                                        <label htmlFor="SaturdayOpen" className="inputLabel timeDesc">Time Open: </label>
+                                        <input
+                                            type="text"
+                                            id="SaturdayOpen"
+                                            name="SaturdayOpen"
+                                            className="textField"
+                                            defaultValue={foundHours.sat_open}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                    <div>
+                                        <label htmlFor="SaturdayClose" className="inputLabel timeDesc">Time Close: </label>
+                                        <input
+                                            type="text"
+                                            id="SaturdayClose"
+                                            name="SaturdayClose"
+                                            className="textField"
+                                            defaultValue={foundHours.sat_close}
+                                            placeholder="ex. 12:00AM"
+                                            onChange={this.handleUpdate}
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div className="buttonBox">
-                            <button type='submit' className="button">
+                            <button type='submit' className="generalButton submit">
                                 Update
-                        </button>
-                            <NavLink className="button" to={`/account`}>
+                            </button>
+                            <NavLink className="generalButton cancel" to={`/account`}>
                                 Cancel
-                        </NavLink>
+                            </NavLink>
                         </div>
                     </fieldset>
                 </form>
@@ -284,139 +335,3 @@ EditHoursPage.propTypes = {
 }
 
 export default EditHoursPage;
-
-
-/*
-
-import PropTypes from 'prop-types';
-
-
-LoginPage.propTypes = {
-restaurants: PropTypes.arrayOf(
-   PropTypes.shape({
-       r_id: PropTypes.number.isRequired,
-       r_owner: PropTypes.string.isRequired,
-       r_image: PropTypes.string,
-       r_type: PropTypes.string,
-       r_name: PropTypes.string,
-       r_address: PropTypes.string,
-       r_city: PropTypes.string,
-       r_state: PropTypes.string,
-       r_zip: PropTypes.string,
-       r_phone: PropTypes.string,
-       r_hours: PropTypes.number.isRequired
-  })
-),
-categories: PropTypes.arrayOf(
-    PropTypes.shape({
-        cat_id: PropTypes.number.isRequired,
-        cat_name: PropTypes.string.isRequired,
-    })
-),
-
-menu: PropTypes.arrayOf(
-  PropTypes.shape({
-
-
-
-    id: PropTypes.number.isRequired,
-    category_id: PropTypes.number.isRequired,
-    tipname: PropTypes.string.isRequired,
-    tipdescription: PropTypes.string.isRequired,
-    directions: PropTypes.string.isRequired,
-    sourcetitle: PropTypes.string,
-    sourceurl: PropTypes.string,
-    rating: PropTypes.number.isRequired,
-    numraters: PropTypes.number.isRequired,
-
-
-
-
-  })
-),
-hours: PropTypes.arrayOf(
-    PropTypes.shape({
-
-
-         sun_open: PropTypes.string,
-            sun_close: PropTypes.string,
-            mon_open: PropTypes.string,
-            mon_close: PropTypes.string,
-            tues_open: PropTypes.string,
-            tues_close: PropTypes.string,
-            wed_open: PropTypes.string,
-            wed_close: PropTypes.string,
-            thu_open: PropTypes.string,
-            thu_close: PropTypes.string,
-            fri_open: PropTypes.string,
-            fri_close: PropTypes.string,
-            sat_open: PropTypes.string,
-            sat_close: PropTypes.string,
-            hours_owner: PropTypes.string.isRequired,
-
-
-    })
-)
-name: PropTypes.string,
-   })
-),
-
-Account.propTypes = {
-    restaurants: PropTypes.arrayOf(
-        PropTypes.shape({
-            r_id: PropTypes.number.isRequired,
-            r_owner: PropTypes.string.isRequired,
-            r_image: PropTypes.string,
-            r_type: PropTypes.string,
-            r_name: PropTypes.string,
-            r_address: PropTypes.string,
-            r_city: PropTypes.string,
-            r_state: PropTypes.string,
-            r_zip: PropTypes.string,
-            r_phone: PropTypes.string,
-            r_hours: PropTypes.number.isRequired
-        })
-    ),
-}
-
-import React from 'react';
-import ReactDOM from 'react-dom';
-import Account from './Account';
-import toJson from 'enzyme-to-json'
-import { shallow } from 'enzyme'
-import { BrowserRouter } from 'react-router-dom';
-
-describe(`Account component`, () => {
-    const props = {
-        r_id: 1,
-        r_owner: 'OwnerS',
-        r_image: 'NoneS',
-        r_type: 'Fast',
-        r_name: 'Restaurant Two',
-        r_address: 'Address2',
-        r_city: 'City2',
-        r_state: 'State2',
-        r_zip: 'Zip2',
-        r_phone: 'Phone2',
-        r_hours: 1
-    }
-
-    it('renders without crashing', () => {
-        const div = document.createElement('div');
-        ReactDOM.render(
-            <BrowserRouter>
-                <Account {...props} />
-            </BrowserRouter>, div);
-        ReactDOM.unmountComponentAtNode(div);
-    });
-
-    it('renders the Account form', () => {
-        const wrapper = shallow(<Account {...props} />)
-        expect(toJson(wrapper)).toMatchSnapshot()
-    })
-});
-
-
-
-
-*/

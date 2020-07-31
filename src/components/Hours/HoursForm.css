@@ -1,6 +1,68 @@
 /*Add hours page main body*/
 .HFormContent {
     text-align: center;
-    justify-content: center;
-    align-items: center;
+    padding-bottom: 1rem;
+    min-height: 91.5vh;
+}
+
+/*group holding all hour boxes*/
+.hoursDisplay {
+    width: 90%;
+    margin: 0 auto;
+}
+
+/*box for each day*/
+.hoursGroup {
+    background: lightyellow;
+    border-radius: 10px;
+    padding: 0.5rem;
+    margin: 0.5rem auto;
+    border: 1px solid darkgreen;
+}
+
+/*day of the week for hours form*/
+h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.6rem;
+    font-weight: bolder;
+}
+
+/*Time open and close label*/
+.timeDesc {
+    font-size: 1rem;
+}
+
+/*Box for time open and close each*/
+.hoursSection {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*group holding all hour boxes*/
+    .hoursDisplay {
+        width: 90%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    /*box for each day*/
+    .hoursGroup {
+        width: 45%;
+        margin: 1rem auto;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*box for each day*/
+    .hoursGroup {
+        width: 30%;
+        margin: 0.6rem auto;
+    }
 }

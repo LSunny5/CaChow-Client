@@ -66,9 +66,9 @@ class EditRestaurantPage extends React.Component {
         return (
             <section className='RFormContent'>
                 <h2 className="formTitle">Edit Restaurant</h2>
-                <form className="addForm" onSubmit={this.handleSubmit}>
+                <form className="formBox" onSubmit={this.handleSubmit}>
                     <fieldset>
-                        <label htmlFor="restaurantName" className="inputLabel">Name of Restaurant: </label>
+                        <label htmlFor="restaurantName" className="inputLabel">Name of Restaurant <span className="required">*</span>: </label>
                         <input
                             type="text"
                             id="restaurantName"
@@ -156,12 +156,12 @@ class EditRestaurantPage extends React.Component {
                             onChange={this.handleUpdate}
                         />
                         <div className="buttonBox">
-                            <button type='submit' className="button">
+                            <button type='submit' className="generalButton submit">
                                 Update
-                        </button>
-                            <NavLink className="button" to={`/account`}>
+                            </button>
+                            <NavLink className="generalButton cancel" to={`/account`}>
                                 Cancel
-                        </NavLink>
+                            </NavLink>
                         </div>
                     </fieldset>
                 </form>

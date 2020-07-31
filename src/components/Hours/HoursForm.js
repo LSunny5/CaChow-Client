@@ -61,6 +61,10 @@ class HoursForm extends React.Component {
     }
 
     render() {
+
+
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
         return (
             <form className="addHourForm" onSubmit={this.handleSubmit}>
                 <fieldset>

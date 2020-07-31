@@ -85,82 +85,83 @@ export default class EditMenuItemPage extends Component {
         return (
             <section className='RFormContent'>
                 <h2 className="formTitle">Edit Menu Items</h2>
-                {(items.length > 0) ? (
-                    items.map(item =>
-                        <div className="editItemBox" key={item.item_id}>
-                            <form className="addForm" onSubmit={this.handlePatch}>
-                                <fieldset>
-                                    <label htmlFor="itemName" className="inputLabel">Name of Item: </label>
-                                    <input
-                                        type="text"
-                                        id="itemName"
-                                        name="itemName"
-                                        defaultValue={item.item_name}
-                                        className="textField"
-                                        placeholder="Add name of menu item here..."
-                                        onChange={this.handleUpdate}
-                                    />
-                                    <label htmlFor="category" className="inputLabel">Category: </label>
-
-                                    <select id="category" className="inputEdit"
-                                        required
-                                        defaultValue={item.item_cat}
-                                        onChange={this.handleUpdate}
-                                    >
-                                        {categories.slice(0, categories.length).map(category =>
-                                            <option
-                                                key={category.cat_id}
-                                                value={category.cat_id}
-                                            >
-                                                {category.cat_name}
-                                            </option>
-                                        )}
-                                    </select>
-                                    <br />
-                                    <label htmlFor="itemPrice" className="inputLabel">Price: </label>
-                                    <input
-                                        type="money"
-                                        id="itemPrice"
-                                        name="itemPrice"
-                                        className="textField"
-                                        defaultValue={item.item_price}
-                                        step={0.01}
-                                        precision={2}
-                                        placeholder="Add price (ex. 0.00)"
-                                        onChange={this.handleUpdate}
-                                    />
-                                    <div className="editButtonBox">
-                                        <button type='submit'>Update</button>
-                                        <button onClick={() => {
-                                            if (window.confirm('Are you sure you wish to delete this item?') ? this.handleDelete(item.item_id) : this.handleCancel())
-                                                this.handleCancel()
-                                        }}>
-                                            Delete
+                <p className="editItemDesc">After you make your changes, press the update button to update the item!</p>
+                <div className="itemBox">
+                    {(items.length > 0) ? (
+                        items.map(item =>
+                            <div className="editItemBox" key={item.item_id}>
+                                <form className="addForm" onSubmit={this.handlePatch}>
+                                    <fieldset>
+                                        <label htmlFor="itemName" className="inputLabel">Name of Item<span className="required">*</span>: </label>
+                                        <input
+                                            type="text"
+                                            id="itemName"
+                                            name="itemName"
+                                            defaultValue={item.item_name}
+                                            className="textField"
+                                            placeholder="Add name of menu item here..."
+                                            onChange={this.handleUpdate}
+                                        />
+                                        <label htmlFor="category" className="inputLabel">Category: </label>
+                                        <select id="category" className="inputEdit"
+                                            required
+                                            defaultValue={item.item_cat}
+                                            onChange={this.handleUpdate}
+                                        >
+                                            {categories.slice(0, categories.length).map(category =>
+                                                <option
+                                                    key={category.cat_id}
+                                                    value={category.cat_id}
+                                                >
+                                                    {category.cat_name}
+                                                </option>
+                                            )}
+                                        </select>
+                                        <br />
+                                        <label htmlFor="itemPrice" className="inputLabel">Price: </label>
+                                        <input
+                                            type="money"
+                                            id="itemPrice"
+                                            name="itemPrice"
+                                            className="textField"
+                                            defaultValue={item.item_price}
+                                            step={0.01}
+                                            precision={2}
+                                            placeholder="Add price (ex. 0.00)"
+                                            onChange={this.handleUpdate}
+                                        />
+                                        <div className="editButtonBox">
+                                            <button type='submit' className="extraButtons update2">Update</button>
+                                            <button className="extraButtons cancel2" onClick={() => {
+                                                if (window.confirm('Are you sure you wish to delete this item?') ? this.handleDelete(item.item_id) : this.handleCancel())
+                                                    this.handleCancel()
+                                            }}>
+                                                Delete
                                         </button>
-                                    </div>
-                                </fieldset>
-                            </form>
-                        </div>
-                    )) : (
-                        <div className="noItemsBox">
-                            There are no items to edit for this restaurant...
-                        </div>
-                    )}
+                                        </div>
+                                    </fieldset>
+                                </form>
+                            </div>
+                        )) : (
+                            <div className="noItemsBox">
+                                There are no items to edit for this restaurant...
+                            </div>
+                        )}
+                </div>
                 <div className="buttonBox">
                     <NavLink
                         to={`/restaurants/${r_id}`}
-                        className="button"
+                        className="generalButton submit"
                     >
                         Finished
                         </NavLink>
                     <NavLink
-                        className="button"
+                        className="generalButton cancel"
                         to={`/account`}
                     >
                         Cancel
                         </NavLink>
                 </div>
-
             </section >
         )
     };
