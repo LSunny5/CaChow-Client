@@ -11,8 +11,10 @@ class Restaurant extends React.Component {
         for (let i = 1; i <= categories.length; i++) {
             if (parseInt(item.item_cat) === i) {
                 return (
-                    <li key={item.item_id} className="category">
-                        {categories[i - 1].cat_name}
+                    <li key={item.item_id} className="bulletlist">
+                        <p className="category">
+                            {categories[i - 1].cat_name}
+                        </p>
                         <ul>
                             <li key={item.item_id} className="foodName">
                                 {item.item_name}
@@ -35,43 +37,28 @@ class Restaurant extends React.Component {
         return (
             <div className="restaurantContent">
                 <section className="restaurantInfo">
-                    <p className="restaurantName">({targetRestaurant.r_type})</p>
                     <h1 className="restaurantName">{targetRestaurant.r_name}</h1>
-                    <p className="restaurantName">{targetRestaurant.r_address}</p>
-                    <p className="restaurantName">{targetRestaurant.r_city}, {targetRestaurant.r_state}  {targetRestaurant.r_zip}</p>
-                    <p className="restaurantName">{targetRestaurant.r_phone}</p>
+                    <p className="restaurantText">{targetRestaurant.r_address}</p>
+                    <p className="restaurantText">{targetRestaurant.r_city}, {targetRestaurant.r_state}  {targetRestaurant.r_zip}</p>
+                    <p className="restaurantText">{targetRestaurant.r_phone}</p>
+                    <p className="restaurantType">{targetRestaurant.r_type}</p>
                     <br />
                     <div className="hoursBox">
                         <h3 className="hoursHeading">Hours: </h3>
-                        <p>Sunday: <span className="hoursDisplay">{targetHours.sun_open}</span> to <span className="hoursDisplay">{targetHours.sun_close}</span> </p>
-                        <p>Monday: <span className="hoursDisplay">{targetHours.mon_open}</span> to <span className="hoursDisplay">{targetHours.mon_close}</span>  </p>
-                        <p>Tuesday: <span className="hoursDisplay">{targetHours.tues_open}</span> to <span className="hoursDisplay">{targetHours.tues_close}</span> </p>
-                        <p>Wednesday: <span className="hoursDisplay">{targetHours.wed_open}</span> to <span className="hoursDisplay">{targetHours.wed_close}</span> </p>
-                        <p>Thursday: <span className="hoursDisplay">{targetHours.thu_open}</span> to <span className="hoursDisplay">{targetHours.thu_close}</span> </p>
-                        <p>Friday: <span className="hoursDisplay">{targetHours.fri_open}</span> to <span className="hoursDisplay">{targetHours.fri_close}</span> </p>
-                        <p>Saturday: <span className="hoursDisplay">{targetHours.sat_open}</span> to <span className="hoursDisplay">{targetHours.sat_close}</span> </p>
+                        <p className="day">Sunday: <span className="hoursDisplay">{targetHours.sun_open}</span> to <span className="hoursDisplay">{targetHours.sun_close}</span> </p>
+                        <p className="day">Monday: <span className="hoursDisplay">{targetHours.mon_open}</span> to <span className="hoursDisplay">{targetHours.mon_close}</span>  </p>
+                        <p className="day">Tuesday: <span className="hoursDisplay">{targetHours.tues_open}</span> to <span className="hoursDisplay">{targetHours.tues_close}</span> </p>
+                        <p className="day">Wednesday: <span className="hoursDisplay">{targetHours.wed_open}</span> to <span className="hoursDisplay">{targetHours.wed_close}</span> </p>
+                        <p className="day">Thursday: <span className="hoursDisplay">{targetHours.thu_open}</span> to <span className="hoursDisplay">{targetHours.thu_close}</span> </p>
+                        <p className="day">Friday: <span className="hoursDisplay">{targetHours.fri_open}</span> to <span className="hoursDisplay">{targetHours.fri_close}</span> </p>
+                        <p className="day">Saturday: <span className="hoursDisplay">{targetHours.sat_open}</span> to <span className="hoursDisplay">{targetHours.sat_close}</span> </p>
                     </div>
                 </section>
                 <br />
                 <section className="restaurantMenu">
-                    <h2 className="menuHeading">Menu Update</h2>
+                    <h2 className="menuHeading">Menu</h2>
                     <ul className="menuList">
-
                         {targetItems.map(item => this.printItem(item, categories, item.item_cat))}
-
-
-                        {/*TODO:  Arrange items by category */}
-                        {/* {for (let i = 1; i <= categories.length; i++) {
-                                if (item.item_cat === i) {
-                                        <li key={item.item_id} className="category">
-                                            {item.item_cat}
-                                            <ul>
-                                                <li className="foodName">
-                                                    {item.item_name}
-                                                    <span className="price">${item.item_price}</span>
-                                                </li>
-                                            </ul>
-                                        </li>*/}
                     </ul>
                 </section>
             </div>

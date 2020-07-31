@@ -6,6 +6,7 @@
     -o-background-size: cover;
     background-size: cover;
     min-height: 92vh;
+    padding-bottom: 1rem;
 }
 
 /*heading title*/

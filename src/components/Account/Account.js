@@ -43,7 +43,7 @@ export default class Account extends Component {
                                     Edit Hours
                                 </NavLink>
                                 <NavLink to={`/restaurants/${restaurant.r_id}/addItem`} className="ownerButton green">
-                                    Add Menu Item
+                                    + Add Menu Item
                                 </NavLink>
                                 <NavLink to={`/restaurants/${restaurant.r_id}/editItems`}
                                     className="ownerButton">
@@ -67,8 +67,6 @@ export default class Account extends Component {
                         Remove Account
                     </NavLink>
                 </div>
-                <br />
-                <br />
             </section >
         )
     };

@@ -1,50 +1,21 @@
-/*container for restaurant and buttons associated*/
-.restaurantBox {
-    border: 1px solid black;
-    padding: 5%;
-    margin: 5px;
-    border-radius: 10px;
+/*entire account page*/
+.AccountPage {
+    min-height: 91vh;
+    padding-bottom: 1rem;
 }
 
-/*button look on account page*/
-.ownerButton {
-    display: block;
-    text-decoration: none;
-    border: 1px solid black;
-    color: black;
-    padding: 7px;
-    margin: 7px;
-    border-radius: 10px;
-    cursor: pointer;
-}
-
-/*div for restaurant title*/
-.RestaurantName {
-    margin-bottom: 1rem;
-}
-
-/*div for button boxes*/
-.buttonsboxes {
-    margin: 1.3rem auto;
-}
-
-/*restaurant title text*/
-.rView {
-    font-size: 1.6em;
-    font-weight: bold;
-}
-
-/*message for when no restaurants added*/
-.noRestaurants {
-    margin: 20px;
-    border: 1px dotted blue;
-    padding: 10px;
+/*welcome message*/
+.formTitle {
+    width: 90%;
+    font-size: 2rem;
+    margin: 0 auto;
+    padding: 1rem;
 }
 
 /*add restaurant button*/
 .addRestButton {
     display: block;
-    width: 50%;
+    width: 60%;
     margin: 0 auto 1.5rem;
     background-color: lightgreen;
     text-decoration: none;
@@ -53,13 +24,86 @@
     border-radius: 10px;
 }
 
+/*container for restaurant and buttons associated*/
+.restaurantBox {
+    padding: 3%;
+    margin: 0 auto;
+    width: 90%;
+    border-bottom: 1px dotted rgb(2, 34, 2);
+    font-family: 'Delius', cursive;
+}
+
+/*div for restaurant title*/
+.RestaurantName {
+    margin: 1rem auto;
+}
+
+/*restaurant title text*/
+.rView {
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Cinzel', serif;
+    line-height: 1rem;
+}
+
+/*message for when no restaurants added*/
+.noRestaurants {
+    margin: 20px auto;
+    border: 1px dotted green;
+    padding: 2rem;
+    width: 70%;
+    font-size: 1.2rem;
+    font-family: 'Delius', cursive;
+    background: rgb(255, 255, 248);
+}
+
+/*div for button boxes*/
+.buttonsboxes {
+    margin: 1.3rem auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+/*button look on account page*/
+.ownerButton {
+    display: block;
+    text-decoration: none;
+    border: 1px solid black;
+    color: black;
+    padding: 1rem;
+    margin: 0.5rem auto;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 40%;
+    background: white;
+    font-weight: bolder;
+    transition: 1s;
+}
+
+/*button on hover*/
+.ownerButton:hover {
+    background-color: black;
+    color: white;
+}
+
 /*User remove button*/
 .removeButton {
     color: red;
     font-weight: bolder;
     background: lightpink; 
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 3px;
+    padding: 1.5rem auto;
+    width: 50%;
+    font-family: 'Delius', cursive;
+    border: none;
+    cursor: pointer;
+}
+
+/*hover of remove button*/
+.removeButton:hover {
+    background-color: red;
+    color: lightcoral;
 }
 
 /*make text red and bold*/
@@ -71,4 +115,83 @@
 /*make text green*/
 .green {
     color: green;
+}
+
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*welcome message*/
+    .formTitle {
+        font-size: 3rem;
+    }
+
+    /*add restaurant button*/
+    .addRestButton {
+        width: 20%;
+        margin: 0 auto;
+    }
+
+    /*div for restaurant title*/
+    .RestaurantName {
+        margin: 2rem auto;
+    }
+
+    /*message for when no restaurants added*/
+    .noRestaurants {
+        margin: 3rem auto 1rem;
+    }
+
+    /*div for button boxes*/
+    .buttonsboxes {
+        margin: 1rem auto;
+    }
+
+    /*button look on account page*/
+    .ownerButton {
+        padding: 1rem;
+        margin: 0.5rem auto;
+        border-radius: 10px;
+        width: 22%;
+    }
+
+    /*User remove button*/
+    .removeButton {
+        width: 25%;
+    }
+}
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*welcome message*/
+    .formTitle {
+        font-size: 3.3rem;
+    }
+
+    /*add restaurant button*/
+    .addRestButton {
+        width: 15%;
+    }
+
+    /*container for restaurant and buttons associated*/
+    .restaurantBox {
+        padding: 1rem;
+    }
+
+    /*div for button boxes*/
+    .buttonsboxes {
+        margin: 1rem auto;
+    }
+
+    /*button look on account page*/
+    .ownerButton {
+        padding: 1rem;
+        margin: 0 auto;
+        width: 18%;
+    }
+
+    /*User remove button*/
+    .removeButton {
+        width: 15%;
+    }
 }

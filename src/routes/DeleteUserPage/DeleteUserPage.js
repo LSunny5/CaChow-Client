@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './DeleteUser.css';
 import config from '../../config';
 import TokenService from '../../services/token-service';
+import IdleService from '../../services/idle-service';
 import PropTypes from 'prop-types';
 
 export default class DeleteUserPage extends Component {
@@ -23,6 +24,9 @@ export default class DeleteUserPage extends Component {
             })
             .then(() => {
                 alert('User has been successfully deleted!');
+                TokenService.clearAuthToken()
+                TokenService.clearCallbackBeforeExpiry()
+                IdleService.unRegisterIdleResets()
                 this.props.history.push('/login');
             })
             .catch(error => {
@@ -41,13 +45,13 @@ export default class DeleteUserPage extends Component {
         return (
             <section className='deleteContent'>
                 <h2 className="deleteHeading">Deleting User...</h2>
-                <div className="restaurantBox">
+                <div className="deleteBox">
                     <p className="deleteMessage">
                         Are you sure you want to <span className="redandbold">delete</span> this account?
                     </p>
-                    <div className="buttonBox">
-                        <button className="deleteButton redandbold" onClick={this.handleDelete}>Delete</button>
-                        <button className="deleteButton" onClick={this.handleCancel}>Cancel</button>
+                    <div className="deleteButtonBox">
+                        <button className="deleteButton redshade redandbold" onClick={this.handleDelete}>Delete</button>
+                        <button className="deleteButton yellowshade" onClick={this.handleCancel}>Cancel</button>
                     </div>
                 </div>
             </section >

@@ -1,44 +1,127 @@
+/*restaurant page*/
 .restaurantContent {
-    min-height: 80vh;
+    min-height: 92vh;
     padding: 10px;
+    padding-bottom: 1rem;
 }
 
+/*box for restaurant information*/
 .restaurantInfo {
-    border: 1px solid black;
+    border: 2px solid black;
     padding: 10px;
+    margin: 1rem 1rem 0;
+    font-family: 'Delius', cursive;
+    background: white;
+    border-radius: 10px;
 }
 
+/*box for the restaurant menu*/
 .restaurantMenu {
-    border: 1px dotted black;
+    border: 2px dotted black;
     padding: 10px;
+    margin: 0 10px 10px;
+    background: rgb(228, 248, 228);
+    border-radius: 10px;
+    font-family: 'Delius', cursive;
 }
 
+/*title for menu "menu"*/
+.menuHeading {
+    font-size: 1.8rem;
+    font-family: 'Cinzel', serif;
+}
+
+/*container for all the menu items*/
 .menuList {
     text-align: left;
     padding: 0;
+    font-size: 1rem;
 }
 
-.category {
+/*Name of restaurant*/
+.restaurantName {
+    font-size: 1.8rem;
+    font-family: 'Cinzel', serif;
+}
+
+/*restaurant Type*/
+.restaurantType {
+    font-size: 0.6rem;
+    color: darkgreen;
+}
+
+/*Hours title "hours"*/
+.hoursHeading {
+    font-family: 'Cinzel', serif;
+}
+
+.day {
+    font-size: 0.8rem;
+}
+
+/*hours time text*/
+.hoursDisplay {
+    color: darkblue;
+}
+
+/*list style for menu*/
+.bulletlist {
     list-style: none;
-    
 }
 
+/*category row*/
+.category {
+    padding: 3px 10px;
+    background: rgb(243, 193, 174);
+}
+
+/*item name*/
 .foodName{
     list-style: none;
     position: relative;
+    background: rgb(228, 248, 228);
 }
 
+/*price of item*/
 .price {
     position: absolute;
     right: 0px;
 }
 
-.hoursDisplay {
-    color: darkblue;
+/********************************************************************/
+/*For Ipads and larger screens */
+@media only screen and (min-width: 600px) {
+    /*box for restaurant information*/
+    .restaurantInfo {
+        width: 50%;
+        margin: 2rem auto 0;
+    }
+
+    /*box for the restaurant menu*/
+    .restaurantMenu {
+        width: 70%;
+        margin: 1rem auto;
+    }
 }
 
-.userType {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+
+/********************************************************************/
+/*For Laptops and larger screens */
+@media only screen and (min-width: 1024px) {
+    /*box for restaurant information*/
+    .restaurantInfo {
+        width: 30%;
+        margin: 1rem auto 0;
+    }
+
+    /*box for the restaurant menu*/
+    .restaurantMenu {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    /*Name of restaurant*/
+    .restaurantName {
+        font-size: 2rem;
+    }
 }
