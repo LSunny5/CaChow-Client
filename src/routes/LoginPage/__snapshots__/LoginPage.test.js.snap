@@ -15,26 +15,20 @@ exports[`LoginPage route renders the LoginPage form 1`] = `
     />
     Back
   </button>
-  <h2
-    className="formTitle"
-  >
-    Login
-  </h2>
   <LoginForm
     onLoginSuccess={[Function]}
   />
-  <p
+  <div
     className="demoInstructions"
   >
-    <span
+    <p
       className="makeBold"
     >
       For Demo Version: 
-    </span>
-    <br />
+    </p>
     Username: Guest
     <br />
     Password: Demo2020!
-  </p>
+  </div>
 </section>
 `;

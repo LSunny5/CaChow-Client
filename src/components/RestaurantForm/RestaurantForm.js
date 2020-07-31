@@ -84,9 +84,9 @@ class RestaurantForm extends React.Component {
 
     render() {
         return (
-            <form className="addForm" onSubmit={this.handleSubmit}>
+            <form className="formBox" onSubmit={this.handleSubmit}>
                 <fieldset>
-                    <label htmlFor="restaurantName" className="inputLabel">Name of Restaurant: </label>
+                    <label htmlFor="restaurantName" className="inputLabel">Name of Restaurant<span className="required">*</span>: </label>
                     <input
                         type="text"
                         id="restaurantName"
@@ -166,10 +166,10 @@ class RestaurantForm extends React.Component {
                         onChange={this.handleUpdate}
                     />
                     <div className="buttonBox">
-                        <button type='submit' className="button">
+                        <button type='submit' className="generalButton submit">
                             Next
                         </button>
-                        <button onClick={this.handleCancel} className="button">
+                        <button onClick={this.handleCancel} className="generalButton cancel">
                             Cancel
                         </button>
                     </div>
@@ -178,7 +178,6 @@ class RestaurantForm extends React.Component {
         );
     };
 }
-
 
 RestaurantForm.propTypes = {
     hours: PropTypes.arrayOf(

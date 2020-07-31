@@ -90,7 +90,7 @@ export default class EditMenuItemPage extends Component {
                     {(items.length > 0) ? (
                         items.map(item =>
                             <div className="editItemBox" key={item.item_id}>
-                                <form className="addForm" onSubmit={this.handlePatch}>
+                                <form onSubmit={this.handlePatch}>
                                     <fieldset>
                                         <label htmlFor="itemName" className="inputLabel">Name of Item<span className="required">*</span>: </label>
                                         <input

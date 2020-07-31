@@ -9,22 +9,31 @@ exports[`EditMenuItemPage component renders the EditMenuItemPage form 1`] = `
   >
     Edit Menu Items
   </h2>
-  <div
-    className="noItemsBox"
+  <p
+    className="editItemDesc"
   >
-    There are no items to edit for this restaurant...
+    After you make your changes, press the update button to update the item!
+  </p>
+  <div
+    className="itemBox"
+  >
+    <div
+      className="noItemsBox"
+    >
+      There are no items to edit for this restaurant...
+    </div>
   </div>
   <div
     className="buttonBox"
   >
     <NavLink
-      className="button"
+      className="generalButton submit"
       to="/restaurants/1"
     >
       Finished
     </NavLink>
     <NavLink
-      className="button"
+      className="generalButton cancel"
       to="/account"
     >
       Cancel

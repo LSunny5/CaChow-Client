@@ -4,27 +4,58 @@ exports[`Landing Page component renders the Landing Page by default 1`] = `
 <section
   className="LandingContent"
 >
-  <h1
-    className="LandingHeading"
-  >
-    CaChow!
-  </h1>
   <div
-    className="LandingDescription"
+    className="LandingTop"
   >
-    Welcome to the site that keeps all your menus in one place! Instead of having to navigate to several different websites to view their menus, this site allows you to click and see the restaurant's information and menu!
-    <br />
-    <br />
-  </div>
-  <form
-    className="LandingForm"
-  >
-    <NavLink
-      className="beginButton"
-      to="/login"
+    <img
+      alt="Cachow Logo"
+      className="LandingImage"
+      src="images/LogoResized.png"
+    />
+    <h1
+      className="LandingHeading"
     >
-      Let's Begin
-    </NavLink>
-  </form>
+      CaChow!
+    </h1>
+  </div>
+  <div
+    className="LandingBottom"
+  >
+    <div
+      className="LandingDescription"
+    >
+      Welcome to the site that keeps all your menus in one place! Instead of having to navigate to several different websites to view menus and restaurant information, keep all your menus in one place!
+    </div>
+    <div
+      className="ButtonTextBox"
+    >
+      <div
+        className="ButtonText"
+      >
+        Let's Begin
+      </div>
+      <div
+        className="ButtonWrapper"
+      >
+        <div
+          className="ButtonArrow"
+        />
+        <NavLink
+          to="/login"
+        >
+          <div
+            className="ButtonCircleBorder"
+          />
+          <div
+            className="ButtonCircleCover"
+          >
+            <div
+              className="SmallCircle"
+            />
+          </div>
+        </NavLink>
+      </div>
+    </div>
+  </div>
 </section>
 `;

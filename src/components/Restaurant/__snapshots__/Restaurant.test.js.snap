@@ -7,26 +7,23 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
   <section
     className="restaurantInfo"
   >
-    <p
-      className="restaurantName"
-    >
-      (
-      )
-    </p>
     <h1
       className="restaurantName"
     />
     <p
-      className="restaurantName"
+      className="restaurantText"
     />
     <p
-      className="restaurantName"
+      className="restaurantText"
     >
       , 
         
     </p>
     <p
-      className="restaurantName"
+      className="restaurantText"
+    />
+    <p
+      className="restaurantType"
     />
     <br />
     <div
@@ -37,7 +34,9 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
       >
         Hours: 
       </h3>
-      <p>
+      <p
+        className="day"
+      >
         Sunday: 
         <span
           className="hoursDisplay"
@@ -48,7 +47,9 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
         />
          
       </p>
-      <p>
+      <p
+        className="day"
+      >
         Monday: 
         <span
           className="hoursDisplay"
@@ -59,7 +60,9 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
         />
           
       </p>
-      <p>
+      <p
+        className="day"
+      >
         Tuesday: 
         <span
           className="hoursDisplay"
@@ -70,7 +73,9 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
         />
          
       </p>
-      <p>
+      <p
+        className="day"
+      >
         Wednesday: 
         <span
           className="hoursDisplay"
@@ -81,7 +86,9 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
         />
          
       </p>
-      <p>
+      <p
+        className="day"
+      >
         Thursday: 
         <span
           className="hoursDisplay"
@@ -92,7 +99,9 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
         />
          
       </p>
-      <p>
+      <p
+        className="day"
+      >
         Friday: 
         <span
           className="hoursDisplay"
@@ -103,7 +112,9 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
         />
          
       </p>
-      <p>
+      <p
+        className="day"
+      >
         Saturday: 
         <span
           className="hoursDisplay"
@@ -123,7 +134,7 @@ exports[`Restaurant component renders the Restaurant form 1`] = `
     <h2
       className="menuHeading"
     >
-      Menu Update
+      Menu
     </h2>
     <ul
       className="menuList"

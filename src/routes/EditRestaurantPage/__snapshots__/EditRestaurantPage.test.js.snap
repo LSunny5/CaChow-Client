@@ -10,7 +10,7 @@ exports[`EditRestaurantPage route renders the EditRestaurantPage form 1`] = `
     Edit Restaurant
   </h2>
   <form
-    className="addForm"
+    className="formBox"
     onSubmit={[Function]}
   >
     <fieldset>
@@ -18,7 +18,13 @@ exports[`EditRestaurantPage route renders the EditRestaurantPage form 1`] = `
         className="inputLabel"
         htmlFor="restaurantName"
       >
-        Name of Restaurant: 
+        Name of Restaurant 
+        <span
+          className="required"
+        >
+          *
+        </span>
+        : 
       </label>
       <input
         className="textField"
@@ -137,13 +143,13 @@ exports[`EditRestaurantPage route renders the EditRestaurantPage form 1`] = `
         className="buttonBox"
       >
         <button
-          className="button"
+          className="generalButton submit"
           type="submit"
         >
           Update
         </button>
         <NavLink
-          className="button"
+          className="generalButton cancel"
           to="/account"
         >
           Cancel

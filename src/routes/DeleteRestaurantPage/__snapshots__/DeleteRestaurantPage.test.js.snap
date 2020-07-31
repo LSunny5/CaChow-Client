@@ -10,7 +10,7 @@ exports[`DeleteRestaurantPage route renders the EditRestaurantPage form 1`] = `
     Deleting Restaurant...
   </h2>
   <div
-    className="restaurantBox"
+    className="deleteBox"
   >
     <p
       className="deleteMessage"
@@ -24,16 +24,16 @@ exports[`DeleteRestaurantPage route renders the EditRestaurantPage form 1`] = `
        the restaurant and all the information?
     </p>
     <div
-      className="buttonBox"
+      className="deleteBox"
     >
       <button
-        className="deleteButton redandbold"
+        className="deleteButton redshade redandbold"
         onClick={[Function]}
       >
         Delete
       </button>
       <button
-        className="deleteButton"
+        className="deleteButton yellowshade"
         onClick={[Function]}
       >
         Cancel

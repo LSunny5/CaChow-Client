@@ -6,10 +6,15 @@ exports[`LoginForm route renders the LoginForm form 1`] = `
   onSubmit={[Function]}
 >
   <legend
+    className="formTitle"
+  >
+    Login
+  </legend>
+  <p
     className="loginDirect"
   >
     Please enter your username and password. 
-  </legend>
+  </p>
   <div
     role="alert"
   />
@@ -52,12 +57,16 @@ exports[`LoginForm route renders the LoginForm form 1`] = `
       type="password"
     />
   </div>
-  <button
-    className="loginButton"
-    type="submit"
+  <div
+    className="buttonBox"
   >
-    Log in
-  </button>
+    <button
+      className="borderButton"
+      type="submit"
+    >
+      Log in
+    </button>
+  </div>
   <div
     className="registerQuestionBox"
   >

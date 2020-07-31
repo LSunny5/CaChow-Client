@@ -2,7 +2,7 @@
 
 exports[`RestaurantForm component renders the RestaurantForm form 1`] = `
 <form
-  className="addForm"
+  className="formBox"
   onSubmit={[Function]}
 >
   <fieldset>
@@ -10,7 +10,13 @@ exports[`RestaurantForm component renders the RestaurantForm form 1`] = `
       className="inputLabel"
       htmlFor="restaurantName"
     >
-      Name of Restaurant: 
+      Name of Restaurant
+      <span
+        className="required"
+      >
+        *
+      </span>
+      : 
     </label>
     <input
       className="textField"
@@ -129,13 +135,13 @@ exports[`RestaurantForm component renders the RestaurantForm form 1`] = `
       className="buttonBox"
     >
       <button
-        className="button"
+        className="generalButton submit"
         type="submit"
       >
         Next
       </button>
       <button
-        className="button"
+        className="generalButton cancel"
         onClick={[Function]}
       >
         Cancel

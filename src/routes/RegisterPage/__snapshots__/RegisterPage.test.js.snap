@@ -2,13 +2,19 @@
 
 exports[`RegistrationPage component renders the RegistrationPage route 1`] = `
 <section
-  className="formPage"
+  className="formPage registerPage"
 >
-  <h2
-    className="formTitle"
+  <button
+    className="backButton"
+    onClick={[Function]}
   >
-    Register
-  </h2>
+    <img
+      alt="Go back"
+      className="backArrow"
+      src="/images/backarrow.png"
+    />
+    Back
+  </button>
   <RegistrationForm
     onRegistrationSuccess={[Function]}
   />

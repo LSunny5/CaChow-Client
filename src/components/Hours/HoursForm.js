@@ -35,7 +35,7 @@ class HoursForm extends React.Component {
             sat_close: event.target['SaturdayClose'].value,
             hours_owner: uname,
         }
-        
+
         fetch(`${config.APIENDPOINT}/hours`, {
             method: 'POST',
             headers: {
@@ -61,158 +61,205 @@ class HoursForm extends React.Component {
     }
 
     render() {
-
-
-        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-
         return (
             <form className="addHourForm" onSubmit={this.handleSubmit}>
-                <fieldset>
-                    <label htmlFor="SundayOpen" className="inputLabel">Time Open on Sunday: </label>
-                    <input
-                        type="text"
-                        id="SundayOpen"
-                        name="SundayOpen"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="SundayClose" className="inputLabel">Time Close on Sunday: </label>
-                    <input
-                        type="text"
-                        id="SundayClose"
-                        name="SundayClose"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="MondayOpen" className="inputLabel">Time Open on Monday: </label>
-                    <input
-                        type="text"
-                        id="MondayOpen"
-                        name="MondayOpen"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="MondayClose" className="inputLabel">Time Close on Monday: </label>
-                    <input
-                        type="text"
-                        id="MondayClose"
-                        name="MondayClose"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="TuesdayOpen" className="inputLabel">Time Open on Tuesday: </label>
-                    <input
-                        type="text"
-                        id="TuesdayOpen"
-                        name="TuesdayOpen"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="TuesdayClose" className="inputLabel">Time Close on Tuesday: </label>
-                    <input
-                        type="text"
-                        id="TuesdayClose"
-                        name="TuesdayClose"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="WednesdayOpen" className="inputLabel">Time Open on Wednesday: </label>
-                    <input
-                        type="text"
-                        id="WednesdayOpen"
-                        name="WednesdayOpen"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="WednesdayClose" className="inputLabel">Time Close on Wednesday: </label>
-                    <input
-                        type="text"
-                        id="WednesdayClose"
-                        name="WednesdayClose"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="ThursdayOpen" className="inputLabel">Time Open on Thursday: </label>
-                    <input
-                        type="text"
-                        id="ThursdayOpen"
-                        name="ThursdayOpen"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="ThursdayClose" className="inputLabel">Time Close on Thursday: </label>
-                    <input
-                        type="text"
-                        id="ThursdayClose"
-                        name="ThursdayClose"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="FridayOpen" className="inputLabel">Time Open on Friday: </label>
-                    <input
-                        type="text"
-                        id="FridayOpen"
-                        name="FridayOpen"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="FridayClose" className="inputLabel">Time Close on Friday: </label>
-                    <input
-                        type="text"
-                        id="FridayClose"
-                        name="FridayClose"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="SaturdayOpen" className="inputLabel">Time Open on Saturday: </label>
-                    <input
-                        type="text"
-                        id="SaturdayOpen"
-                        name="SaturdayOpen"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
-                    <label htmlFor="SaturdayClose" className="inputLabel">Time Close on Saturday: </label>
-                    <input
-                        type="text"
-                        id="SaturdayClose"
-                        name="SaturdayClose"
-                        className="textField"
-                        placeholder="ex. 12:00AM"
-                        onChange={this.handleUpdate}
-                    />
-                    <br />
+                <fieldset className="hoursFieldset">
+                    <div className="hoursDisplay">
+                        <div className="hoursGroup">
+                            <h3>Sunday</h3>
+                            <div className="hoursSection">
+                                <div>
+                                    <label htmlFor="SundayOpen" className="inputLabel">Time Open: </label>
+                                    <input
+                                        type="text"
+                                        id="SundayOpen"
+                                        name="SundayOpen"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="SundayClose" className="inputLabel">Time Close: </label>
+                                    <input
+                                        type="text"
+                                        id="SundayClose"
+                                        name="SundayClose"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hoursGroup">
+                            <h3>Monday</h3>
+                            <div className="hoursSection">
+                                <div>
+                                    <label htmlFor="MondayOpen" className="inputLabel">Time Open: </label>
+                                    <input
+                                        type="text"
+                                        id="MondayOpen"
+                                        name="MondayOpen"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="MondayClose" className="inputLabel">Time Close: </label>
+                                    <input
+                                        type="text"
+                                        id="MondayClose"
+                                        name="MondayClose"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hoursGroup">
+                            <h3>Tuesday</h3>
+                            <div className="hoursSection">
+                                <div>
+                                    <label htmlFor="TuesdayOpen" className="inputLabel">Time Open: </label>
+                                    <input
+                                        type="text"
+                                        id="TuesdayOpen"
+                                        name="TuesdayOpen"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="TuesdayClose" className="inputLabel">Time Close: </label>
+                                    <input
+                                        type="text"
+                                        id="TuesdayClose"
+                                        name="TuesdayClose"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hoursGroup">
+                            <h3>Wednesday</h3>
+                            <div className="hoursSection">
+                                <div>
+                                    <label htmlFor="WednesdayOpen" className="inputLabel">Time Open: </label>
+                                    <input
+                                        type="text"
+                                        id="WednesdayOpen"
+                                        name="WednesdayOpen"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="WednesdayClose" className="inputLabel">Time Close: </label>
+                                    <input
+                                        type="text"
+                                        id="WednesdayClose"
+                                        name="WednesdayClose"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hoursGroup">
+                            <h3>Thursday</h3>
+                            <div className="hoursSection">
+                                <div>
+                                    <label htmlFor="ThursdayOpen" className="inputLabel">Time Open: </label>
+                                    <input
+                                        type="text"
+                                        id="ThursdayOpen"
+                                        name="ThursdayOpen"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="ThursdayClose" className="inputLabel">Time Close: </label>
+                                    <input
+                                        type="text"
+                                        id="ThursdayClose"
+                                        name="ThursdayClose"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hoursGroup">
+                            <h3>Friday</h3>
+                            <div className="hoursSection">
+                                <div>
+                                    <label htmlFor="FridayOpen" className="inputLabel">Time Open: </label>
+                                    <input
+                                        type="text"
+                                        id="FridayOpen"
+                                        name="FridayOpen"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="FridayClose" className="inputLabel">Time Close: </label>
+                                    <input
+                                        type="text"
+                                        id="FridayClose"
+                                        name="FridayClose"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="hoursGroup">
+                            <h3>Saturday</h3>
+                            <div className="hoursSection">
+                                <div>
+                                    <label htmlFor="SaturdayOpen" className="inputLabel">Time Open: </label>
+                                    <input
+                                        type="text"
+                                        id="SaturdayOpen"
+                                        name="SaturdayOpen"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                                <div>
+                                    <label htmlFor="SaturdayClose" className="inputLabel">Time Close: </label>
+                                    <input
+                                        type="text"
+                                        id="SaturdayClose"
+                                        name="SaturdayClose"
+                                        className="textField"
+                                        placeholder="ex. 12:00AM"
+                                        onChange={this.handleUpdate}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div className="buttonBox">
-                        <button type='submit' className="button">
+                        <button type='submit' className="generalButton submit">
                             Next
                         </button>
-                        <NavLink className="button" to={`/account`}>
+                        <NavLink className="generalButton cancel" to={`/account`}>
                             Cancel
                         </NavLink>
                     </div>
@@ -223,7 +270,7 @@ class HoursForm extends React.Component {
 }
 
 HoursForm.propTypes = {
-    nextLocation: PropTypes.string, 
+    nextLocation: PropTypes.string,
 }
 
 export default HoursForm;

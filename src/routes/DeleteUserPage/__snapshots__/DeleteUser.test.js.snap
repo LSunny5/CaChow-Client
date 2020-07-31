@@ -10,7 +10,7 @@ exports[`DeleteUserPage route renders the DeleteUserPage form 1`] = `
     Deleting User...
   </h2>
   <div
-    className="restaurantBox"
+    className="deleteBox"
   >
     <p
       className="deleteMessage"
@@ -24,16 +24,16 @@ exports[`DeleteUserPage route renders the DeleteUserPage form 1`] = `
        this account?
     </p>
     <div
-      className="buttonBox"
+      className="deleteButtonBox"
     >
       <button
-        className="deleteButton redandbold"
+        className="deleteButton redshade redandbold"
         onClick={[Function]}
       >
         Delete
       </button>
       <button
-        className="deleteButton"
+        className="deleteButton yellowshade"
         onClick={[Function]}
       >
         Cancel

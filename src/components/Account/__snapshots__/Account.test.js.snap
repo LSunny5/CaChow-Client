@@ -36,7 +36,5 @@ exports[`Account component renders the Account form 1`] = `
       Remove Account
     </NavLink>
   </div>
-  <br />
-  <br />
 </section>
 `;
